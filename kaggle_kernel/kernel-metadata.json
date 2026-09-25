@@ -1,0 +1,10 @@
+{
+  "id": "kieuthithutrang/rgsp-vlm-pipeline-test-qwen2-vl-llava-1-5",
+  "title": "rgsp-vlm-pipeline-test-qwen2-vl-llava-1-5",
+  "code_file": "pipeline_test.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true
+}

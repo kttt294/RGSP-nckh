@@ -1,0 +1,276 @@
+[{"stream_name":"stderr","time":10.782769719000001,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":10.782826513,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":10.782833427,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":10.782837374,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":11.52453889,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":11.524567593,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":11.524572346,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":11.524577677,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":16.17763757,"data":"\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/1.8 MB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m1.8/1.8 MB\u001b[0m \u001b[31m71.8 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m1.8/1.8 MB\u001b[0m \u001b[31m37.6 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":32.60656249,"data":"\u001b[?25hPyTorch Version: 2.10.0+cu128\n"}
+,{"stream_name":"stdout","time":32.60660154,"data":"CUDA Available: True\n"}
+,{"stream_name":"stdout","time":32.606607893,"data":"GPU Device: Tesla T4\n"}
+,{"stream_name":"stdout","time":32.606612473,"data":"VRAM: 15.64 GB\n"}
+,{"stream_name":"stdout","time":33.135482052,"data":"Ảnh viễn thám đã tải: 1616 x 1565 pixels\n"}
+,{"stream_name":"stdout","time":33.30471298,"data":"--- PROMPT TIẾNG ANH ---\n"}
+,{"stream_name":"stdout","time":33.304741347,"data":"Examine this aerial remote sensing image carefully:\n"}
+,{"stream_name":"stdout","time":33.304747159,"data":"1. What types of objects or vehicles are visible (e.g., planes, vehicles, ships, harbors, buildings)?\n"}
+,{"stream_name":"stdout","time":33.304752256,"data":"2. Where are they located and what are their orientations?\n"}
+,{"stream_name":"stdout","time":33.30475684,"data":"3. If any object is too blurry or small to determine reliably, state 'Cannot be determined from image'.\n"}
+,{"stream_name":"stdout","time":33.304761726,"data":"\n"}
+,{"stream_name":"stdout","time":33.30476631,"data":"--- PROMPT TIẾNG VIỆT ---\n"}
+,{"stream_name":"stdout","time":33.304771087,"data":"Quan sát kỹ bức ảnh viễn thám này và trả lời các câu hỏi sau:\n"}
+,{"stream_name":"stdout","time":33.30477585,"data":"1. Trong ảnh có những loại phương tiện hoặc công trình nào (ví dụ: máy bay, ô tô, tàu thuyền, cầu cảng, nhà xưởng)?\n"}
+,{"stream_name":"stdout","time":33.304781599,"data":"2. Vị trí và hướng xoay (trục định hướng) của chúng như thế nào?\n"}
+,{"stream_name":"stdout","time":33.304787192,"data":"3. Nếu có vật thể nào quá nhỏ hoặc quá mờ không thể nhận diện một cách tin cậy, hãy nói rõ 'Không thể xác định từ ảnh'.\n"}
+,{"stream_name":"stderr","time":69.04631671,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":69.046345478,"data":"\n"}
+,{"stream_name":"stderr","time":69.046351357,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":69.069666903,"data":"Đang tải mô hình Qwen/Qwen2-VL-7B-Instruct (chế độ lượng tử hóa 4-bit để tối ưu VRAM)...\n"}
+,{"stream_name":"stdout","time":69.069694004,"data":"\n"}
+,{"stream_name":"stderr","time":70.151825134,"data":"The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. \n"}
+,{"stream_name":"stderr","time":70.151862073,"data":"\n"}
+,{"stream_name":"stderr","time":70.151868126,"data":"The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. \n"}
+,{"stream_name":"stdout","time":217.220907122,"data":"\n"}
+,{"stream_name":"stdout","time":217.220976498,"data":"--- [QWEN2-VL] CHẠY LẦN 1: PROMPT TIẾNG ANH ---\n"}
+,{"stream_name":"stderr","time":223.241028883,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":223.24107296,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":223.241078784,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":223.242703532,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":223.242731607,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":223.242833454,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":223.243923401,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":223.243947278,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":223.243954298,"data":"Exception encountered at \"In [4]\":\n"}
+,{"stream_name":"stderr","time":223.243960037,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":223.243964311,"data":"OutOfMemoryError                          Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":223.243968707,"data":"/tmp/ipykernel_23/1779491753.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":223.243974126,"data":"     52 # Chạy Lần 1: Tiếng Anh\n"}
+,{"stream_name":"stderr","time":223.243979096,"data":"     53 print(\"\\n--- [QWEN2-VL] CHẠY LẦN 1: PROMPT TIẾNG ANH ---\")\n"}
+,{"stream_name":"stderr","time":223.24398373,"data":"---\u003e 54 out_qwen_en = run_qwen(PROMPT_EN)\n"}
+,{"stream_name":"stderr","time":223.243988242,"data":"     55 print(out_qwen_en)\n"}
+,{"stream_name":"stderr","time":223.243993224,"data":"     56 \n"}
+,{"stream_name":"stderr","time":223.243997879,"data":"\n"}
+,{"stream_name":"stderr","time":223.244002131,"data":"/tmp/ipykernel_23/1779491753.py in run_qwen(prompt_text)\n"}
+,{"stream_name":"stderr","time":223.244018074,"data":"     43 \n"}
+,{"stream_name":"stderr","time":223.244021939,"data":"     44     with torch.no_grad():\n"}
+,{"stream_name":"stderr","time":223.244025232,"data":"---\u003e 45         generated_ids = model_qwen.generate(**inputs, max_new_tokens=300)\n"}
+,{"stream_name":"stderr","time":223.24402914,"data":"     46 \n"}
+,{"stream_name":"stderr","time":223.244032644,"data":"     47     generated_ids_trimmed = [\n"}
+,{"stream_name":"stderr","time":223.244036236,"data":"\n"}
+,{"stream_name":"stderr","time":223.244039631,"data":"/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py in decorate_context(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244043385,"data":"    122         # pyrefly: ignore [bad-context-manager]\n"}
+,{"stream_name":"stderr","time":223.244046826,"data":"    123         with ctx_factory():\n"}
+,{"stream_name":"stderr","time":223.244050179,"data":"--\u003e 124             return func(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244054252,"data":"    125 \n"}
+,{"stream_name":"stderr","time":223.244057669,"data":"    126     return decorate_context\n"}
+,{"stream_name":"stderr","time":223.244061696,"data":"\n"}
+,{"stream_name":"stderr","time":223.244065492,"data":"/usr/local/lib/python3.12/dist-packages/transformers/generation/utils.py in generate(self, inputs, generation_config, logits_processor, stopping_criteria, prefix_allowed_tokens_fn, synced_gpus, assistant_model, streamer, negative_prompt_ids, negative_prompt_attention_mask, custom_generate, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244070669,"data":"   2667 \n"}
+,{"stream_name":"stderr","time":223.244073856,"data":"   2668         # 9. Call generation mode\n"}
+,{"stream_name":"stderr","time":223.244077307,"data":"-\u003e 2669         result = decoding_method(\n"}
+,{"stream_name":"stderr","time":223.244081028,"data":"   2670             self,\n"}
+,{"stream_name":"stderr","time":223.244084519,"data":"   2671             input_ids,\n"}
+,{"stream_name":"stderr","time":223.244088078,"data":"\n"}
+,{"stream_name":"stderr","time":223.244091417,"data":"/usr/local/lib/python3.12/dist-packages/transformers/generation/utils.py in _sample(self, input_ids, logits_processor, stopping_criteria, generation_config, synced_gpus, streamer, **model_kwargs)\n"}
+,{"stream_name":"stderr","time":223.244095813,"data":"   2862         # we don't have several `prefill` calls in one generation loop. Skip `_prefill` for assistants\n"}
+,{"stream_name":"stderr","time":223.244099469,"data":"   2863         if not generation_config.is_assistant:\n"}
+,{"stream_name":"stderr","time":223.244103046,"data":"-\u003e 2864             outputs = self._prefill(input_ids, generation_config, model_kwargs)\n"}
+,{"stream_name":"stderr","time":223.244106765,"data":"   2865             prefill_consumed = False\n"}
+,{"stream_name":"stderr","time":223.244110336,"data":"   2866         else:\n"}
+,{"stream_name":"stderr","time":223.244113718,"data":"\n"}
+,{"stream_name":"stderr","time":223.244118352,"data":"/usr/local/lib/python3.12/dist-packages/transformers/generation/utils.py in _prefill(self, input_ids, generation_config, model_kwargs)\n"}
+,{"stream_name":"stderr","time":223.244122244,"data":"   3851             model_kwargs = self._get_initial_cache_position(input_ids.shape[1], input_ids.device, model_kwargs)\n"}
+,{"stream_name":"stderr","time":223.244126151,"data":"   3852             model_inputs = self.prepare_inputs_for_generation(input_ids, is_first_iteration=True, **model_kwargs)\n"}
+,{"stream_name":"stderr","time":223.244129919,"data":"-\u003e 3853             return self(**model_inputs, return_dict=True)\n"}
+,{"stream_name":"stderr","time":223.244133587,"data":"   3854         else:  # Chunked prefill\n"}
+,{"stream_name":"stderr","time":223.244141326,"data":"   3855             # Even if we are not compiling the forward, flex is always compiled when used. With chunked prefill, we may\n"}
+,{"stream_name":"stderr","time":223.244145416,"data":"\n"}
+,{"stream_name":"stderr","time":223.244148723,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py in _wrapped_call_impl(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244152536,"data":"   1774             return self._compiled_call_impl(*args, **kwargs)  # type: ignore[misc]\n"}
+,{"stream_name":"stderr","time":223.244156417,"data":"   1775         else:\n"}
+,{"stream_name":"stderr","time":223.244160129,"data":"-\u003e 1776             return self._call_impl(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244163646,"data":"   1777 \n"}
+,{"stream_name":"stderr","time":223.244167061,"data":"   1778     # torchrec tests the code consistency with the following code\n"}
+,{"stream_name":"stderr","time":223.244170709,"data":"\n"}
+,{"stream_name":"stderr","time":223.244173959,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py in _call_impl(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244177761,"data":"   1785                 or _global_backward_pre_hooks or _global_backward_hooks\n"}
+,{"stream_name":"stderr","time":223.244181416,"data":"   1786                 or _global_forward_hooks or _global_forward_pre_hooks):\n"}
+,{"stream_name":"stderr","time":223.244185112,"data":"-\u003e 1787             return forward_call(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244188797,"data":"   1788 \n"}
+,{"stream_name":"stderr","time":223.244192043,"data":"   1789         result = None\n"}
+,{"stream_name":"stderr","time":223.244195626,"data":"\n"}
+,{"stream_name":"stderr","time":223.244198946,"data":"/usr/local/lib/python3.12/dist-packages/accelerate/hooks.py in new_forward(module, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244216925,"data":"    190                 output = module._old_forward(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.24422102,"data":"    191         else:\n"}
+,{"stream_name":"stderr","time":223.244224755,"data":"--\u003e 192             output = module._old_forward(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.24422861,"data":"    193         return module._hf_hook.post_forward(module, output)\n"}
+,{"stream_name":"stderr","time":223.244232224,"data":"    194 \n"}
+,{"stream_name":"stderr","time":223.244235606,"data":"\n"}
+,{"stream_name":"stderr","time":223.244238893,"data":"/usr/local/lib/python3.12/dist-packages/transformers/utils/generic.py in wrapper(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244242824,"data":"    833         if return_dict_passed is not None:\n"}
+,{"stream_name":"stderr","time":223.244246323,"data":"    834             return_dict = return_dict_passed\n"}
+,{"stream_name":"stderr","time":223.244249932,"data":"--\u003e 835         output = func(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244253101,"data":"    836         if not return_dict and not isinstance(output, tuple):\n"}
+,{"stream_name":"stderr","time":223.244257203,"data":"    837             output = output.to_tuple()\n"}
+,{"stream_name":"stderr","time":223.244260559,"data":"\n"}
+,{"stream_name":"stderr","time":223.244263993,"data":"/usr/local/lib/python3.12/dist-packages/transformers/models/qwen2_vl/modeling_qwen2_vl.py in forward(self, input_ids, attention_mask, position_ids, past_key_values, inputs_embeds, labels, use_cache, output_attentions, output_hidden_states, pixel_values, pixel_values_videos, image_grid_thw, video_grid_thw, rope_deltas, cache_position, logits_to_keep, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.24427274,"data":"   1420         )\n"}
+,{"stream_name":"stderr","time":223.244276792,"data":"   1421 \n"}
+,{"stream_name":"stderr","time":223.244280069,"data":"-\u003e 1422         outputs: Qwen2VLModelOutputWithPast = self.model(\n"}
+,{"stream_name":"stderr","time":223.24428366,"data":"   1423             input_ids=input_ids,\n"}
+,{"stream_name":"stderr","time":223.244287065,"data":"   1424             pixel_values=pixel_values,\n"}
+,{"stream_name":"stderr","time":223.244290666,"data":"\n"}
+,{"stream_name":"stderr","time":223.24429437,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py in _wrapped_call_impl(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244298521,"data":"   1774             return self._compiled_call_impl(*args, **kwargs)  # type: ignore[misc]\n"}
+,{"stream_name":"stderr","time":223.244302166,"data":"   1775         else:\n"}
+,{"stream_name":"stderr","time":223.244305491,"data":"-\u003e 1776             return self._call_impl(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244309098,"data":"   1777 \n"}
+,{"stream_name":"stderr","time":223.244312483,"data":"   1778     # torchrec tests the code consistency with the following code\n"}
+,{"stream_name":"stderr","time":223.244324649,"data":"\n"}
+,{"stream_name":"stderr","time":223.24432806,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py in _call_impl(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244331834,"data":"   1785                 or _global_backward_pre_hooks or _global_backward_hooks\n"}
+,{"stream_name":"stderr","time":223.244335522,"data":"   1786                 or _global_forward_hooks or _global_forward_pre_hooks):\n"}
+,{"stream_name":"stderr","time":223.244338989,"data":"-\u003e 1787             return forward_call(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244342574,"data":"   1788 \n"}
+,{"stream_name":"stderr","time":223.244345906,"data":"   1789         result = None\n"}
+,{"stream_name":"stderr","time":223.244348996,"data":"\n"}
+,{"stream_name":"stderr","time":223.244352517,"data":"/usr/local/lib/python3.12/dist-packages/transformers/models/qwen2_vl/modeling_qwen2_vl.py in forward(self, input_ids, attention_mask, position_ids, past_key_values, inputs_embeds, use_cache, output_attentions, output_hidden_states, return_dict, pixel_values, pixel_values_videos, image_grid_thw, video_grid_thw, rope_deltas, cache_position, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244357093,"data":"   1237 \n"}
+,{"stream_name":"stderr","time":223.244360399,"data":"   1238         if pixel_values is not None:\n"}
+,{"stream_name":"stderr","time":223.244363962,"data":"-\u003e 1239             image_embeds = self.get_image_features(pixel_values, image_grid_thw, return_dict=True).pooler_output\n"}
+,{"stream_name":"stderr","time":223.244367755,"data":"   1240             image_embeds = torch.cat(image_embeds, dim=0).to(inputs_embeds.device, inputs_embeds.dtype)\n"}
+,{"stream_name":"stderr","time":223.244371469,"data":"   1241             image_mask, _ = self.get_placeholder_mask(\n"}
+,{"stream_name":"stderr","time":223.244375219,"data":"\n"}
+,{"stream_name":"stderr","time":223.244379381,"data":"/usr/local/lib/python3.12/dist-packages/transformers/utils/generic.py in wrapper(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244383096,"data":"    833         if return_dict_passed is not None:\n"}
+,{"stream_name":"stderr","time":223.244386613,"data":"    834             return_dict = return_dict_passed\n"}
+,{"stream_name":"stderr","time":223.244390136,"data":"--\u003e 835         output = func(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244397006,"data":"    836         if not return_dict and not isinstance(output, tuple):\n"}
+,{"stream_name":"stderr","time":223.244400694,"data":"    837             output = output.to_tuple()\n"}
+,{"stream_name":"stderr","time":223.244404323,"data":"\n"}
+,{"stream_name":"stderr","time":223.244407609,"data":"/usr/local/lib/python3.12/dist-packages/transformers/models/qwen2_vl/modeling_qwen2_vl.py in get_image_features(self, pixel_values, image_grid_thw, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244411533,"data":"   1150         \"\"\"\n"}
+,{"stream_name":"stderr","time":223.244415595,"data":"   1151         pixel_values = pixel_values.type(self.visual.dtype)\n"}
+,{"stream_name":"stderr","time":223.244419231,"data":"-\u003e 1152         vision_outputs = self.visual(pixel_values, grid_thw=image_grid_thw, return_dict=True, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244423259,"data":"   1153         split_sizes = (image_grid_thw.prod(-1) // self.visual.spatial_merge_size**2).tolist()\n"}
+,{"stream_name":"stderr","time":223.244427002,"data":"   1154         image_embeds = torch.split(vision_outputs.pooler_output, split_sizes)\n"}
+,{"stream_name":"stderr","time":223.244432503,"data":"\n"}
+,{"stream_name":"stderr","time":223.244436159,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py in _wrapped_call_impl(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244439886,"data":"   1774             return self._compiled_call_impl(*args, **kwargs)  # type: ignore[misc]\n"}
+,{"stream_name":"stderr","time":223.244443515,"data":"   1775         else:\n"}
+,{"stream_name":"stderr","time":223.244446896,"data":"-\u003e 1776             return self._call_impl(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244450938,"data":"   1777 \n"}
+,{"stream_name":"stderr","time":223.244454392,"data":"   1778     # torchrec tests the code consistency with the following code\n"}
+,{"stream_name":"stderr","time":223.244457935,"data":"\n"}
+,{"stream_name":"stderr","time":223.244461265,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py in _call_impl(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244464869,"data":"   1785                 or _global_backward_pre_hooks or _global_backward_hooks\n"}
+,{"stream_name":"stderr","time":223.244468786,"data":"   1786                 or _global_forward_hooks or _global_forward_pre_hooks):\n"}
+,{"stream_name":"stderr","time":223.24447232,"data":"-\u003e 1787             return forward_call(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244475845,"data":"   1788 \n"}
+,{"stream_name":"stderr","time":223.244484927,"data":"   1789         result = None\n"}
+,{"stream_name":"stderr","time":223.244488388,"data":"\n"}
+,{"stream_name":"stderr","time":223.24449167,"data":"/usr/local/lib/python3.12/dist-packages/accelerate/hooks.py in new_forward(module, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244495383,"data":"    190                 output = module._old_forward(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244498953,"data":"    191         else:\n"}
+,{"stream_name":"stderr","time":223.244502356,"data":"--\u003e 192             output = module._old_forward(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244506055,"data":"    193         return module._hf_hook.post_forward(module, output)\n"}
+,{"stream_name":"stderr","time":223.244509763,"data":"    194 \n"}
+,{"stream_name":"stderr","time":223.244513241,"data":"\n"}
+,{"stream_name":"stderr","time":223.244516554,"data":"/usr/local/lib/python3.12/dist-packages/transformers/utils/generic.py in wrapper(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244523753,"data":"   1000                         outputs = func(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244527389,"data":"   1001                 else:\n"}
+,{"stream_name":"stderr","time":223.244530865,"data":"-\u003e 1002                     outputs = func(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244534546,"data":"   1003             except TypeError as original_exception:\n"}
+,{"stream_name":"stderr","time":223.244538198,"data":"   1004                 # If we get a TypeError, it's possible that the model is not receiving the recordable kwargs correctly.\n"}
+,{"stream_name":"stderr","time":223.244541992,"data":"\n"}
+,{"stream_name":"stderr","time":223.244545238,"data":"/usr/local/lib/python3.12/dist-packages/transformers/models/qwen2_vl/modeling_qwen2_vl.py in forward(self, hidden_states, grid_thw, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244548996,"data":"    770 \n"}
+,{"stream_name":"stderr","time":223.244552305,"data":"    771         for blk in self.blocks:\n"}
+,{"stream_name":"stderr","time":223.244555983,"data":"--\u003e 772             hidden_states = blk(\n"}
+,{"stream_name":"stderr","time":223.244559464,"data":"    773                 hidden_states,\n"}
+,{"stream_name":"stderr","time":223.244563339,"data":"    774                 cu_seqlens=cu_seqlens,\n"}
+,{"stream_name":"stderr","time":223.244566806,"data":"\n"}
+,{"stream_name":"stderr","time":223.244570047,"data":"/usr/local/lib/python3.12/dist-packages/transformers/modeling_layers.py in __call__(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244573831,"data":"     91 \n"}
+,{"stream_name":"stderr","time":223.244577181,"data":"     92             return self._gradient_checkpointing_func(partial(super().__call__, **kwargs), *args)\n"}
+,{"stream_name":"stderr","time":223.244580927,"data":"---\u003e 93         return super().__call__(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244584646,"data":"     94 \n"}
+,{"stream_name":"stderr","time":223.244587922,"data":"     95 \n"}
+,{"stream_name":"stderr","time":223.244591281,"data":"\n"}
+,{"stream_name":"stderr","time":223.24459448,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py in _wrapped_call_impl(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.24459797,"data":"   1774             return self._compiled_call_impl(*args, **kwargs)  # type: ignore[misc]\n"}
+,{"stream_name":"stderr","time":223.244601708,"data":"   1775         else:\n"}
+,{"stream_name":"stderr","time":223.244605225,"data":"-\u003e 1776             return self._call_impl(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.24460882,"data":"   1777 \n"}
+,{"stream_name":"stderr","time":223.244612179,"data":"   1778     # torchrec tests the code consistency with the following code\n"}
+,{"stream_name":"stderr","time":223.244615849,"data":"\n"}
+,{"stream_name":"stderr","time":223.244619468,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py in _call_impl(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244623093,"data":"   1785                 or _global_backward_pre_hooks or _global_backward_hooks\n"}
+,{"stream_name":"stderr","time":223.244626573,"data":"   1786                 or _global_forward_hooks or _global_forward_pre_hooks):\n"}
+,{"stream_name":"stderr","time":223.244630309,"data":"-\u003e 1787             return forward_call(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244633883,"data":"   1788 \n"}
+,{"stream_name":"stderr","time":223.244637209,"data":"   1789         result = None\n"}
+,{"stream_name":"stderr","time":223.244643556,"data":"\n"}
+,{"stream_name":"stderr","time":223.244646913,"data":"/usr/local/lib/python3.12/dist-packages/accelerate/hooks.py in new_forward(module, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244650674,"data":"    190                 output = module._old_forward(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244654214,"data":"    191         else:\n"}
+,{"stream_name":"stderr","time":223.24465773,"data":"--\u003e 192             output = module._old_forward(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244661301,"data":"    193         return module._hf_hook.post_forward(module, output)\n"}
+,{"stream_name":"stderr","time":223.244664852,"data":"    194 \n"}
+,{"stream_name":"stderr","time":223.244668337,"data":"\n"}
+,{"stream_name":"stderr","time":223.244672463,"data":"/usr/local/lib/python3.12/dist-packages/transformers/models/qwen2_vl/modeling_qwen2_vl.py in forward(self, hidden_states, cu_seqlens, rotary_pos_emb, position_embeddings, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244676763,"data":"    450         **kwargs,\n"}
+,{"stream_name":"stderr","time":223.244680283,"data":"    451     ) -\u003e torch.Tensor:\n"}
+,{"stream_name":"stderr","time":223.244683929,"data":"--\u003e 452         hidden_states = hidden_states + self.attn(\n"}
+,{"stream_name":"stderr","time":223.244687545,"data":"    453             self.norm1(hidden_states),\n"}
+,{"stream_name":"stderr","time":223.244691074,"data":"    454             cu_seqlens=cu_seqlens,\n"}
+,{"stream_name":"stderr","time":223.244694524,"data":"\n"}
+,{"stream_name":"stderr","time":223.244697859,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py in _wrapped_call_impl(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244701487,"data":"   1774             return self._compiled_call_impl(*args, **kwargs)  # type: ignore[misc]\n"}
+,{"stream_name":"stderr","time":223.244705043,"data":"   1775         else:\n"}
+,{"stream_name":"stderr","time":223.24470841,"data":"-\u003e 1776             return self._call_impl(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244711954,"data":"   1777 \n"}
+,{"stream_name":"stderr","time":223.244715248,"data":"   1778     # torchrec tests the code consistency with the following code\n"}
+,{"stream_name":"stderr","time":223.244718899,"data":"\n"}
+,{"stream_name":"stderr","time":223.244722284,"data":"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py in _call_impl(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244725948,"data":"   1785                 or _global_backward_pre_hooks or _global_backward_hooks\n"}
+,{"stream_name":"stderr","time":223.244729578,"data":"   1786                 or _global_forward_hooks or _global_forward_pre_hooks):\n"}
+,{"stream_name":"stderr","time":223.244733549,"data":"-\u003e 1787             return forward_call(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244737126,"data":"   1788 \n"}
+,{"stream_name":"stderr","time":223.244740449,"data":"   1789         result = None\n"}
+,{"stream_name":"stderr","time":223.244743826,"data":"\n"}
+,{"stream_name":"stderr","time":223.244747134,"data":"/usr/local/lib/python3.12/dist-packages/accelerate/hooks.py in new_forward(module, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244750781,"data":"    190                 output = module._old_forward(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244754299,"data":"    191         else:\n"}
+,{"stream_name":"stderr","time":223.244757669,"data":"--\u003e 192             output = module._old_forward(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244761518,"data":"    193         return module._hf_hook.post_forward(module, output)\n"}
+,{"stream_name":"stderr","time":223.244767589,"data":"    194 \n"}
+,{"stream_name":"stderr","time":223.244771032,"data":"\n"}
+,{"stream_name":"stderr","time":223.244774438,"data":"/usr/local/lib/python3.12/dist-packages/transformers/models/qwen2_vl/modeling_qwen2_vl.py in forward(self, hidden_states, cu_seqlens, rotary_pos_emb, position_embeddings, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244778751,"data":"    412 \n"}
+,{"stream_name":"stderr","time":223.244782086,"data":"    413             attn_outputs = [\n"}
+,{"stream_name":"stderr","time":223.244785669,"data":"--\u003e 414                 attention_interface(\n"}
+,{"stream_name":"stderr","time":223.244789215,"data":"    415                     self,\n"}
+,{"stream_name":"stderr","time":223.244792912,"data":"    416                     q,\n"}
+,{"stream_name":"stderr","time":223.244796379,"data":"\n"}
+,{"stream_name":"stderr","time":223.244799582,"data":"/usr/local/lib/python3.12/dist-packages/transformers/integrations/sdpa_attention.py in sdpa_attention_forward(module, query, key, value, attention_mask, dropout, scaling, is_causal, **kwargs)\n"}
+,{"stream_name":"stderr","time":223.244804162,"data":"     90             attention_mask = torch.logical_not(attention_mask.bool()).to(query.device)\n"}
+,{"stream_name":"stderr","time":223.244807879,"data":"     91 \n"}
+,{"stream_name":"stderr","time":223.244811269,"data":"---\u003e 92     attn_output = torch.nn.functional.scaled_dot_product_attention(\n"}
+,{"stream_name":"stderr","time":223.244815009,"data":"     93         query,\n"}
+,{"stream_name":"stderr","time":223.244818516,"data":"     94         key,\n"}
+,{"stream_name":"stderr","time":223.244821874,"data":"\n"}
+,{"stream_name":"stderr","time":223.244826781,"data":"OutOfMemoryError: CUDA out of memory. Tried to allocate 10.06 GiB. GPU 0 has a total capacity of 14.56 GiB of which 2.13 GiB is free. Including non-PyTorch memory, this process has 12.43 GiB memory in use. Of the allocated memory 12.17 GiB is allocated by PyTorch, and 138.88 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n"}
+,{"stream_name":"stderr","time":223.244832792,"data":"\n"}
+,{"stream_name":"stderr","time":225.937923496,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":225.937970674,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":226.197517715,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":226.197566982,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":226.931270141,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":227.270313128,"data":"[NbConvertApp] Writing 725068 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":229.671079891,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":230.545484194,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":230.545525048,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":230.546151626,"data":"[NbConvertApp] Writing 458248 bytes to __results__.html\n"}
+]

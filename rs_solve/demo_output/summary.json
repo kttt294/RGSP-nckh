@@ -1,0 +1,16 @@
+{
+  "total": 35,
+  "by_kind": {
+    "Q1": 5,
+    "Q2": 5,
+    "Q3-HF": 5,
+    "Q3-LF": 5,
+    "Q4": 5,
+    "Q5": 5,
+    "Q6": 5
+  },
+  "source_status": {
+    "illustrative_only": 35
+  },
+  "all_token_grids_measured": false
+}
