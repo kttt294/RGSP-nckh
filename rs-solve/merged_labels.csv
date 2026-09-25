@@ -1,0 +1,85 @@
+﻿class_id,canonical_name_en,vietnamese_name,domain_group,dota_label,isaid_label,dior_label,visdrone_label,xview_label,is_cross_dataset,num_datasets_present,deduplication_notes
+airplane,Airplane / Fixed-wing Aircraft,Máy bay cánh bằng,Aviation,plane,plane,airplane,-,"Fixed-wing Aircraft, Passenger/Cargo Plane",CÓ (Đa dataset),4,"Gộp 'plane' (DOTA), 'plane' (iSAID), 'airplane' (DIOR) và 'Fixed-wing Aircraft' / 'Passenger/Cargo Plane' (xView). Trong xView, nhãn 11 là lớp máy bay nói chung và nhãn 13 là máy bay thương mại/chở hàng lớn."
+small_aircraft,Small Light Aircraft,Máy bay cánh bằng cỡ nhỏ / Thể thao,Aviation,-,-,-,-,Small Aircraft,KHÔNG (Đơn dataset),1,"Lớp con đặc thù trong xView (nhãn 12), phân biệt máy bay thể thao, Cessna cỡ nhỏ với máy bay vận tải lớn. Rất quan trọng cho câu hỏi phân biệt loại con (Q3-HF)."
+helicopter,Helicopter,Trực thăng,Aviation,helicopter,helicopter,-,-,Helicopter,CÓ (Đa dataset),3,"Gộp 'helicopter' (DOTA), 'helicopter' (iSAID) và 'Helicopter' (xView nhãn 15). DIOR không có nhãn trực thăng."
+airport,Airport / Airfield,Cảng hàng không / Sân bay,Aviation Infrastructure,airport,-,airport,-,-,CÓ (Đa dataset),2,Gộp 'airport' (DOTA) và 'airport' (DIOR). Là vùng cấu trúc lớn gồm đường băng và nhà ga.
+helipad,Helipad,Bãi đáp trực thăng,Aviation Infrastructure,helipad,-,-,-,Helipad,CÓ (Đa dataset),2,Gộp 'helipad' (DOTA nhãn 18) và 'Helipad' (xView nhãn 84). Thường có ký hiệu chữ H và kích thước chuẩn theo ICAO Doc 9261.
+aircraft_hangar,Aircraft Hangar,Nhà chứa máy bay,Aviation Infrastructure,-,-,-,-,Aircraft Hangar,KHÔNG (Đơn dataset),1,Đặc thù của bộ xView (nhãn 74). Công trình mái vòm rộng dùng đỗ và bảo dưỡng máy bay.
+small_vehicle,Small Vehicle / Passenger Car,Xe con / Ô tô du lịch,Road Vehicles,small-vehicle,small_vehicle,vehicle,car,"Passenger Vehicle, Small Car",CÓ (Đa dataset),5,"Gộp 'small-vehicle' (DOTA/iSAID), 'vehicle' (DIOR - phần xe con), 'car' (VisDrone) và 'Passenger Vehicle', 'Small Car' (xView nhãn 17, 18). Chiều rộng chuẩn ~1.5m theo UNECE M1."
+large_vehicle,Large Vehicle (General),Xe cơ giới lớn nói chung,Road Vehicles,large-vehicle,large_vehicle,vehicle,-,Truck,CÓ (Đa dataset),4,"Gộp nhãn 'large-vehicle' của DOTA và iSAID, 'vehicle' (phần xe tải) của DIOR, và 'Truck' nói chung của xView."
+bus,Bus / Coach,Xe buýt / Xe khách lớn,Road Vehicles,-,-,-,bus,Bus,CÓ (Đa dataset),2,"Gộp 'bus' (VisDrone) và 'Bus' (xView nhãn 19). Ở DOTA/iSAID/DIOR, xe buýt nằm gộp bên trong 'large-vehicle' hoặc 'vehicle'."
+truck,Truck / Lorry,Xe tải tiêu chuẩn,Road Vehicles,-,-,-,truck,"Truck, Cargo Truck",CÓ (Đa dataset),2,"Gộp 'truck' (VisDrone) và 'Truck' / 'Cargo Truck' (xView nhãn 23, 24). Ở DOTA, xe tải được gắn nhãn là 'large-vehicle'."
+pickup_truck,Pickup Truck,Xe bán tải,Road Vehicles,-,-,-,-,Pickup Truck,KHÔNG (Đơn dataset),1,"Lớp con đặc thù của xView (nhãn 20), phân biệt xe bán tải với xe con thông thường."
+utility_truck,Utility Truck,Xe công vụ / Xe dịch vụ công,Road Vehicles,-,-,-,-,Utility Truck,KHÔNG (Đơn dataset),1,"Lớp con đặc thù của xView (nhãn 21), bao gồm xe cẩu điện, xe sửa ống nước, xe cứu hộ."
+van,Van / Minivan,Xe tải nhỏ chở hàng / Xe Van,Road Vehicles,-,-,-,van,-,KHÔNG (Đơn dataset),1,"Lớp đặc thù của VisDrone nhãn 5, đại diện cho xe tải nhỏ/xe 16 chỗ đô thị."
+trailer,Trailer / Semi-Trailer,Rơ-moóc / Sơ-mi rơ-moóc,Road Vehicles,-,-,-,-,Trailer,KHÔNG (Đơn dataset),1,Lớp rơ-moóc rời trong xView (nhãn 27).
+truck_tractor,Truck Tractor (Semi-truck head),Đầu kéo container / Xe đầu kéo,Road Vehicles,-,-,-,-,Truck Tractor,KHÔNG (Đơn dataset),1,Lớp đầu kéo đơn không thùng trong xView (nhãn 26).
+truck_tractor_w_box_trailer,Truck Tractor w/ Box Trailer,Xe đầu kéo kéo theo rơ-moóc thùng kín,Road Vehicles,-,-,-,-,Truck Tractor w/ Box Trailer,KHÔNG (Đơn dataset),1,Đặc thù xView (nhãn 25). Đoàn xe đầu kéo gắn rơ-moóc thùng hàng kín.
+truck_tractor_w_flatbed_trailer,Truck Tractor w/ Flatbed Trailer,Xe đầu kéo kéo theo rơ-moóc sàn phẳng,Road Vehicles,-,-,-,-,Truck Tractor w/ Flatbed Trailer,KHÔNG (Đơn dataset),1,Đặc thù xView (nhãn 28). Xe đầu kéo gắn sàn phẳng chở máy móc hoặc cọc thép.
+truck_tractor_w_liquid_tank,Truck Tractor w/ Liquid Tank,Xe đầu kéo bồn chở chất lỏng (Xe téc),Road Vehicles,-,-,-,-,Truck Tractor w/ Liquid Tank,KHÔNG (Đơn dataset),1,Đặc thù xView (nhãn 29). Xe chở xăng dầu hoặc hóa chất.
+crane_truck,Crane Truck,Xe tải gắn cần cẩu,Road Vehicles / Machinery,-,-,-,-,Crane Truck,KHÔNG (Đơn dataset),1,Đặc thù xView (nhãn 32). Xe tải cơ động có lắp cần trục tự hành.
+pedestrian,Pedestrian,Người đi bộ đứng một mình,Pedestrians,-,-,-,pedestrian,-,KHÔNG (Đơn dataset),1,"Đặc thù VisDrone (nhãn 1). Chiếm kích thước rất nhỏ (~0.5m x 0.5m), cực trị cho bài toán giới hạn phân giải."
+people,People / Crowd,Nhóm người đi bộ,Pedestrians,-,-,-,people,-,KHÔNG (Đơn dataset),1,"Đặc thù VisDrone (nhãn 2). Nhóm người tụ tập, khó tách từng cá thể."
+bicycle,Bicycle,Xe đạp,Micro-mobility,-,-,-,bicycle,-,KHÔNG (Đơn dataset),1,Đặc thù VisDrone (nhãn 3). Kích thước ~1.5m x 0.5m.
+motorcycle,Motorcycle / Scooter,Xe máy / Xe mô tô,Micro-mobility,-,-,-,motor,-,KHÔNG (Đơn dataset),1,Đặc thù VisDrone (nhãn 10).
+tricycle,Tricycle,Xe ba bánh chở hàng,Micro-mobility,-,-,-,tricycle,-,KHÔNG (Đơn dataset),1,Đặc thù VisDrone (nhãn 7).
+awning_tricycle,Awning Tricycle,Xe ba bánh có mái che,Micro-mobility,-,-,-,awning-tricycle,-,KHÔNG (Đơn dataset),1,"Đặc thù VisDrone (nhãn 8), rất phổ biến tại các đô thị châu Á."
+ship,Ship / Maritime Vessel (General),Tàu thủy nói chung,Maritime Vessels,ship,ship,ship,-,Maritime Vessel,CÓ (Đa dataset),4,"Gộp nhãn 'ship' của DOTA, iSAID, DIOR và 'Maritime Vessel' (xView nhãn 40). Là lớp tàu thủy đa năng."
+motorboat,Motorboat,Ca nô / Thuyền máy cỡ nhỏ,Maritime Vessels,-,-,-,-,Motorboat,KHÔNG (Đơn dataset),1,Lớp con xView (nhãn 41). Thuyền máy cao tốc kích thước nhỏ $L_c \approx 6-10\text{m}$.
+sailboat,Sailboat,Thuyền buồm,Maritime Vessels,-,-,-,-,Sailboat,KHÔNG (Đơn dataset),1,Lớp con xView (nhãn 42). Nhận biết qua cột buồm và thân thuyền thon.
+tugboat,Tugboat,Tàu lai dắt cảng biển,Maritime Vessels,-,-,-,-,Tugboat,KHÔNG (Đơn dataset),1,"Lớp con xView (nhãn 44). Thân bè, công suất lớn, kích thước ~20-30m."
+barge,Barge,Sà lan chở hàng,Maritime Vessels,-,-,-,-,Barge,KHÔNG (Đơn dataset),1,Lớp con xView (nhãn 45). Thuyền đáy phẳng boong trống chở cát đá hoặc than.
+fishing_vessel,Fishing Vessel,Tàu đánh cá,Maritime Vessels,-,-,-,-,Fishing Vessel,KHÔNG (Đơn dataset),1,Lớp con xView (nhãn 47). Tàu cá với dàn lưới hoặc giàn câu đặc trưng.
+ferry,Ferry,Phà chở khách và xe,Maritime Vessels,-,-,-,-,Ferry,KHÔNG (Đơn dataset),1,Lớp con xView (nhãn 49). Phà hai đầu hoặc phà cao tốc.
+yacht,Yacht,Du thuyền sang trọng,Maritime Vessels,-,-,-,-,Yacht,KHÔNG (Đơn dataset),1,Lớp con xView (nhãn 50).
+container_ship,Container Ship,Tàu container chở hàng lớn,Maritime Vessels,-,-,-,-,Container Ship,KHÔNG (Đơn dataset),1,"Lớp con xView (nhãn 51). Chiều dài $100 - 350\text{m}$, nhận biết qua các ô xếp container."
+oil_tanker,Oil Tanker,Tàu chở dầu / Tàu chở hóa chất,Maritime Vessels,-,-,-,-,Oil Tanker,KHÔNG (Đơn dataset),1,Lớp con xView (nhãn 52). Mặt boong có hệ thống đường ống dẫn dầu.
+harbor,Harbor / Port,Cảng biển / Bến cảng,Maritime Infrastructure,harbor,harbor,harbor,-,-,CÓ (Đa dataset),3,"Gộp 'harbor' từ DOTA, iSAID và DIOR. Cụm cầu cảng, vũng đậu tàu và mặt nước tiếp giáp."
+railway_vehicle,Railway Vehicle (General),Toa tàu hỏa nói chung,Railway,-,-,-,-,Railway Vehicle,KHÔNG (Đơn dataset),1,Lớp tổng quát của xView (nhãn 33).
+locomotive,Locomotive,Đầu máy xe lửa,Railway,-,-,-,-,Locomotive,KHÔNG (Đơn dataset),1,Lớp con xView (nhãn 38). Đầu kéo tàu hỏa.
+railway_passenger_car,Railway Passenger Car,Toa xe lửa chở khách,Railway,-,-,-,-,Passenger Car,KHÔNG (Đơn dataset),1,"Lớp con xView (nhãn 34). Lưu ý: Tên gốc trong xView là 'Passenger Car' nhưng thuộc nhóm đường sắt, phân biệt với xe hơi."
+railway_cargo_car,Railway Cargo/Container Car,Toa xe lửa chở hàng / Container,Railway,-,-,-,-,Cargo/Container Car,KHÔNG (Đơn dataset),1,Lớp con xView (nhãn 35).
+railway_flat_car,Railway Flat Car,Toa xe lửa sàn phẳng,Railway,-,-,-,-,Flat Car,KHÔNG (Đơn dataset),1,Lớp con xView (nhãn 36).
+railway_tank_car,Railway Tank Car,Toa xe lửa xi téc / Bồn chứa,Railway,-,-,-,-,Tank car,KHÔNG (Đơn dataset),1,Lớp con xView (nhãn 37).
+train_station,Train Station,Ga xe lửa / Nhà ga đường sắt,Railway Infrastructure,-,-,trainstation,-,-,KHÔNG (Đơn dataset),1,Lớp công trình đặc thù của DIOR nhãn 18.
+engineering_vehicle,Engineering Vehicle (General),Xe / Thiết bị cơ giới công trình,Machinery & Construction,-,-,-,-,Engineering Vehicle,KHÔNG (Đơn dataset),1,Lớp tổng quát xView (nhãn 53).
+tower_crane,Tower Crane,Cần cẩu tháp xây dựng,Machinery & Construction,-,-,-,-,Tower crane,KHÔNG (Đơn dataset),1,Lớp cần cẩu tháp cố định trong xView (nhãn 54).
+container_crane,Container Crane / Gantry Crane,Cẩu giàn bốc dỡ container bến cảng,Machinery & Construction,container-crane,-,-,-,Container Crane,CÓ (Đa dataset),2,Gộp 'container-crane' (DOTA nhãn 16) và 'Container Crane' (xView nhãn 55). Cần cẩu giàn khổng lồ tại cảng container.
+reach_stacker,Reach Stacker,Xe nâng / Xe gắp container,Machinery & Construction,-,-,-,-,Reach Stacker,KHÔNG (Đơn dataset),1,Đặc thù xView (nhãn 56). Xe bánh lốp chuyên bốc container.
+straddle_carrier,Straddle Carrier,Xe cổng bốc xếp container tự hành,Machinery & Construction,-,-,-,-,Straddle Carrier,KHÔNG (Đơn dataset),1,Đặc thù xView (nhãn 57).
+mobile_crane,Mobile Crane,Cần cẩu bánh lốp di động,Machinery & Construction,-,-,-,-,Mobile Crane,KHÔNG (Đơn dataset),1,Đặc thù xView (nhãn 59).
+dump_truck,Dump Truck,Xe tải tự đổ (Xe ben),Machinery & Construction,-,-,-,-,Dump Truck,KHÔNG (Đơn dataset),1,Đặc thù xView (nhãn 60).
+haul_truck,Haul Truck (Heavy Mining Truck),Xe tải siêu trường mỏ khoáng sản,Machinery & Construction,-,-,-,-,Haul Truck,KHÔNG (Đơn dataset),1,"Đặc thù xView (nhãn 61). Xe tải mỏ khổng lồ (Caterpillar 797, v.v.)."
+scraper_tractor,Scraper / Tractor,Máy cào đất / Máy kéo công trình,Machinery & Construction,-,-,-,-,Scraper/Tractor,KHÔNG (Đơn dataset),1,Đặc thù xView (nhãn 62).
+bulldozer,Front Loader / Bulldozer,Máy xúc lật / Máy ủi đất,Machinery & Construction,-,-,-,-,Front loader/Bulldozer,KHÔNG (Đơn dataset),1,Đặc thù xView (nhãn 63).
+excavator,Excavator,Máy đào bánh xích (Máy cuốc),Machinery & Construction,-,-,-,-,Excavator,KHÔNG (Đơn dataset),1,Đặc thù xView (nhãn 64).
+cement_mixer,Cement Mixer Truck,Xe bồn trộn bê tông,Machinery & Construction,-,-,-,-,Cement Mixer,KHÔNG (Đơn dataset),1,Đặc thù xView (nhãn 65).
+ground_grader,Ground Grader / Road Grader,Máy san gạt mặt đường,Machinery & Construction,-,-,-,-,Ground Grader,KHÔNG (Đơn dataset),1,Đặc thù xView (nhãn 66).
+tennis_court,Tennis Court,Sân quần vợt (Tennis),Sports Facilities,tennis-court,tennis_court,tenniscourt,-,-,CÓ (Đa dataset),3,"Gộp 'tennis-court' (DOTA), 'tennis_court' (iSAID) và 'tenniscourt' (DIOR). Kích thước chuẩn cố định 23.77m x 10.97m (Luật ITF)."
+basketball_court,Basketball Court,Sân bóng rổ,Sports Facilities,basketball-court,basketball_court,basketballcourt,-,-,CÓ (Đa dataset),3,"Gộp 'basketball-court' (DOTA), 'basketball_court' (iSAID) và 'basketballcourt' (DIOR). Kích thước chuẩn cố định 28m x 15m (Luật FIBA)."
+baseball_diamond,Baseball Diamond / Field,Sân bóng chày,Sports Facilities,baseball-diamond,baseball_diamond,baseballfield,-,-,CÓ (Đa dataset),3,"Gộp 'baseball-diamond' (DOTA/iSAID) và 'baseballfield' (DIOR). Hình rẻ quạt đặc trưng, cự ly base 27.43m (Luật WBSC)."
+soccer_ball_field,Soccer Field / Football Pitch,Sân bóng đá,Sports Facilities,soccer-ball-field,soccer_ball_field,-,-,-,CÓ (Đa dataset),2,Gộp 'soccer-ball-field' từ DOTA và iSAID. Kích thước thi đấu quốc tế cố định 105m x 68m (Luật FIFA).
+ground_track_field,Ground Track Field / Running Track,Đường chạy điền kinh / Sân vận động có đường chạy,Sports Facilities,ground-track-field,ground_track_field,groundtrackfield,-,-,CÓ (Đa dataset),3,Gộp 'ground-track-field' (DOTA/iSAID) và 'groundtrackfield' (DIOR). Vòng chạy oval tiêu chuẩn 400m.
+swimming_pool,Swimming Pool,Bể bơi ngoài trời,Sports Facilities,swimming-pool,swimming_pool,-,-,-,CÓ (Đa dataset),2,Gộp 'swimming-pool' từ DOTA và iSAID.
+stadium,Stadium,Sân vận động lớn có khán đài mái che,Sports Facilities,-,-,stadium,-,-,KHÔNG (Đơn dataset),1,"Đặc thù của DIOR nhãn 15. Khác với sân điền kinh hở, stadium là tổ hợp công trình vòm lớn."
+golf_course,Golf Course,Sân gôn (Golf),Sports Facilities,-,-,golfcourse,-,-,KHÔNG (Đơn dataset),1,"Đặc thù của DIOR nhãn 10. Gồm các green, bunker và fairway diện tích rộng."
+bridge,Bridge,Cầu vượt sông / Cầu giao thông,Transportation Infrastructure,bridge,bridge,bridge,-,-,CÓ (Đa dataset),3,"Gộp 'bridge' từ DOTA, iSAID và DIOR."
+overpass,Overpass / Flyover,Cầu vượt cạn / Nút giao lập thể,Transportation Infrastructure,-,-,overpass,-,-,KHÔNG (Đơn dataset),1,Đặc thù của DIOR nhãn 13. Phân biệt với cầu vượt sông bằng việc bắc qua đường bộ khác.
+roundabout,Roundabout / Traffic Circle,Đảo giao thông / Vòng xuyến bùng binh,Road Infrastructure,roundabout,roundabout,-,-,-,CÓ (Đa dataset),2,Gộp 'roundabout' từ DOTA và iSAID. Hình tròn đồng tâm phân luồng giao thông.
+expressway_service_area,Expressway Service Area,Trạm dừng nghỉ cao tốc,Road Infrastructure,-,-,expressway-service-area,-,-,KHÔNG (Đơn dataset),1,Đặc thù DIOR nhãn 8. Khu phức hợp bãi đỗ xe và trạm dịch vụ.
+expressway_toll_station,Expressway Toll Station,Trạm thu phí cao tốc,Road Infrastructure,-,-,expressway-toll-station,-,-,KHÔNG (Đơn dataset),1,Đặc thù DIOR nhãn 9. Mái che ngang qua làn đường cao tốc.
+vehicle_lot,Vehicle Lot / Parking Lot,Bãi đỗ xe ô tô tập trung,Road Infrastructure,-,-,-,-,Vehicle Lot,KHÔNG (Đơn dataset),1,Đặc thù xView (nhãn 83). Bãi tập kết mật độ xe cao.
+storage_tank,Storage Tank,Bồn chứa nhiên liệu / Hóa chất công nghiệp,Industrial Facilities,storage-tank,storage_tank,storagetank,-,Storage Tank,CÓ (Đa dataset),4,"Gộp cả 4 bộ dữ liệu: DOTA, iSAID, DIOR và xView (nhãn 86). Bồn hình tròn/trụ đứng theo tiêu chuẩn API 650."
+shipping_container,Shipping Container (Individual),Thùng container vận tải biển (Chiếc đơn),Logistics & Storage,-,-,-,-,Shipping Container,KHÔNG (Đơn dataset),1,Đặc thù xView (nhãn 91). Kích thước cố định theo ISO 668 (20ft hoặc 40ft).
+shipping_container_lot,Shipping Container Lot / Depot,Bãi tập kết thùng container,Logistics & Storage,-,-,-,-,Shipping container lot,KHÔNG (Đơn dataset),1,Đặc thù xView (nhãn 89). Cụm nhiều container xếp chồng.
+chimney,Chimney / Industrial Smokestack,Ống khói nhà máy công nghiệp,Industrial Structures,-,-,chimney,-,-,KHÔNG (Đơn dataset),1,"Đặc thù DIOR nhãn 6. Trụ tròn cao vút, có bóng đổ đặc trưng."
+dam,Dam,Đập thủy điện / Đập chắn nước,Civil Infrastructure,-,-,dam,-,Dam,CÓ (Đa dataset),2,Gộp 'dam' từ DIOR (nhãn 7) và xView (nhãn 76). Công trình thủy lợi ngăn sông/hồ.
+windmill,Windmill / Wind Turbine,Tuabin điện gió / Cối xay gió,Energy Infrastructure,-,-,windmill,-,-,KHÔNG (Đơn dataset),1,Đặc thù DIOR nhãn 20. Cột tháp kèm 3 cánh quạt dài.
+pylon,Pylon / Electricity Transmission Tower,Cột điện cao thế,Energy Infrastructure,-,-,-,-,Pylon,KHÔNG (Đơn dataset),1,Đặc thù xView (nhãn 93). Tháp kim loại đỡ đường dây điện.
+tower,Tower (Communication/Observation),Tháp thông tin / Tháp viễn thông,Civil Infrastructure,-,-,-,-,Tower,KHÔNG (Đơn dataset),1,Đặc thù xView (nhãn 94).
+building,Building,Tòa nhà / Công trình kiến trúc dân dụng,Civil Buildings,-,-,-,-,Building,KHÔNG (Đơn dataset),1,Lớp nhà ở / tòa nhà trong xView (nhãn 73).
+shed,Shed,Nhà kho tạm / Nhà xưởng nhỏ,Civil Buildings,-,-,-,-,Shed,KHÔNG (Đơn dataset),1,Lớp kho nhỏ trong xView (nhãn 72).
+hut_tent,Hut / Tent,Lều bạt / Chòi tạm,Civil Buildings,-,-,-,-,Hut/Tent,KHÔNG (Đơn dataset),1,"Đặc thù xView (nhãn 71). Kích thước nhỏ, phục vụ cứu trợ hoặc lán trại."
+damaged_building,Damaged Building,Tòa nhà bị hư hại / Đổ sập,Civil Buildings,-,-,-,-,Damaged Building,KHÔNG (Đơn dataset),1,Đặc thù xView (nhãn 76). Phục vụ bài toán đánh giá thảm họa thiên tai.
+facility,Facility (Industrial / Commercial),Khu phức hợp công xưởng / Cơ sở,Civil Buildings,-,-,-,-,Facility,KHÔNG (Đơn dataset),1,Đặc thù xView (nhãn 77).
+construction_site,Construction Site,Công trường xây dựng,Machinery & Construction,-,-,-,-,Construction Site,KHÔNG (Đơn dataset),1,"Đặc thù xView (nhãn 79). Vùng đất trống đang đào đắp, tập kết vật liệu."

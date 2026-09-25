@@ -1,0 +1,1682 @@
+{
+  "airplane": {
+    "class_id": "airplane",
+    "display_name_en": "Airplane / Fixed-wing Aircraft",
+    "display_name_vi": "Máy bay cánh bằng",
+    "domain_group": "Aviation",
+    "dataset_mappings": {
+      "dota": "plane",
+      "isaid": "plane",
+      "dior": "airplane",
+      "visdrone": null,
+      "xview": "Fixed-wing Aircraft, Passenger/Cargo Plane"
+    },
+    "L_min_m": 7.25,
+    "L_typ_m": 34.11,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Sải cánh / Chiều dài thân máy bay cánh bằng từ cỡ nhỏ huấn luyện (Piper Cherokee: 7.25m, Cessna 150: 7.28m) đến phản lực chở khách thân hẹp phổ biến nhất thế giới (Airbus A320-200: 34.11m, Boeing 737-800: 34.32m)",
+    "standard_source": "FAA Aircraft Characteristics Database (ACD_Data: Col 15 & Col 17)",
+    "standard_org": "Federal Aviation Administration (FAA)",
+    "reference_url": "https://www.faa.gov/airports/engineering/aircraft_char_database"
+  },
+  "small_aircraft": {
+    "class_id": "small_aircraft",
+    "display_name_en": "Small Light Aircraft",
+    "display_name_vi": "Máy bay cánh bằng cỡ nhỏ / Thể thao",
+    "domain_group": "Aviation",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Small Aircraft"
+    },
+    "L_min_m": 7.25,
+    "L_typ_m": 11.0,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài thân nhỏ nhất (Piper Cherokee: 7.25m / 23.8 ft) đến sải cánh điển hình (Cessna 172 Skyhawk: 11.00m / 36.1 ft - máy bay phổ biến nhất lịch sử hàng không với >20,000 đăng ký FAA)",
+    "standard_source": "FAA Aircraft Characteristics Database (ACD_Data: Col 15 & Col 17)",
+    "standard_org": "Federal Aviation Administration (FAA)",
+    "reference_url": "https://www.faa.gov/airports/engineering/aircraft_char_database"
+  },
+  "helicopter": {
+    "class_id": "helicopter",
+    "display_name_en": "Helicopter",
+    "display_name_vi": "Trực thăng",
+    "domain_group": "Aviation",
+    "dataset_mappings": {
+      "dota": "helicopter",
+      "isaid": "helicopter",
+      "dior": null,
+      "visdrone": null,
+      "xview": "Helicopter"
+    },
+    "L_min_m": 8.75,
+    "L_typ_m": 11.95,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài tổng thể khi cánh quạt quay (D-value overall length từ trực thăng dân dụng nhỏ Robinson R22: 8.75m đến trực thăng tiện ích phổ biến Bell 206B JetRanger: 11.95m)",
+    "standard_source": "FAA AC 150/5390-2D (Heliport Design, Appendix A) / ICAO Annex 14 Vol II",
+    "standard_org": "Federal Aviation Administration / ICAO",
+    "reference_url": "https://www.faa.gov/airports/resources/advisory_circulars/index.cfm/go/document.current/documentnumber/150_5390-2"
+  },
+  "airport": {
+    "class_id": "airport",
+    "display_name_en": "Airport / Airfield",
+    "display_name_vi": "Cảng hàng không / Sân bay",
+    "domain_group": "Aviation Infrastructure",
+    "dataset_mappings": {
+      "dota": "airport",
+      "isaid": null,
+      "dior": "airport",
+      "visdrone": null,
+      "xview": null
+    },
+    "L_min_m": 18.0,
+    "L_typ_m": 45.0,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng mặt đường băng sân bay tiêu chuẩn quốc tế (từ Code 1A tối thiểu 18m đến Code 4C/D/E đường băng phản lực thương mại 45m)",
+    "standard_source": "ICAO Annex 14, Volume I: Aerodromes (Chapter 3, Section 3.1.10: Width of runways)",
+    "standard_org": "International Civil Aviation Organization (ICAO)",
+    "reference_url": "https://store.icao.int/en/annex-14-aerodromes"
+  },
+  "helipad": {
+    "class_id": "helipad",
+    "display_name_en": "Helipad",
+    "display_name_vi": "Bãi đáp trực thăng",
+    "domain_group": "Aviation Infrastructure",
+    "dataset_mappings": {
+      "dota": "helipad",
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Helipad"
+    },
+    "L_min_m": 8.0,
+    "L_typ_m": 15.0,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng cạnh bãi tiếp đất cất hạ cánh TLOF (từ bãi trực thăng nhỏ R22 tối thiểu 8m đến bãi đỗ thương mại / bệnh viện 15m / 50ft)",
+    "standard_source": "FAA AC 150/5390-2D (Heliport Design, Chapter 2: TLOF Dimensions)",
+    "standard_org": "Federal Aviation Administration (FAA)",
+    "reference_url": "https://www.faa.gov/airports/resources/advisory_circulars/index.cfm/go/document.current/documentnumber/150_5390-2"
+  },
+  "aircraft_hangar": {
+    "class_id": "aircraft_hangar",
+    "display_name_en": "Aircraft Hangar",
+    "display_name_vi": "Nhà chứa máy bay",
+    "domain_group": "Aviation Infrastructure",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Aircraft Hangar"
+    },
+    "L_min_m": 12.5,
+    "L_typ_m": 45.0,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng cửa mở lọt lòng nhà chứa máy bay (từ T-hangar cá nhân 12.5m đến nhà chứa máy bay thân hẹp thương mại A320/B737 45m)",
+    "standard_source": "FAA AC 150/5300-13B (Airport Design, Chapter 3 & Appendix E)",
+    "standard_org": "Federal Aviation Administration (FAA)",
+    "reference_url": "https://www.faa.gov/airports/resources/advisory_circulars/index.cfm/go/document.current/documentnumber/150_5300-13"
+  },
+  "small_vehicle": {
+    "class_id": "small_vehicle",
+    "display_name_en": "Small Vehicle / Passenger Car",
+    "display_name_vi": "Xe con / Ô tô du lịch",
+    "domain_group": "Road Vehicles",
+    "dataset_mappings": {
+      "dota": "small-vehicle",
+      "isaid": "small_vehicle",
+      "dior": "vehicle",
+      "visdrone": "car",
+      "xview": "Passenger Vehicle, Small Car"
+    },
+    "L_min_m": 1.5,
+    "L_typ_m": 1.8,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Chiều rộng thân xe ô tô con không tính gương chiếu hậu (từ xe cỡ nhỏ đô thị A/B-segment 1.50m đến sedan hạng C/D 1.80m)",
+    "standard_source": "Regulation (EU) 2018/858 / UNECE Category M1 (Vehicle body width without mirrors)",
+    "standard_org": "European Parliament / UNECE",
+    "reference_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32018R0858"
+  },
+  "large_vehicle": {
+    "class_id": "large_vehicle",
+    "display_name_en": "Large Vehicle (General)",
+    "display_name_vi": "Xe cơ giới lớn nói chung",
+    "domain_group": "Road Vehicles",
+    "dataset_mappings": {
+      "dota": "large-vehicle",
+      "isaid": "large_vehicle",
+      "dior": "vehicle",
+      "visdrone": null,
+      "xview": "Truck"
+    },
+    "L_min_m": 2.2,
+    "L_typ_m": 2.55,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng thân xe cơ giới thương mại cỡ lớn tối đa theo luật (từ xe tải trung 2.20m đến giới hạn tối đa 2.55m theo luật châu Âu)",
+    "standard_source": "Directive 96/53/EC (Maximum Authorized Dimensions for Heavy Vehicles)",
+    "standard_org": "European Parliament and Council of the European Union",
+    "reference_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A31996L0053"
+  },
+  "bus": {
+    "class_id": "bus",
+    "display_name_en": "Bus / Coach",
+    "display_name_vi": "Xe buýt / Xe khách lớn",
+    "domain_group": "Road Vehicles",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": "bus",
+      "xview": "Bus"
+    },
+    "L_min_m": 2.3,
+    "L_typ_m": 2.55,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Chiều rộng thân xe buýt chở khách công cộng (từ xe buýt mini/midi 2.30m đến xe buýt đô thị và xe khách tiêu chuẩn 2.55m)",
+    "standard_source": "UNECE Regulation No. 107 (Category M3) / Directive 96/53/EC",
+    "standard_org": "UNECE World Forum for Harmonization of Vehicle Regulations",
+    "reference_url": "https://unece.org/transport/vehicle-regulations-wp29"
+  },
+  "truck": {
+    "class_id": "truck",
+    "display_name_en": "Truck / Lorry",
+    "display_name_vi": "Xe tải tiêu chuẩn",
+    "domain_group": "Road Vehicles",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": "truck",
+      "xview": "Truck, Cargo Truck"
+    },
+    "L_min_m": 2.2,
+    "L_typ_m": 2.5,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Chiều rộng thùng xe tải chở hàng (từ xe tải nhẹ/trung Category N2 2.20m đến xe tải nặng Category N3 2.50m)",
+    "standard_source": "Directive 96/53/EC / UNECE Category N2/N3 Commercial Vehicles",
+    "standard_org": "UNECE / European Commission",
+    "reference_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A31996L0053"
+  },
+  "pickup_truck": {
+    "class_id": "pickup_truck",
+    "display_name_en": "Pickup Truck",
+    "display_name_vi": "Xe bán tải",
+    "domain_group": "Road Vehicles",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Pickup Truck"
+    },
+    "L_min_m": 1.8,
+    "L_typ_m": 2.03,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Chiều rộng thân xe bán tải không tính gương (từ cỡ trung 1.80m như Hilux/Ranger đến cỡ lớn full-size 2.03m / 79.9 in như Ford F-150)",
+    "standard_source": "US DOT FMVSS Standard No. 108 & FHWA Vehicle Classification (Full-size Pickups)",
+    "standard_org": "Federal Highway Administration / US DOT",
+    "reference_url": "https://www.fhwa.dot.gov/policyinformation/travel_monitoring/tvt.cfm"
+  },
+  "utility_truck": {
+    "class_id": "utility_truck",
+    "display_name_en": "Utility Truck",
+    "display_name_vi": "Xe công vụ / Xe dịch vụ công",
+    "domain_group": "Road Vehicles",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Utility Truck"
+    },
+    "L_min_m": 2.0,
+    "L_typ_m": 2.45,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng thân xe công vụ / xe kỹ thuật / xe cứu hộ trên khung gầm thương mại Class 4-5",
+    "standard_source": "FHWA Vehicle Classification Class 4-5 & xView Dataset Specifications (Lam et al., 2018)",
+    "standard_org": "Defense Innovation Unit / FHWA",
+    "reference_url": "https://arxiv.org/abs/1802.07856"
+  },
+  "van": {
+    "class_id": "van",
+    "display_name_en": "Van / Minivan",
+    "display_name_vi": "Xe tải nhỏ chở hàng / Xe Van",
+    "domain_group": "Road Vehicles",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": "van",
+      "xview": null
+    },
+    "L_min_m": 1.7,
+    "L_typ_m": 2.0,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Chiều rộng thân xe van thương mại không tính gương (từ van nhỏ 1.70m như Caddy/Kangoo đến van lớn 2.00m như Transit/Sprinter)",
+    "standard_source": "Regulation (EU) 2018/858 Category N1 (Light Commercial Vehicles)",
+    "standard_org": "European Parliament / UNECE",
+    "reference_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32018R0858"
+  },
+  "trailer": {
+    "class_id": "trailer",
+    "display_name_en": "Trailer / Semi-Trailer",
+    "display_name_vi": "Rơ-moóc / Sơ-mi rơ-moóc",
+    "domain_group": "Road Vehicles",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Trailer"
+    },
+    "L_min_m": 2.0,
+    "L_typ_m": 2.55,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Chiều rộng thùng rơ-moóc chở hàng (từ rơ-moóc nhẹ O2 2.00m đến sơ-mi rơ-moóc tiêu chuẩn O4 2.55m)",
+    "standard_source": "ISO 1726 / Directive 96/53/EC (Category O4 Freight Trailers)",
+    "standard_org": "International Organization for Standardization / EU",
+    "reference_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A31996L0053"
+  },
+  "truck_tractor": {
+    "class_id": "truck_tractor",
+    "display_name_en": "Truck Tractor (Semi-truck head)",
+    "display_name_vi": "Đầu kéo container / Xe đầu kéo",
+    "domain_group": "Road Vehicles",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Truck Tractor"
+    },
+    "L_min_m": 2.45,
+    "L_typ_m": 2.5,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Chiều rộng cabin đầu kéo container chuyên dụng (Class 8 semi-truck tractor cab width)",
+    "standard_source": "Directive 96/53/EC / FHWA Class 8 Commercial Tractor",
+    "standard_org": "Federal Highway Administration / UNECE",
+    "reference_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A31996L0053"
+  },
+  "truck_tractor_w_box_trailer": {
+    "class_id": "truck_tractor_w_box_trailer",
+    "display_name_en": "Truck Tractor w/ Box Trailer",
+    "display_name_vi": "Xe đầu kéo kéo theo rơ-moóc thùng kín",
+    "domain_group": "Road Vehicles",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Truck Tractor w/ Box Trailer"
+    },
+    "L_min_m": 12.0,
+    "L_typ_m": 16.5,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài tổng thể tổ hợp xe đầu kéo kéo theo sơ-mi rơ-moóc thùng kín (tối đa 16.50m theo luật châu Âu Directive 96/53/EC)",
+    "standard_source": "Directive 96/53/EC, Annex I (Maximum Authorized Articulated Vehicle Length)",
+    "standard_org": "Council of the European Union",
+    "reference_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A31996L0053"
+  },
+  "truck_tractor_w_flatbed_trailer": {
+    "class_id": "truck_tractor_w_flatbed_trailer",
+    "display_name_en": "Truck Tractor w/ Flatbed Trailer",
+    "display_name_vi": "Xe đầu kéo kéo theo rơ-moóc sàn phẳng",
+    "domain_group": "Road Vehicles",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Truck Tractor w/ Flatbed Trailer"
+    },
+    "L_min_m": 12.0,
+    "L_typ_m": 16.5,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài tổng thể tổ hợp xe đầu kéo kéo sơ-mi rơ-moóc sàn phẳng (Flatbed articulated truck overall length)",
+    "standard_source": "Directive 96/53/EC, Annex I / xView Dataset Specifications (Lam et al., 2018)",
+    "standard_org": "European Union / DIU",
+    "reference_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A31996L0053"
+  },
+  "truck_tractor_w_liquid_tank": {
+    "class_id": "truck_tractor_w_liquid_tank",
+    "display_name_en": "Truck Tractor w/ Liquid Tank",
+    "display_name_vi": "Xe đầu kéo bồn chở chất lỏng (Xe téc)",
+    "domain_group": "Road Vehicles",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Truck Tractor w/ Liquid Tank"
+    },
+    "L_min_m": 12.0,
+    "L_typ_m": 16.5,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài tổng thể tổ hợp xe đầu kéo kéo téc xi-téc chở nhiên liệu / chất lỏng (Articulated fuel tanker overall length)",
+    "standard_source": "Directive 96/53/EC, Annex I & ADR Agreement (Tank Vehicles)",
+    "standard_org": "United Nations ECE / European Union",
+    "reference_url": "https://unece.org/about-adr"
+  },
+  "crane_truck": {
+    "class_id": "crane_truck",
+    "display_name_en": "Crane Truck",
+    "display_name_vi": "Xe tải gắn cần cẩu",
+    "domain_group": "Road Vehicles / Machinery",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Crane Truck"
+    },
+    "L_min_m": 9.0,
+    "L_typ_m": 12.0,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài tổng thể khung xe tải gắn cẩu tự hành khi thu gọn di chuyển trên đường (Carrier overall transport length)",
+    "standard_source": "ISO 4301-2 (Mobile cranes) / Directive 96/53/EC",
+    "standard_org": "International Organization for Standardization",
+    "reference_url": "https://www.iso.org/standard/66526.html"
+  },
+  "pedestrian": {
+    "class_id": "pedestrian",
+    "display_name_en": "Pedestrian",
+    "display_name_vi": "Người đi bộ đứng một mình",
+    "domain_group": "Pedestrians",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": "pedestrian",
+      "xview": null
+    },
+    "L_min_m": 0.4,
+    "L_typ_m": 0.5,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng hai vai người trưởng thành đo qua xương mỏm cùng vai (Biacromial shoulder breadth theo ISO 7250-1)",
+    "standard_source": "ISO 7250-1:2017 (Basic human body measurements for technological design)",
+    "standard_org": "International Organization for Standardization",
+    "reference_url": "https://www.iso.org/standard/65246.html"
+  },
+  "people": {
+    "class_id": "people",
+    "display_name_en": "People / Crowd",
+    "display_name_vi": "Nhóm người đi bộ",
+    "domain_group": "Pedestrians",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": "people",
+      "xview": null
+    },
+    "L_min_m": 1.0,
+    "L_typ_m": 2.5,
+    "critical_dimension_type": "diameter",
+    "critical_dimension_desc": "Đường kính vùng tập trung nhóm người đi bộ / đám đông từ 2-3 người đến cụm nhỏ trong ảnh UAV",
+    "standard_source": "VisDrone Benchmark Specifications (Zhu et al., IEEE TPAMI 2021)",
+    "standard_org": "Tianjin University AISKYEYE Team",
+    "reference_url": "https://github.com/VisDrone/VisDrone-Dataset"
+  },
+  "bicycle": {
+    "class_id": "bicycle",
+    "display_name_en": "Bicycle",
+    "display_name_vi": "Xe đạp",
+    "domain_group": "Micro-mobility",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": "bicycle",
+      "xview": null
+    },
+    "L_min_m": 0.45,
+    "L_typ_m": 0.65,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng ghi-đông tay lái xe đạp (từ tay lái cong đua 45cm đến tay lái ngang thành phố/địa hình 65cm theo ISO 4210)",
+    "standard_source": "ISO 4210-2:2015 (Cycles — Safety requirements for bicycles, Section 4.7)",
+    "standard_org": "International Organization for Standardization",
+    "reference_url": "https://www.iso.org/standard/64106.html"
+  },
+  "motorcycle": {
+    "class_id": "motorcycle",
+    "display_name_en": "Motorcycle / Scooter",
+    "display_name_vi": "Xe máy / Xe mô tô",
+    "domain_group": "Micro-mobility",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": "motor",
+      "xview": null
+    },
+    "L_min_m": 0.7,
+    "L_typ_m": 0.85,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng tay lái mô tô / xe máy hai bánh (từ xe tay ga đô thị 70cm đến xe phân khối lớn 85cm theo UNECE R78)",
+    "standard_source": "UNECE Regulation No. 78 / Regulation (EU) No 168/2013 (Category L3e)",
+    "standard_org": "UNECE World Forum for Harmonization of Vehicles",
+    "reference_url": "https://unece.org/transport/vehicle-regulations-wp29"
+  },
+  "tricycle": {
+    "class_id": "tricycle",
+    "display_name_en": "Tricycle",
+    "display_name_vi": "Xe ba bánh chở hàng",
+    "domain_group": "Micro-mobility",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": "tricycle",
+      "xview": null
+    },
+    "L_min_m": 0.95,
+    "L_typ_m": 1.2,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng cơ sở trục bánh sau / thùng hàng xe ba bánh chở hàng (Rear track width theo GB 7258-2017)",
+    "standard_source": "GB 7258-2017 (Technical Specifications for Safety of Power-driven Vehicles, Section 4.5) / VisDrone",
+    "standard_org": "Standardization Administration of China (SAC) / Tianjin University",
+    "reference_url": "https://openstd.samr.gov.cn/bzgk/gb/newGbInfo?hcno=9520847937A0923010E0B19BD1B1C47E"
+  },
+  "awning_tricycle": {
+    "class_id": "awning_tricycle",
+    "display_name_en": "Awning Tricycle",
+    "display_name_vi": "Xe ba bánh có mái che",
+    "domain_group": "Micro-mobility",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": "awning-tricycle",
+      "xview": null
+    },
+    "L_min_m": 1.05,
+    "L_typ_m": 1.25,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng khung mái che chống mưa nắng của xe ba bánh chở khách / chuyển phát nhanh (Canopy roof width)",
+    "standard_source": "GB 7258-2017 (Technical Specifications for Power-driven Vehicles) / VisDrone Specifications",
+    "standard_org": "Standardization Administration of China (SAC) / Tianjin University",
+    "reference_url": "https://openstd.samr.gov.cn/bzgk/gb/newGbInfo?hcno=9520847937A0923010E0B19BD1B1C47E"
+  },
+  "ship": {
+    "class_id": "ship",
+    "display_name_en": "Ship / Maritime Vessel (General)",
+    "display_name_vi": "Tàu thủy nói chung",
+    "domain_group": "Maritime Vessels",
+    "dataset_mappings": {
+      "dota": "ship",
+      "isaid": "ship",
+      "dior": "ship",
+      "visdrone": null,
+      "xview": "Maritime Vessel"
+    },
+    "L_min_m": 12.0,
+    "L_typ_m": 80.0,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài tổng thể thân tàu thủy (Length Overall - LOA từ tàu thương mại nhỏ 12m đến tàu chở hàng bách hóa 80m)",
+    "standard_source": "Civil NIIRS Reference Guide (IRSC, 1996) / IMO SOLAS",
+    "standard_org": "Imagery Resolution Support Committee / International Maritime Organization",
+    "reference_url": "https://fas.org/irp/imint/niirs_c/index.html"
+  },
+  "motorboat": {
+    "class_id": "motorboat",
+    "display_name_en": "Motorboat",
+    "display_name_vi": "Ca nô / Thuyền máy cỡ nhỏ",
+    "domain_group": "Maritime Vessels",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Motorboat"
+    },
+    "L_min_m": 4.57,
+    "L_typ_m": 7.62,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài thân vỏ ca-nô / thuyền máy thể thao (15 feet đến 25 feet theo tiêu chuẩn Civil NIIRS)",
+    "standard_source": "Civil NIIRS Reference Guide (Small boats 15-20ft criterion) / ABYC Standards",
+    "standard_org": "Imagery Resolution Support Committee / American Boat & Yacht Council",
+    "reference_url": "https://fas.org/irp/imint/niirs_c/index.html"
+  },
+  "sailboat": {
+    "class_id": "sailboat",
+    "display_name_en": "Sailboat",
+    "display_name_vi": "Thuyền buồm",
+    "domain_group": "Maritime Vessels",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Sailboat"
+    },
+    "L_min_m": 6.0,
+    "L_typ_m": 12.0,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài thân thuyền buồm một thân (từ thuyền buồm thể thao 20ft đến du thuyền buồm tuần tiễu 40ft)",
+    "standard_source": "Civil NIIRS Reference Guide / World Sailing Offshore Special Regulations",
+    "standard_org": "World Sailing / IRSC",
+    "reference_url": "https://fas.org/irp/imint/niirs_c/index.html"
+  },
+  "tugboat": {
+    "class_id": "tugboat",
+    "display_name_en": "Tugboat",
+    "display_name_vi": "Tàu lai dắt cảng biển",
+    "domain_group": "Maritime Vessels",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Tugboat"
+    },
+    "L_min_m": 18.0,
+    "L_typ_m": 28.0,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài thân tàu kéo / lai dắt cảng biển chuyên dụng (Harbor tugboat length overall)",
+    "standard_source": "IMO Harbor Craft Guidelines / Civil NIIRS Reference Guide",
+    "standard_org": "International Maritime Organization / IRSC",
+    "reference_url": "https://fas.org/irp/imint/niirs_c/index.html"
+  },
+  "barge": {
+    "class_id": "barge",
+    "display_name_en": "Barge",
+    "display_name_vi": "Sà lan chở hàng",
+    "domain_group": "Maritime Vessels",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Barge"
+    },
+    "L_min_m": 25.0,
+    "L_typ_m": 59.44,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài sà lan chở hàng đường thủy nội địa (sà lan mặt boong nhỏ 25m đến sà lan Jumbo Hopper 195ft: 59.44m chuẩn USACE)",
+    "standard_source": "USACE Standard Inland Barge Sizing (195ft Jumbo Hopper Barge) / USCG",
+    "standard_org": "U.S. Army Corps of Engineers",
+    "reference_url": "https://www.iwr.usace.army.mil/Missions/Navigation/Waterborne-Commerce-Statistics-Center/"
+  },
+  "fishing_vessel": {
+    "class_id": "fishing_vessel",
+    "display_name_en": "Fishing Vessel",
+    "display_name_vi": "Tàu đánh cá",
+    "domain_group": "Maritime Vessels",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Fishing Vessel"
+    },
+    "L_min_m": 10.0,
+    "L_typ_m": 24.0,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài tàu đánh cá thương mại (từ tàu cá ven bờ 10m đến ngưỡng công ước Torremolinos/Cape Town 24m)",
+    "standard_source": "FAO Fisheries Technical Paper No. 483 & IMO Cape Town Agreement (24m threshold)",
+    "standard_org": "Food and Agriculture Organization (FAO) / IMO",
+    "reference_url": "https://www.fao.org/fishery/en/vessels"
+  },
+  "ferry": {
+    "class_id": "ferry",
+    "display_name_en": "Ferry",
+    "display_name_vi": "Phà chở khách và xe",
+    "domain_group": "Maritime Vessels",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Ferry"
+    },
+    "L_min_m": 30.0,
+    "L_typ_m": 85.0,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài phà chở khách và ô tô (từ phà sông cỡ nhỏ 30m đến phà hai đầu ven biển trung bình 85m)",
+    "standard_source": "IMO High Speed Craft (HSC) Code / Civil NIIRS Reference Guide",
+    "standard_org": "International Maritime Organization / IRSC",
+    "reference_url": "https://fas.org/irp/imint/niirs_c/index.html"
+  },
+  "yacht": {
+    "class_id": "yacht",
+    "display_name_en": "Yacht",
+    "display_name_vi": "Du thuyền sang trọng",
+    "domain_group": "Maritime Vessels",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Yacht"
+    },
+    "L_min_m": 12.0,
+    "L_typ_m": 35.0,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài du thuyền giải trí cá nhân (từ du thuyền hạng trung 40ft đến ngưỡng siêu du thuyền 35m)",
+    "standard_source": "Large Commercial Yacht Code (LY3) / Civil NIIRS Reference Guide",
+    "standard_org": "UK Maritime and Coastguard Agency (MCA) / IRSC",
+    "reference_url": "https://fas.org/irp/imint/niirs_c/index.html"
+  },
+  "container_ship": {
+    "class_id": "container_ship",
+    "display_name_en": "Container Ship",
+    "display_name_vi": "Tàu container chở hàng lớn",
+    "domain_group": "Maritime Vessels",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Container Ship"
+    },
+    "L_min_m": 90.0,
+    "L_typ_m": 294.13,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài tàu chở hàng container (từ tàu gom hàng feeder 90m đến tàu kích thước chuẩn Panamax 294.13m / 965 ft)",
+    "standard_source": "Panama Canal Authority Vessel Requirements (Panamax LOA) / IMO",
+    "standard_org": "Panama Canal Authority (ACP) / IMO",
+    "reference_url": "https://www.pancanal.com/"
+  },
+  "oil_tanker": {
+    "class_id": "oil_tanker",
+    "display_name_en": "Oil Tanker",
+    "display_name_vi": "Tàu chở dầu / Tàu chở hóa chất",
+    "domain_group": "Maritime Vessels",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Oil Tanker"
+    },
+    "L_min_m": 80.0,
+    "L_typ_m": 245.0,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài tàu chở dầu thô và hóa chất (từ tàu chở dầu ven bờ đến tàu dầu cỡ Aframax 245m)",
+    "standard_source": "Civil NIIRS Reference Guide / OCIMF Tanker Sizing Guidelines",
+    "standard_org": "Oil Companies International Marine Forum (OCIMF) / IRSC",
+    "reference_url": "https://fas.org/irp/imint/niirs_c/index.html"
+  },
+  "harbor": {
+    "class_id": "harbor",
+    "display_name_en": "Harbor / Port",
+    "display_name_vi": "Cảng biển / Bến cảng",
+    "domain_group": "Maritime Infrastructure",
+    "dataset_mappings": {
+      "dota": "harbor",
+      "isaid": "harbor",
+      "dior": "harbor",
+      "visdrone": null,
+      "xview": null
+    },
+    "L_min_m": 50.0,
+    "L_typ_m": 200.0,
+    "critical_dimension_type": "extent",
+    "critical_dimension_desc": "Chiều dài phân đoạn cầu bến cảng cập tàu thương mại (Wharf / pier berth operational extent)",
+    "standard_source": "World Bank Port Development Guidelines / UNCTAD Port Planning Manual",
+    "standard_org": "The World Bank / UNCTAD",
+    "reference_url": "https://documents.worldbank.org/"
+  },
+  "railway_vehicle": {
+    "class_id": "railway_vehicle",
+    "display_name_en": "Railway Vehicle (General)",
+    "display_name_vi": "Toa tàu hỏa nói chung",
+    "domain_group": "Railway",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Railway Vehicle"
+    },
+    "L_min_m": 14.0,
+    "L_typ_m": 20.0,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài toa xe đường sắt tiêu chuẩn qua hai đầu móc nối (Length over buffers theo UIC 505/571)",
+    "standard_source": "UIC 505-1 & UIC 571 (Standard Railway Rolling Stock Dimensions)",
+    "standard_org": "International Union of Railways (UIC)",
+    "reference_url": "https://uic.org/"
+  },
+  "locomotive": {
+    "class_id": "locomotive",
+    "display_name_en": "Locomotive",
+    "display_name_vi": "Đầu máy xe lửa",
+    "domain_group": "Railway",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Locomotive"
+    },
+    "L_min_m": 18.0,
+    "L_typ_m": 20.5,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài đầu máy xe lửa chính tuyến qua hai đầu móc nối (từ Siemens Vectron 18.98m đến GE ES44AC)",
+    "standard_source": "UIC 505-1 / AAR Rolling Stock Standards (Mainline Locomotives)",
+    "standard_org": "International Union of Railways / AAR",
+    "reference_url": "https://uic.org/"
+  },
+  "railway_passenger_car": {
+    "class_id": "railway_passenger_car",
+    "display_name_en": "Railway Passenger Car",
+    "display_name_vi": "Toa xe lửa chở khách",
+    "domain_group": "Railway",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Passenger Car"
+    },
+    "L_min_m": 21.0,
+    "L_typ_m": 26.4,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài toa xe lửa chở khách tiêu chuẩn quốc tế (toa UIC Type X/Y 24.5m đến Type Z chuẩn 26.40m)",
+    "standard_source": "UIC 567 Standard Passenger Car Specifications (UIC-Z 26.40m)",
+    "standard_org": "International Union of Railways",
+    "reference_url": "https://uic.org/"
+  },
+  "railway_cargo_car": {
+    "class_id": "railway_cargo_car",
+    "display_name_en": "Railway Cargo/Container Car",
+    "display_name_vi": "Toa xe lửa chở hàng / Container",
+    "domain_group": "Railway",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Cargo/Container Car"
+    },
+    "L_min_m": 12.0,
+    "L_typ_m": 16.5,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài toa xe lửa chở hàng bách hóa có mui (Freight boxcar length over buffers theo UIC 571-1)",
+    "standard_source": "UIC 571-1 Standard Freight Wagons (Covered wagons)",
+    "standard_org": "International Union of Railways",
+    "reference_url": "https://uic.org/"
+  },
+  "railway_flat_car": {
+    "class_id": "railway_flat_car",
+    "display_name_en": "Railway Flat Car",
+    "display_name_vi": "Toa xe lửa sàn phẳng",
+    "domain_group": "Railway",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Flat Car"
+    },
+    "L_min_m": 14.0,
+    "L_typ_m": 19.9,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài sàn toa xe lửa chở container (Flatcar length over buffers cho container 40ft/60ft theo UIC 571-2)",
+    "standard_source": "UIC 571-2 Standard Freight Flat Cars (Intermodal flat wagons)",
+    "standard_org": "International Union of Railways",
+    "reference_url": "https://uic.org/"
+  },
+  "railway_tank_car": {
+    "class_id": "railway_tank_car",
+    "display_name_en": "Railway Tank Car",
+    "display_name_vi": "Toa xe lửa xi téc / Bồn chứa",
+    "domain_group": "Railway",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Tank car"
+    },
+    "L_min_m": 2.4,
+    "L_typ_m": 2.8,
+    "critical_dimension_type": "diameter",
+    "critical_dimension_desc": "Đường kính ngoài xi-téc bồn chở chất lỏng đường sắt (Railway tank wagon cylinder outer diameter)",
+    "standard_source": "DOT-111 / UIC 571-3 Tank Wagon Standards",
+    "standard_org": "Federal Railroad Administration / UIC",
+    "reference_url": "https://uic.org/"
+  },
+  "train_station": {
+    "class_id": "train_station",
+    "display_name_en": "Train Station",
+    "display_name_vi": "Ga xe lửa / Nhà ga đường sắt",
+    "domain_group": "Railway Infrastructure",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": "trainstation",
+      "visdrone": null,
+      "xview": null
+    },
+    "L_min_m": 50.0,
+    "L_typ_m": 200.0,
+    "critical_dimension_type": "extent",
+    "critical_dimension_desc": "Chiều dài phân khu ke ga hành khách và nhà ga đường sắt đón tàu (Station platform and terminal extent)",
+    "standard_source": "TSI PRM (Commission Regulation EU No 1300/2014) / UIC Leaflet 700",
+    "standard_org": "European Union Agency for Railways / UIC",
+    "reference_url": "https://uic.org/"
+  },
+  "engineering_vehicle": {
+    "class_id": "engineering_vehicle",
+    "display_name_en": "Engineering Vehicle (General)",
+    "display_name_vi": "Xe / Thiết bị cơ giới công trình",
+    "domain_group": "Machinery & Construction",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Engineering Vehicle"
+    },
+    "L_min_m": 2.4,
+    "L_typ_m": 3.0,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng khung vỏ thiết bị cơ giới công trình nói chung (Earth-moving machinery chassis width)",
+    "standard_source": "ISO 6165 (Earth-moving machinery — Basic types) / xView Specifications",
+    "standard_org": "International Organization for Standardization",
+    "reference_url": "https://www.iso.org/standard/54532.html"
+  },
+  "tower_crane": {
+    "class_id": "tower_crane",
+    "display_name_en": "Tower Crane",
+    "display_name_vi": "Cần cẩu tháp xây dựng",
+    "domain_group": "Machinery & Construction",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Tower crane"
+    },
+    "L_min_m": 30.0,
+    "L_typ_m": 55.0,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài tay cần làm việc nằm ngang của cần trục tháp xây dựng (Tower crane jib working radius)",
+    "standard_source": "ISO 4301-3 (Cranes — Tower cranes) / Liebherr EC-B Tower Cranes",
+    "standard_org": "International Organization for Standardization / Liebherr",
+    "reference_url": "https://www.liebherr.com/en/int/products/construction-machines/tower-cranes/tower-cranes.html"
+  },
+  "container_crane": {
+    "class_id": "container_crane",
+    "display_name_en": "Container Crane / Gantry Crane",
+    "display_name_vi": "Cẩu giàn bốc dỡ container bến cảng",
+    "domain_group": "Machinery & Construction",
+    "dataset_mappings": {
+      "dota": "container-crane",
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Container Crane"
+    },
+    "L_min_m": 30.48,
+    "L_typ_m": 50.0,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Tầm với cần vươn giàn cẩu bốc dỡ container bờ cảng STS qua mạn tàu (STS quay crane outreach length)",
+    "standard_source": "ISO 4301-5 (Cranes — Overhead travelling and portal bridge cranes) / Port Equipment Handbook",
+    "standard_org": "International Organization for Standardization",
+    "reference_url": "https://www.iso.org/standard/66528.html"
+  },
+  "reach_stacker": {
+    "class_id": "reach_stacker",
+    "display_name_en": "Reach Stacker",
+    "display_name_vi": "Xe nâng / Xe gắp container",
+    "domain_group": "Machinery & Construction",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Reach Stacker"
+    },
+    "L_min_m": 4.15,
+    "L_typ_m": 6.06,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng phủ lốp cầu trước đến bề rộng ngàm gắp container 20ft (Spreader 20ft locked width)",
+    "standard_source": "ISO 5053-1 (Industrial Trucks) / Kalmar Gloria DRG450 Technical Specifications",
+    "standard_org": "International Organization for Standardization / Kalmar",
+    "reference_url": "https://www.kalmarglobal.com/equipment/reachstackers/"
+  },
+  "straddle_carrier": {
+    "class_id": "straddle_carrier",
+    "display_name_en": "Straddle Carrier",
+    "display_name_vi": "Xe cổng bốc xếp container tự hành",
+    "domain_group": "Machinery & Construction",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Straddle Carrier"
+    },
+    "L_min_m": 4.8,
+    "L_typ_m": 5.0,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng phủ bì cổng xe bốc container tự hành di động (Straddle carrier outer portal width)",
+    "standard_source": "ISO 5053-1 (Industrial Trucks) / Kalmar Straddle Carrier Technical Specifications",
+    "standard_org": "International Organization for Standardization / Kalmar",
+    "reference_url": "https://www.kalmarglobal.com/equipment/straddle-carriers/"
+  },
+  "mobile_crane": {
+    "class_id": "mobile_crane",
+    "display_name_en": "Mobile Crane",
+    "display_name_vi": "Cần cẩu bánh lốp di động",
+    "domain_group": "Machinery & Construction",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Mobile Crane"
+    },
+    "L_min_m": 10.5,
+    "L_typ_m": 14.5,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài di chuyển trên đường của xe cẩu tự hành nhiều trục (All-terrain mobile crane transport length)",
+    "standard_source": "ISO 4301-2 (Mobile cranes) / Liebherr LTM Mobile Crane Specifications",
+    "standard_org": "International Organization for Standardization / Liebherr",
+    "reference_url": "https://www.liebherr.com/en/int/products/construction-machines/mobile-and-crawler-cranes/mobile-cranes/mobile-cranes.html"
+  },
+  "dump_truck": {
+    "class_id": "dump_truck",
+    "display_name_en": "Dump Truck",
+    "display_name_vi": "Xe tải tự đổ (Xe ben)",
+    "domain_group": "Machinery & Construction",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Dump Truck"
+    },
+    "L_min_m": 7.5,
+    "L_typ_m": 9.0,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài tổng thể xe tải tự đổ 3-4 trục công trình giao thông (Rigid construction dumper length)",
+    "standard_source": "Directive 96/53/EC / UNECE Category N3 Commercial Vehicles",
+    "standard_org": "European Commission / UNECE",
+    "reference_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A31996L0053"
+  },
+  "haul_truck": {
+    "class_id": "haul_truck",
+    "display_name_en": "Haul Truck (Heavy Mining Truck)",
+    "display_name_vi": "Xe tải siêu trường mỏ khoáng sản",
+    "domain_group": "Machinery & Construction",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Haul Truck"
+    },
+    "L_min_m": 6.1,
+    "L_typ_m": 9.76,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng ngoài lốp xe tải siêu trọng mỏ khoáng sản (từ CAT 777G 6.10m đến CAT 797F 9.76m / 32 ft)",
+    "standard_source": "Caterpillar Mining Trucks Technical Specifications (CAT 777G & CAT 797F) / ISO 6165",
+    "standard_org": "Caterpillar / ISO",
+    "reference_url": "https://www.cat.com/en_US/products/new/equipment/off-highway-trucks.html"
+  },
+  "scraper_tractor": {
+    "class_id": "scraper_tractor",
+    "display_name_en": "Scraper / Tractor",
+    "display_name_vi": "Máy cào đất / Máy kéo công trình",
+    "domain_group": "Machinery & Construction",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Scraper/Tractor"
+    },
+    "L_min_m": 3.56,
+    "L_typ_m": 3.94,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng phủ bì máy cào đất bánh lốp chuyên dụng (từ CAT 621K 3.56m đến CAT 631K 3.94m)",
+    "standard_source": "ISO 6165 (Wheel Tractor-Scrapers) / Caterpillar 621K & 631K Specalog",
+    "standard_org": "International Organization for Standardization / Caterpillar",
+    "reference_url": "https://www.cat.com/en_US/products/new/equipment/wheel-tractor-scrapers.html"
+  },
+  "bulldozer": {
+    "class_id": "bulldozer",
+    "display_name_en": "Front Loader / Bulldozer",
+    "display_name_vi": "Máy xúc lật / Máy ủi đất",
+    "domain_group": "Machinery & Construction",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Front loader/Bulldozer"
+    },
+    "L_min_m": 3.26,
+    "L_typ_m": 4.31,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng lưỡi gạt đất chuyên dụng máy ủi (từ lưỡi bán chữ U CAT D6 3.26m đến lưỡi SU CAT D8 4.31m)",
+    "standard_source": "ISO 6165 / Caterpillar Track-Type Tractors Specifications (D6 & D8)",
+    "standard_org": "International Organization for Standardization / Caterpillar",
+    "reference_url": "https://www.cat.com/en_US/products/new/equipment/dozers.html"
+  },
+  "excavator": {
+    "class_id": "excavator",
+    "display_name_en": "Excavator",
+    "display_name_vi": "Máy đào bánh xích (Máy cuốc)",
+    "domain_group": "Machinery & Construction",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Excavator"
+    },
+    "L_min_m": 2.8,
+    "L_typ_m": 3.5,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng phủ bì vệt xích máy xúc đào thủy lực (từ hạng 20 tấn CAT 320 2.98m đến hạng 50 tấn CAT 349 3.64m)",
+    "standard_source": "ISO 6165 (Hydraulic Excavators) / Caterpillar 320 & 349 Specalog",
+    "standard_org": "International Organization for Standardization / Caterpillar",
+    "reference_url": "https://www.cat.com/en_US/products/new/equipment/excavators.html"
+  },
+  "cement_mixer": {
+    "class_id": "cement_mixer",
+    "display_name_en": "Cement Mixer Truck",
+    "display_name_vi": "Xe bồn trộn bê tông",
+    "domain_group": "Machinery & Construction",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Cement Mixer"
+    },
+    "L_min_m": 8.0,
+    "L_typ_m": 9.5,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài tổng thể xe bồn trộn bê tông tươi 3-4 trục (Transit concrete mixer truck overall length)",
+    "standard_source": "Directive 96/53/EC & ISO 6165 / UNECE Category N3",
+    "standard_org": "European Commission / UNECE",
+    "reference_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A31996L0053"
+  },
+  "ground_grader": {
+    "class_id": "ground_grader",
+    "display_name_en": "Ground Grader / Road Grader",
+    "display_name_vi": "Máy san gạt mặt đường",
+    "domain_group": "Machinery & Construction",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Ground Grader"
+    },
+    "L_min_m": 3.66,
+    "L_typ_m": 4.27,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng lưỡi san gạt mặt đường tiêu chuẩn quốc tế (lưỡi 12ft: 3.66m và lưỡi 14ft: 4.27m)",
+    "standard_source": "ISO 6165 Motor Graders / Caterpillar Motor Grader Specifications (CAT 140)",
+    "standard_org": "International Organization for Standardization / Caterpillar",
+    "reference_url": "https://www.cat.com/en_US/products/new/equipment/motor-graders.html"
+  },
+  "tennis_court": {
+    "class_id": "tennis_court",
+    "display_name_en": "Tennis Court",
+    "display_name_vi": "Sân quần vợt (Tennis)",
+    "domain_group": "Sports Facilities",
+    "dataset_mappings": {
+      "dota": "tennis-court",
+      "isaid": "tennis_court",
+      "dior": "tenniscourt",
+      "visdrone": null,
+      "xview": null
+    },
+    "L_min_m": 8.23,
+    "L_typ_m": 10.97,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng mặt sân thi đấu quần vợt kẻ vạch (sân đơn 27ft: 8.23m và sân đôi 36ft: 10.97m)",
+    "standard_source": "ITF Rules of Tennis 2024, Appendix I (The Court)",
+    "standard_org": "International Tennis Federation (ITF)",
+    "reference_url": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/"
+  },
+  "basketball_court": {
+    "class_id": "basketball_court",
+    "display_name_en": "Basketball Court",
+    "display_name_vi": "Sân bóng rổ",
+    "domain_group": "Sports Facilities",
+    "dataset_mappings": {
+      "dota": "basketball-court",
+      "isaid": "basketball_court",
+      "dior": "basketballcourt",
+      "visdrone": null,
+      "xview": null
+    },
+    "L_min_m": 15.0,
+    "L_typ_m": 15.24,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng mặt sân thi đấu bóng rổ kẻ vạch tiêu chuẩn (sân FIBA 15.00m và sân NBA/NCAA 50ft: 15.24m)",
+    "standard_source": "FIBA Official Basketball Rules 2022 (Art. 2.1) / NBA Official Rules (Rule 1)",
+    "standard_org": "International Basketball Federation (FIBA) / NBA",
+    "reference_url": "https://www.fiba.basketball/documents/official-basketball-rules.pdf"
+  },
+  "baseball_diamond": {
+    "class_id": "baseball_diamond",
+    "display_name_en": "Baseball Diamond / Field",
+    "display_name_vi": "Sân bóng chày",
+    "domain_group": "Sports Facilities",
+    "dataset_mappings": {
+      "dota": "baseball-diamond",
+      "isaid": "baseball_diamond",
+      "dior": "baseballfield",
+      "visdrone": null,
+      "xview": null
+    },
+    "L_min_m": 27.43,
+    "L_typ_m": 97.54,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Cự ly tiêu chuẩn đường chạy giữa các chốt gôn 90ft (27.43m) đến hàng rào ngoài sân 320ft (97.54m)",
+    "standard_source": "Official Baseball Rules (OBR 2023 Edition, Rule 2.01: Layout of the Field) / WBSC",
+    "standard_org": "World Baseball Softball Confederation (WBSC) / Major League Baseball",
+    "reference_url": "https://www.wbsc.org/en/game-rules"
+  },
+  "soccer_ball_field": {
+    "class_id": "soccer_ball_field",
+    "display_name_en": "Soccer Field / Football Pitch",
+    "display_name_vi": "Sân bóng đá",
+    "domain_group": "Sports Facilities",
+    "dataset_mappings": {
+      "dota": "soccer-ball-field",
+      "isaid": "soccer_ball_field",
+      "dior": null,
+      "visdrone": null,
+      "xview": null
+    },
+    "L_min_m": 45.0,
+    "L_typ_m": 68.0,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng đường biên ngang sân bóng đá (tối thiểu 45m theo Luật 1 IFAB và chuẩn quốc tế FIFA 68m)",
+    "standard_source": "IFAB Laws of the Game 2023/24, Law 1 (The Field of Play, Field dimensions)",
+    "standard_org": "International Football Association Board (IFAB) / FIFA",
+    "reference_url": "https://www.theifab.com/laws/latest/the-field-of-play/"
+  },
+  "ground_track_field": {
+    "class_id": "ground_track_field",
+    "display_name_en": "Ground Track Field / Running Track",
+    "display_name_vi": "Đường chạy điền kinh / Sân vận động có đường chạy",
+    "domain_group": "Sports Facilities",
+    "dataset_mappings": {
+      "dota": "ground-track-field",
+      "isaid": "ground_track_field",
+      "dior": "groundtrackfield",
+      "visdrone": null,
+      "xview": null
+    },
+    "L_min_m": 73.0,
+    "L_typ_m": 92.52,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng lòng sân trong đường chạy oval 400m (73.00m) đến mép ngoài toàn bộ 8 làn chạy (92.52m)",
+    "standard_source": "World Athletics Track and Field Facilities Manual (2019 Edition, Section 2.2.1)",
+    "standard_org": "World Athletics",
+    "reference_url": "https://worldathletics.org/about-iaaf/documents/technical-information"
+  },
+  "swimming_pool": {
+    "class_id": "swimming_pool",
+    "display_name_en": "Swimming Pool",
+    "display_name_vi": "Bể bơi ngoài trời",
+    "domain_group": "Sports Facilities",
+    "dataset_mappings": {
+      "dota": "swimming-pool",
+      "isaid": "swimming_pool",
+      "dior": null,
+      "visdrone": null,
+      "xview": null
+    },
+    "L_min_m": 12.5,
+    "L_typ_m": 25.0,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng mặt nước bể bơi thi đấu thể thao (từ bể ngắn 5-6 làn 12.5m đến bể chuẩn Olympic 10 làn 25.0m)",
+    "standard_source": "World Aquatics Competition Regulations 2023, Part VI (Facilities, Section 1)",
+    "standard_org": "World Aquatics (formerly FINA)",
+    "reference_url": "https://www.worldaquatics.com/rules/competition-regulations"
+  },
+  "stadium": {
+    "class_id": "stadium",
+    "display_name_en": "Stadium",
+    "display_name_vi": "Sân vận động lớn có khán đài mái che",
+    "domain_group": "Sports Facilities",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": "stadium",
+      "visdrone": null,
+      "xview": null
+    },
+    "L_min_m": 120.0,
+    "L_typ_m": 200.0,
+    "critical_dimension_type": "diameter",
+    "critical_dimension_desc": "Đường kính ngoài khán đài và mái che sân vận động (từ nhà thi đấu/sân địa phương 120m đến sân chuẩn FIFA 200m)",
+    "standard_source": "FIFA Football Stadiums: Technical Recommendations and Requirements (5th Edition) / DIOR",
+    "standard_org": "FIFA / NWPU",
+    "reference_url": "https://publications.fifa.com/en/football-stadiums-guidelines/"
+  },
+  "golf_course": {
+    "class_id": "golf_course",
+    "display_name_en": "Golf Course",
+    "display_name_vi": "Sân gôn (Golf)",
+    "domain_group": "Sports Facilities",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": "golfcourse",
+      "visdrone": null,
+      "xview": null
+    },
+    "L_min_m": 50.0,
+    "L_typ_m": 150.0,
+    "critical_dimension_type": "extent",
+    "critical_dimension_desc": "Phạm vi khu vực sân tập / vùng cỏ gạt bóng green trong ảnh viễn thám DIOR (Golf green/practice complex extent)",
+    "standard_source": "USGA Recommendations for a Method of Putting Green Construction / DIOR Benchmark",
+    "standard_org": "United States Golf Association (USGA) / NWPU",
+    "reference_url": "https://www.usga.org/course-care/green-section-record.html"
+  },
+  "bridge": {
+    "class_id": "bridge",
+    "display_name_en": "Bridge",
+    "display_name_vi": "Cầu vượt sông / Cầu giao thông",
+    "domain_group": "Transportation Infrastructure",
+    "dataset_mappings": {
+      "dota": "bridge",
+      "isaid": "bridge",
+      "dior": "bridge",
+      "visdrone": null,
+      "xview": null
+    },
+    "L_min_m": 8.0,
+    "L_typ_m": 24.0,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng mặt cắt ngang bản mặt cầu đường bộ (từ cầu 2 làn đường nhánh 8m đến cầu cao tốc 4 làn 24m)",
+    "standard_source": "AASHTO LRFD Bridge Design Specifications (Section 2.5: Roadway Widths)",
+    "standard_org": "American Association of State Highway and Transportation Officials (AASHTO)",
+    "reference_url": "https://www.transportation.org/"
+  },
+  "overpass": {
+    "class_id": "overpass",
+    "display_name_en": "Overpass / Flyover",
+    "display_name_vi": "Cầu vượt cạn / Nút giao lập thể",
+    "domain_group": "Transportation Infrastructure",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": "overpass",
+      "visdrone": null,
+      "xview": null
+    },
+    "L_min_m": 8.0,
+    "L_typ_m": 18.0,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng bản mặt cầu vượt cạn / nhánh nút giao lập thể (từ cầu vượt 1 làn rẽ 8m đến cầu vượt đô thị 4 làn 18m)",
+    "standard_source": "AASHTO A Policy on Geometric Design of Highways and Streets (Green Book)",
+    "standard_org": "AASHTO / FHWA",
+    "reference_url": "https://www.transportation.org/"
+  },
+  "roundabout": {
+    "class_id": "roundabout",
+    "display_name_en": "Roundabout / Traffic Circle",
+    "display_name_vi": "Đảo giao thông / Vòng xuyến bùng binh",
+    "domain_group": "Road Infrastructure",
+    "dataset_mappings": {
+      "dota": "roundabout",
+      "isaid": "roundabout",
+      "dior": null,
+      "visdrone": null,
+      "xview": null
+    },
+    "L_min_m": 15.0,
+    "L_typ_m": 35.0,
+    "critical_dimension_type": "diameter",
+    "critical_dimension_desc": "Đường kính ngoài vòng xuyến đảo giao thông (Inscribed Circle Diameter từ mini-roundabout 15m đến chuẩn 1 làn 35m)",
+    "standard_source": "FHWA-RD-00-067: Roundabouts: An Informational Guide (Exhibit 6-1)",
+    "standard_org": "Federal Highway Administration (FHWA)",
+    "reference_url": "https://www.fhwa.dot.gov/publications/research/safety/00067/000676.pdf"
+  },
+  "expressway_service_area": {
+    "class_id": "expressway_service_area",
+    "display_name_en": "Expressway Service Area",
+    "display_name_vi": "Trạm dừng nghỉ cao tốc",
+    "domain_group": "Road Infrastructure",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": "expressway-service-area",
+      "visdrone": null,
+      "xview": null
+    },
+    "L_min_m": 80.0,
+    "L_typ_m": 200.0,
+    "critical_dimension_type": "extent",
+    "critical_dimension_desc": "Bề rộng khuôn viên phân khu đỗ xe và dịch vụ của trạm dừng nghỉ cao tốc",
+    "standard_source": "AASHTO Guide for Development of Rest Areas on Interstate Highways / DIOR",
+    "standard_org": "AASHTO / NWPU",
+    "reference_url": "https://www.transportation.org/"
+  },
+  "expressway_toll_station": {
+    "class_id": "expressway_toll_station",
+    "display_name_en": "Expressway Toll Station",
+    "display_name_vi": "Trạm thu phí cao tốc",
+    "domain_group": "Road Infrastructure",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": "expressway-toll-station",
+      "visdrone": null,
+      "xview": null
+    },
+    "L_min_m": 20.0,
+    "L_typ_m": 60.0,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng mái che trạm thu phí cao tốc cắt ngang qua các làn xe (từ trạm nhánh 3-4 làn đến trạm chính 10-12 làn)",
+    "standard_source": "FHWA Toll Plaza Design Guide & DIOR Dataset Specifications",
+    "standard_org": "Federal Highway Administration / NWPU",
+    "reference_url": "https://www.fhwa.dot.gov/"
+  },
+  "vehicle_lot": {
+    "class_id": "vehicle_lot",
+    "display_name_en": "Vehicle Lot / Parking Lot",
+    "display_name_vi": "Bãi đỗ xe ô tô tập trung",
+    "domain_group": "Road Infrastructure",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Vehicle Lot"
+    },
+    "L_min_m": 20.0,
+    "L_typ_m": 80.0,
+    "critical_dimension_type": "extent",
+    "critical_dimension_desc": "Bề rộng phân khu cụm bãi đỗ xe ô tô tập trung (từ mô-đun 2 dãy đỗ + làn xe 20m đến bãi đỗ thương mại 80m)",
+    "standard_source": "Urban Land Institute (ULI) The Dimensions of Parking (Module Dimensions)",
+    "standard_org": "Urban Land Institute / National Parking Association",
+    "reference_url": "https://americas.uli.org/"
+  },
+  "storage_tank": {
+    "class_id": "storage_tank",
+    "display_name_en": "Storage Tank",
+    "display_name_vi": "Bồn chứa nhiên liệu / Hóa chất công nghiệp",
+    "domain_group": "Industrial Facilities",
+    "dataset_mappings": {
+      "dota": "storage-tank",
+      "isaid": "storage_tank",
+      "dior": "storagetank",
+      "visdrone": null,
+      "xview": "Storage Tank"
+    },
+    "L_min_m": 10.0,
+    "L_typ_m": 30.0,
+    "critical_dimension_type": "diameter",
+    "critical_dimension_desc": "Đường kính ngoài bồn thép hình trụ chứa dầu công nghiệp (từ bồn hàn API 650 nhỏ 10m đến bồn thương mại 30m)",
+    "standard_source": "API Standard 650: Welded Tanks for Oil Storage (Section 5 / Table A.1a)",
+    "standard_org": "American Petroleum Institute (API)",
+    "reference_url": "https://www.api.org/standards"
+  },
+  "shipping_container": {
+    "class_id": "shipping_container",
+    "display_name_en": "Shipping Container (Individual)",
+    "display_name_vi": "Thùng container vận tải biển (Chiếc đơn)",
+    "domain_group": "Logistics & Storage",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Shipping Container"
+    },
+    "L_min_m": 6.06,
+    "L_typ_m": 12.19,
+    "critical_dimension_type": "length",
+    "critical_dimension_desc": "Chiều dài phủ bì danh định container vận tải biển Series 1 (container 20ft: 6.058m và container 40ft: 12.192m)",
+    "standard_source": "ISO 668:2020 Series 1 freight containers — Classification, dimensions and ratings (Table 1)",
+    "standard_org": "International Organization for Standardization (ISO)",
+    "reference_url": "https://www.iso.org/standard/66373.html"
+  },
+  "shipping_container_lot": {
+    "class_id": "shipping_container_lot",
+    "display_name_en": "Shipping Container Lot / Depot",
+    "display_name_vi": "Bãi tập kết thùng container",
+    "domain_group": "Logistics & Storage",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Shipping container lot"
+    },
+    "L_min_m": 15.0,
+    "L_typ_m": 60.0,
+    "critical_dimension_type": "extent",
+    "critical_dimension_desc": "Bề rộng cụm dãy container tập kết tại bãi cảng (từ dãy 6 hàng container 15m đến phân khu bãi chuẩn 60m)",
+    "standard_source": "UNCTAD Port Development: A handbook for planners / World Bank Guidelines",
+    "standard_org": "United Nations Conference on Trade and Development (UNCTAD) / World Bank",
+    "reference_url": "https://unctad.org/"
+  },
+  "chimney": {
+    "class_id": "chimney",
+    "display_name_en": "Chimney / Industrial Smokestack",
+    "display_name_vi": "Ống khói nhà máy công nghiệp",
+    "domain_group": "Industrial Structures",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": "chimney",
+      "visdrone": null,
+      "xview": null
+    },
+    "L_min_m": 3.0,
+    "L_typ_m": 12.0,
+    "critical_dimension_type": "diameter",
+    "critical_dimension_desc": "Đường kính ngoài chân bệ ống khói công nghiệp (từ lò hơi nhỏ 3m đến ống khói nhà máy nhiệt điện/lọc dầu 12m)",
+    "standard_source": "CICIND Model Code for Concrete Chimneys (Part A)",
+    "standard_org": "International Committee on Industrial Chimneys (CICIND)",
+    "reference_url": "https://www.cicind.org/"
+  },
+  "dam": {
+    "class_id": "dam",
+    "display_name_en": "Dam",
+    "display_name_vi": "Đập thủy điện / Đập chắn nước",
+    "domain_group": "Civil Infrastructure",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": "dam",
+      "visdrone": null,
+      "xview": "Dam"
+    },
+    "L_min_m": 6.0,
+    "L_typ_m": 10.0,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng đỉnh đập chắn nước công trình thủy lợi / thủy điện (từ đập nhỏ 6m đến mặt đường 2 làn trên đỉnh đập bê tông 10m)",
+    "standard_source": "USACE EM 1110-2-2200 (Gravity Dam Design, Section 3-3: Crest Width) / ICOLD",
+    "standard_org": "U.S. Army Corps of Engineers / ICOLD",
+    "reference_url": "https://www.publications.usace.army.mil/USACE-Publications/Engineer-Manuals/"
+  },
+  "windmill": {
+    "class_id": "windmill",
+    "display_name_en": "Windmill / Wind Turbine",
+    "display_name_vi": "Tuabin điện gió / Cối xay gió",
+    "domain_group": "Energy Infrastructure",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": "windmill",
+      "visdrone": null,
+      "xview": null
+    },
+    "L_min_m": 40.0,
+    "L_typ_m": 100.0,
+    "critical_dimension_type": "diameter",
+    "critical_dimension_desc": "Đường kính quét của 3 cánh tuabin gió phát điện (từ tuabin dưới 1MW 40m đến tuabin 2.5-3MW thương mại 100m)",
+    "standard_source": "IEC 61400-1 (Wind energy generation systems — Part 1: Design requirements)",
+    "standard_org": "International Electrotechnical Commission (IEC)",
+    "reference_url": "https://webstore.iec.ch/publication/63704"
+  },
+  "pylon": {
+    "class_id": "pylon",
+    "display_name_en": "Pylon / Electricity Transmission Tower",
+    "display_name_vi": "Cột điện cao thế",
+    "domain_group": "Energy Infrastructure",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Pylon"
+    },
+    "L_min_m": 6.0,
+    "L_typ_m": 18.0,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng sải xà ngang đỡ dây dẫn điện cao thế (từ cột đỡ 110kV 6m đến cột truyền tải 500kV 18m)",
+    "standard_source": "IEEE Standard 691 / ASCE 10-15 (Design of Latticed Steel Transmission Structures)",
+    "standard_org": "IEEE Power & Energy Society / ASCE",
+    "reference_url": "https://standards.ieee.org/ieee/691/3860/"
+  },
+  "tower": {
+    "class_id": "tower",
+    "display_name_en": "Tower (Communication/Observation)",
+    "display_name_vi": "Tháp thông tin / Tháp viễn thông",
+    "domain_group": "Civil Infrastructure",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Tower"
+    },
+    "L_min_m": 4.0,
+    "L_typ_m": 10.0,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng cạnh đáy khung giàn thép tháp viễn thông tự đứng (từ tháp 30-40m đáy 4m đến tháp 60-100m đáy 10m)",
+    "standard_source": "ANSI/TIA-222-H (Structural Standard for Antenna Supporting Structures)",
+    "standard_org": "Telecommunications Industry Association (TIA)",
+    "reference_url": "https://tiaonline.org/standards/"
+  },
+  "building": {
+    "class_id": "building",
+    "display_name_en": "Building",
+    "display_name_vi": "Tòa nhà / Công trình kiến trúc dân dụng",
+    "domain_group": "Civil Buildings",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Building"
+    },
+    "L_min_m": 6.0,
+    "L_typ_m": 25.0,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng nhỏ nhất cạnh đáy tòa nhà xây dựng (từ nhà ở riêng lẻ 6m đến tòa nhà chung cư/văn phòng 25m)",
+    "standard_source": "International Building Code (IBC 2021) / IRC Habitable Structures",
+    "standard_org": "International Code Council (ICC)",
+    "reference_url": "https://codes.iccsafe.org/content/IBC2021P1"
+  },
+  "shed": {
+    "class_id": "shed",
+    "display_name_en": "Shed",
+    "display_name_vi": "Nhà kho tạm / Nhà xưởng nhỏ",
+    "domain_group": "Civil Buildings",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Shed"
+    },
+    "L_min_m": 2.5,
+    "L_typ_m": 6.0,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng nhà kho tạm / công trình phụ trợ một tầng (từ kho làm vườn 2.5m đến nhà kho nông nghiệp 6m)",
+    "standard_source": "International Residential Code (IRC 2021, Section R105.2: Accessory Structures)",
+    "standard_org": "International Code Council (ICC)",
+    "reference_url": "https://codes.iccsafe.org/content/IRC2021P1"
+  },
+  "hut_tent": {
+    "class_id": "hut_tent",
+    "display_name_en": "Hut / Tent",
+    "display_name_vi": "Lều bạt / Chòi tạm",
+    "domain_group": "Civil Buildings",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Hut/Tent"
+    },
+    "L_min_m": 2.5,
+    "L_typ_m": 4.0,
+    "critical_dimension_type": "width",
+    "critical_dimension_desc": "Bề rộng chòi lều tạm cứu trợ khẩn cấp (từ lều dã chiến nhỏ 2.5m đến lều gia đình tiêu chuẩn UNHCR 4.0m x 4.0m)",
+    "standard_source": "UNHCR Emergency Shelter Guidelines & Sphere Handbook (Shelter Standard 2)",
+    "standard_org": "United Nations High Commissioner for Refugees (UNHCR) / Sphere",
+    "reference_url": "https://emergency.unhcr.org/emergency-assistance/shelter-and-settlement/shelter-solutions/tents"
+  },
+  "damaged_building": {
+    "class_id": "damaged_building",
+    "display_name_en": "Damaged Building",
+    "display_name_vi": "Tòa nhà bị hư hại / Đổ sập",
+    "domain_group": "Civil Buildings",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Damaged Building"
+    },
+    "L_min_m": 6.0,
+    "L_typ_m": 25.0,
+    "critical_dimension_type": "extent",
+    "critical_dimension_desc": "Phạm vi vùng đổ sụp / đống đổ nát của công trình bị hư hại do thiên tai / chiến sự",
+    "standard_source": "FEMA Urban Search and Rescue (US&R) Field Operations Guide / xView",
+    "standard_org": "Federal Emergency Management Agency (FEMA)",
+    "reference_url": "https://www.fema.gov/"
+  },
+  "facility": {
+    "class_id": "facility",
+    "display_name_en": "Facility (Industrial / Commercial)",
+    "display_name_vi": "Khu phức hợp công xưởng / Cơ sở",
+    "domain_group": "Civil Buildings",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Facility"
+    },
+    "L_min_m": 30.0,
+    "L_typ_m": 100.0,
+    "critical_dimension_type": "extent",
+    "critical_dimension_desc": "Bề rộng khuôn viên phân khu phức hợp cơ sở công nghiệp / thương mại",
+    "standard_source": "Industrial Facility Site Planning Standards (APA) / xView Specifications",
+    "standard_org": "American Planning Association / DIU",
+    "reference_url": "https://www.planning.org/"
+  },
+  "construction_site": {
+    "class_id": "construction_site",
+    "display_name_en": "Construction Site",
+    "display_name_vi": "Công trường xây dựng",
+    "domain_group": "Machinery & Construction",
+    "dataset_mappings": {
+      "dota": null,
+      "isaid": null,
+      "dior": null,
+      "visdrone": null,
+      "xview": "Construction Site"
+    },
+    "L_min_m": 25.0,
+    "L_typ_m": 100.0,
+    "critical_dimension_type": "extent",
+    "critical_dimension_desc": "Bề rộng mặt bằng khu vực thi công xây dựng đang hoạt động (Site active zone footprint extent)",
+    "standard_source": "OSHA Construction Guidelines (29 CFR 1926) / xView Dataset Specifications",
+    "standard_org": "Occupational Safety and Health Administration (OSHA)",
+    "reference_url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926"
+  }
+}

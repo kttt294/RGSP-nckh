@@ -1,0 +1,124 @@
+﻿dataset_name,original_class_id,original_class_name,category_group,annotation_format
+DOTA-v2.0,1,plane,Aviation,OBB (Oriented Bounding Box)
+DOTA-v2.0,2,baseball-diamond,Sports Facilities,OBB
+DOTA-v2.0,3,bridge,Transportation Infrastructure,OBB
+DOTA-v2.0,4,ground-track-field,Sports Facilities,OBB
+DOTA-v2.0,5,small-vehicle,Road Vehicles,OBB
+DOTA-v2.0,6,large-vehicle,Road Vehicles,OBB
+DOTA-v2.0,7,ship,Maritime Vessels,OBB
+DOTA-v2.0,8,tennis-court,Sports Facilities,OBB
+DOTA-v2.0,9,basketball-court,Sports Facilities,OBB
+DOTA-v2.0,10,storage-tank,Industrial Facilities,OBB
+DOTA-v2.0,11,soccer-ball-field,Sports Facilities,OBB
+DOTA-v2.0,12,roundabout,Road Infrastructure,OBB
+DOTA-v2.0,13,harbor,Maritime Infrastructure,OBB
+DOTA-v2.0,14,swimming-pool,Sports Facilities,OBB
+DOTA-v2.0,15,helicopter,Aviation,OBB
+DOTA-v2.0,16,container-crane,Industrial Machinery,OBB
+DOTA-v2.0,17,airport,Aviation Infrastructure,OBB
+DOTA-v2.0,18,helipad,Aviation Infrastructure,OBB
+iSAID,1,ship,Maritime Vessels,Polygon Mask (Segmentation)
+iSAID,2,storage_tank,Industrial Facilities,Polygon Mask
+iSAID,3,baseball_diamond,Sports Facilities,Polygon Mask
+iSAID,4,tennis_court,Sports Facilities,Polygon Mask
+iSAID,5,basketball_court,Sports Facilities,Polygon Mask
+iSAID,6,ground_track_field,Sports Facilities,Polygon Mask
+iSAID,7,bridge,Transportation Infrastructure,Polygon Mask
+iSAID,8,large_vehicle,Road Vehicles,Polygon Mask
+iSAID,9,small_vehicle,Road Vehicles,Polygon Mask
+iSAID,10,helicopter,Aviation,Polygon Mask
+iSAID,11,swimming_pool,Sports Facilities,Polygon Mask
+iSAID,12,roundabout,Road Infrastructure,Polygon Mask
+iSAID,13,soccer_ball_field,Sports Facilities,Polygon Mask
+iSAID,14,plane,Aviation,Polygon Mask
+iSAID,15,harbor,Maritime Infrastructure,Polygon Mask
+DIOR,1,airplane,Aviation,HBB (Horizontal Bounding Box) / OBB
+DIOR,2,airport,Aviation Infrastructure,HBB / OBB
+DIOR,3,baseballfield,Sports Facilities,HBB / OBB
+DIOR,4,basketballcourt,Sports Facilities,HBB / OBB
+DIOR,5,bridge,Transportation Infrastructure,HBB / OBB
+DIOR,6,chimney,Industrial Structures,HBB / OBB
+DIOR,7,dam,Civil Infrastructure,HBB / OBB
+DIOR,8,expressway-service-area,Road Infrastructure,HBB / OBB
+DIOR,9,expressway-toll-station,Road Infrastructure,HBB / OBB
+DIOR,10,golfcourse,Sports Facilities,HBB / OBB
+DIOR,11,groundtrackfield,Sports Facilities,HBB / OBB
+DIOR,12,harbor,Maritime Infrastructure,HBB / OBB
+DIOR,13,overpass,Road Infrastructure,HBB / OBB
+DIOR,14,ship,Maritime Vessels,HBB / OBB
+DIOR,15,stadium,Sports Facilities,HBB / OBB
+DIOR,16,storagetank,Industrial Facilities,HBB / OBB
+DIOR,17,tenniscourt,Sports Facilities,HBB / OBB
+DIOR,18,trainstation,Railway Infrastructure,HBB / OBB
+DIOR,19,vehicle,Road Vehicles,HBB / OBB
+DIOR,20,windmill,Energy Infrastructure,HBB / OBB
+VisDrone,1,pedestrian,Pedestrians,HBB
+VisDrone,2,people,Pedestrians,HBB
+VisDrone,3,bicycle,Micro-mobility,HBB
+VisDrone,4,car,Road Vehicles,HBB
+VisDrone,5,van,Road Vehicles,HBB
+VisDrone,6,truck,Road Vehicles,HBB
+VisDrone,7,tricycle,Micro-mobility,HBB
+VisDrone,8,awning-tricycle,Micro-mobility,HBB
+VisDrone,9,bus,Road Vehicles,HBB
+VisDrone,10,motor,Micro-mobility,HBB
+xView,11,Fixed-wing Aircraft,Aviation,HBB
+xView,12,Small Aircraft,Aviation,HBB
+xView,13,Passenger/Cargo Plane,Aviation,HBB
+xView,15,Helicopter,Aviation,HBB
+xView,17,Passenger Vehicle,Road Vehicles,HBB
+xView,18,Small Car,Road Vehicles,HBB
+xView,19,Bus,Road Vehicles,HBB
+xView,20,Pickup Truck,Road Vehicles,HBB
+xView,21,Utility Truck,Road Vehicles,HBB
+xView,23,Truck,Road Vehicles,HBB
+xView,24,Cargo Truck,Road Vehicles,HBB
+xView,25,Truck Tractor w/ Box Trailer,Road Vehicles,HBB
+xView,26,Truck Tractor,Road Vehicles,HBB
+xView,27,Trailer,Road Vehicles,HBB
+xView,28,Truck Tractor w/ Flatbed Trailer,Road Vehicles,HBB
+xView,29,Truck Tractor w/ Liquid Tank,Road Vehicles,HBB
+xView,32,Crane Truck,Road Vehicles / Machinery,HBB
+xView,33,Railway Vehicle,Railway,HBB
+xView,34,Passenger Car,Railway,HBB
+xView,35,Cargo/Container Car,Railway,HBB
+xView,36,Flat Car,Railway,HBB
+xView,37,Tank car,Railway,HBB
+xView,38,Locomotive,Railway,HBB
+xView,40,Maritime Vessel,Maritime Vessels,HBB
+xView,41,Motorboat,Maritime Vessels,HBB
+xView,42,Sailboat,Maritime Vessels,HBB
+xView,44,Tugboat,Maritime Vessels,HBB
+xView,45,Barge,Maritime Vessels,HBB
+xView,47,Fishing Vessel,Maritime Vessels,HBB
+xView,49,Ferry,Maritime Vessels,HBB
+xView,50,Yacht,Maritime Vessels,HBB
+xView,51,Container Ship,Maritime Vessels,HBB
+xView,52,Oil Tanker,Maritime Vessels,HBB
+xView,53,Engineering Vehicle,Machinery & Construction,HBB
+xView,54,Tower crane,Machinery & Construction,HBB
+xView,55,Container Crane,Machinery & Construction,HBB
+xView,56,Reach Stacker,Machinery & Construction,HBB
+xView,57,Straddle Carrier,Machinery & Construction,HBB
+xView,59,Mobile Crane,Machinery & Construction,HBB
+xView,60,Dump Truck,Machinery & Construction,HBB
+xView,61,Haul Truck,Machinery & Construction,HBB
+xView,62,Scraper/Tractor,Machinery & Construction,HBB
+xView,63,Front loader/Bulldozer,Machinery & Construction,HBB
+xView,64,Excavator,Machinery & Construction,HBB
+xView,65,Cement Mixer,Machinery & Construction,HBB
+xView,66,Ground Grader,Machinery & Construction,HBB
+xView,71,Hut/Tent,Civil Buildings,HBB
+xView,72,Shed,Civil Buildings,HBB
+xView,73,Building,Civil Buildings,HBB
+xView,74,Aircraft Hangar,Aviation Infrastructure,HBB
+xView,76,Damaged Building,Civil Buildings,HBB
+xView,77,Facility,Civil Buildings,HBB
+xView,79,Construction Site,Machinery & Construction,HBB
+xView,83,Vehicle Lot,Road Infrastructure,HBB
+xView,84,Helipad,Aviation Infrastructure,HBB
+xView,86,Storage Tank,Industrial Facilities,HBB
+xView,89,Shipping container lot,Logistics & Storage,HBB
+xView,91,Shipping Container,Logistics & Storage,HBB
+xView,93,Pylon,Energy Infrastructure,HBB
+xView,94,Tower,Civil Infrastructure,HBB
