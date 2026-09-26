@@ -1,0 +1,1982 @@
+{
+  "scope": "C:\\Users\\trang\\Desktop\\rgsp_nckh\\rs-solve",
+  "inventory": [
+    {
+      "path": "__pycache__\\build_samples.cpython-312.pyc",
+      "bytes": 24323,
+      "sha256": "db84c0f4037506df4cbdc4dc57bd3f1e3c78172794e7d7b6e98b61fe54123973"
+    },
+    {
+      "path": "__pycache__\\test_label_parser.cpython-312.pyc",
+      "bytes": 4664,
+      "sha256": "173b2b85118d2386be3bd17c71e8fb465a7dd837eec07f6f4c42c614099eac09"
+    },
+    {
+      "path": "build_samples.py",
+      "bytes": 22841,
+      "sha256": "40ce24fa853477cc315b8b41fdcd46542f04e5c6f66948268aa89dd45c4cd5af"
+    },
+    {
+      "path": "images\\dota_P1053.jpg",
+      "bytes": 397704,
+      "sha256": "83e3ae1f20298ad8defc6da4dc14a20afe48960b66cf0edb93d95b75d451192a"
+    },
+    {
+      "path": "images\\dota_P1142.jpg",
+      "bytes": 93421,
+      "sha256": "fe9506b65985e185e1997493216ee9d4660b5905a1aeb7ae1db40aeac299618c"
+    },
+    {
+      "path": "images\\dota_P1470.jpg",
+      "bytes": 111845,
+      "sha256": "70f74153fdf528b45df34609b4fe0d56f5e1a28832a8bf2552bad4f90dea1462"
+    },
+    {
+      "path": "labels\\dota_P1053.txt",
+      "bytes": 957,
+      "sha256": "da5900a48ae33e9695b9925bb66e467715496c8eb9105fab85bad970cc307eaf"
+    },
+    {
+      "path": "labels\\dota_P1142.txt",
+      "bytes": 71,
+      "sha256": "2a5d5b8b27fb2acfc5ca6dab472c38b62ca3e8fd6e59e6b0b10c8186bf0404fe"
+    },
+    {
+      "path": "labels\\dota_P1470.txt",
+      "bytes": 297,
+      "sha256": "2cdc0f7b972ec2a692d881f55bb5366cb54ca63af333efc0408afeed574fcae9"
+    },
+    {
+      "path": "labels\\README.md",
+      "bytes": 10792,
+      "sha256": "1d4807ccd58468bab245da932f6c23268d02cc2fc7bb77e0ad9ce0fdae1cebbb"
+    },
+    {
+      "path": "mau_7_questions.json",
+      "bytes": 5378,
+      "sha256": "9c32a2227bf384c71ae9eafaa5fa899d3c5311de0d5e22fa318e5f2edd146dbd"
+    },
+    {
+      "path": "mau_7_questions.jsonl",
+      "bytes": 4659,
+      "sha256": "9db49d1bb8772306424c4e24e2e434f83c2c1f96ea6383f9943cf11d9f60bfdb"
+    },
+    {
+      "path": "merged_labels.csv",
+      "bytes": 18442,
+      "sha256": "5ca8f8a57bfc00b753d1e6aa49904a7de461343d28ee61769596986d7591ebdb"
+    },
+    {
+      "path": "physical_sizes.csv",
+      "bytes": 36005,
+      "sha256": "44392551e573927d8352b30e76492279c10cb8c5e7985a3c01b04ce5866b4092"
+    },
+    {
+      "path": "physical_sizes.json",
+      "bytes": 72250,
+      "sha256": "db1fde264d22bbbf0ed8cf504cff7ad00b9c17418a192d2e52ff9e7a2f5cbe20"
+    },
+    {
+      "path": "raw_labels_of_5dataset.csv",
+      "bytes": 5881,
+      "sha256": "4e4ffc5a56cab35238578b6c01132b3e46f1f86285d75479dd7de18f6a00e8c2"
+    },
+    {
+      "path": "reference\\aircraft_data.xlsx",
+      "bytes": 125570,
+      "sha256": "3e68848b6bb99f9700e25d33c080b993a80dc962d581a391f89aee94b6c8fcb3"
+    },
+    {
+      "path": "reference\\dota_paper_tpami.pdf",
+      "bytes": 23844879,
+      "sha256": "34da01e8483bb3ab536eeaa4e0196e1056e2cd9af82d5a3a8e3239b980d35cb1"
+    },
+    {
+      "path": "reference\\fhwa_roundabouts.pdf",
+      "bytes": 4988341,
+      "sha256": "f431490dfe0286a868e3f7a20605aacec4490cf9a071472cbfc23c2c16d59e60"
+    },
+    {
+      "path": "reference\\fiba_basketball_rules_2022.pdf",
+      "bytes": 226087,
+      "sha256": "6f23f2ca652b734d5a6aa0f0ec57a951e5c67d9f4a24b976119cf4f402480449"
+    },
+    {
+      "path": "reference\\ifab_laws_of_the_game_2023_24.pdf",
+      "bytes": 66134439,
+      "sha256": "ac662982a2ea534e57c260314bd2fbedc971e86bf222e2bda3cf253c46956db4"
+    },
+    {
+      "path": "reference\\visdrone_paper_tpami.pdf",
+      "bytes": 1589363,
+      "sha256": "8efd84fb1f202974b5cd3815ecff445293d40d259f6d1320b97ecfa95c4e0a5b"
+    },
+    {
+      "path": "reference\\xview_paper.pdf",
+      "bytes": 6934127,
+      "sha256": "3b4356d52fb57f72d1a59186d92b6cbe8d0621bdec277131c90cd344961f2152"
+    },
+    {
+      "path": "referenceForData.md",
+      "bytes": 20671,
+      "sha256": "df2f7c4d06fa1c4922ecf401bb7de4ca635731f2ba40e027447858530a643ca5"
+    },
+    {
+      "path": "test_label_parser.py",
+      "bytes": 3410,
+      "sha256": "3c77cdbf8b2bac4af724ad3a55b32a4917cf95e7a5c35fe94ebe77b6acdbef0b"
+    }
+  ],
+  "tables": {
+    "merged_labels.csv": {
+      "rows": 84,
+      "columns": [
+        "class_id",
+        "canonical_name_en",
+        "vietnamese_name",
+        "domain_group",
+        "dota_label",
+        "isaid_label",
+        "dior_label",
+        "visdrone_label",
+        "xview_label",
+        "is_cross_dataset",
+        "num_datasets_present",
+        "deduplication_notes"
+      ],
+      "duplicate_keys": [],
+      "malformed_rows": []
+    },
+    "physical_sizes.csv": {
+      "rows": 84,
+      "columns": [
+        "class_id",
+        "canonical_name_en",
+        "vietnamese_name",
+        "domain_group",
+        "L_min_m",
+        "L_typ_m",
+        "critical_dimension_type",
+        "critical_dimension_desc",
+        "standard_source",
+        "standard_org",
+        "reference_url",
+        "dota_label",
+        "isaid_label",
+        "dior_label",
+        "visdrone_label",
+        "xview_label"
+      ],
+      "duplicate_keys": [],
+      "malformed_rows": []
+    },
+    "raw_labels_of_5dataset.csv": {
+      "rows": 123,
+      "columns": [
+        "dataset_name",
+        "original_class_id",
+        "original_class_name",
+        "category_group",
+        "annotation_format"
+      ],
+      "duplicate_keys": [],
+      "malformed_rows": []
+    }
+  },
+  "raw_dataset_counts": {
+    "DOTA-v2.0": 18,
+    "iSAID": 15,
+    "DIOR": 20,
+    "VisDrone": 10,
+    "xView": 60
+  },
+  "json": {
+    "classes": 84,
+    "duplicate_keys": [],
+    "class_id_key_mismatches": [],
+    "inconsistent_record_keys": [],
+    "invalid_numeric_intervals": []
+  },
+  "keyset_differences": {
+    "json_vs_csv": [],
+    "json_vs_merged": []
+  },
+  "csv_json_differences": [],
+  "csv_merged_differences": [],
+  "mapping_unknown_in_raw": [
+    {
+      "canonical": "dam",
+      "dataset": "xview",
+      "label": "Dam"
+    }
+  ],
+  "mapping_multiple_canonical": [
+    {
+      "dataset": "dior",
+      "label": "vehicle",
+      "canonical": [
+        "small_vehicle",
+        "large_vehicle"
+      ]
+    },
+    {
+      "dataset": "xview",
+      "label": "Truck",
+      "canonical": [
+        "large_vehicle",
+        "truck"
+      ]
+    }
+  ],
+  "unmapped_raw_labels": [],
+  "dataset_count_errors": [],
+  "dimension_type_counts": {
+    "length": 29,
+    "width": 39,
+    "diameter": 7,
+    "extent": 9
+  },
+  "physical_projection": [
+    {
+      "class_id": "airplane",
+      "L_min_m": 7.25,
+      "L_typ_m": 34.11,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Sải cánh / Chiều dài thân máy bay cánh bằng từ cỡ nhỏ huấn luyện (Piper Cherokee: 7.25m, Cessna 150: 7.28m) đến phản lực chở khách thân hẹp phổ biến nhất thế giới (Airbus A320-200: 34.11m, Boeing 737-800: 34.32m)",
+      "standard_source": "FAA Aircraft Characteristics Database (ACD_Data: Col 15 & Col 17)",
+      "reference_url": "https://www.faa.gov/airports/engineering/aircraft_char_database"
+    },
+    {
+      "class_id": "small_aircraft",
+      "L_min_m": 7.25,
+      "L_typ_m": 11.0,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài thân nhỏ nhất (Piper Cherokee: 7.25m / 23.8 ft) đến sải cánh điển hình (Cessna 172 Skyhawk: 11.00m / 36.1 ft - máy bay phổ biến nhất lịch sử hàng không với >20,000 đăng ký FAA)",
+      "standard_source": "FAA Aircraft Characteristics Database (ACD_Data: Col 15 & Col 17)",
+      "reference_url": "https://www.faa.gov/airports/engineering/aircraft_char_database"
+    },
+    {
+      "class_id": "helicopter",
+      "L_min_m": 8.75,
+      "L_typ_m": 11.95,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài tổng thể khi cánh quạt quay (D-value overall length từ trực thăng dân dụng nhỏ Robinson R22: 8.75m đến trực thăng tiện ích phổ biến Bell 206B JetRanger: 11.95m)",
+      "standard_source": "FAA AC 150/5390-2D (Heliport Design, Appendix A) / ICAO Annex 14 Vol II",
+      "reference_url": "https://www.faa.gov/airports/resources/advisory_circulars/index.cfm/go/document.current/documentnumber/150_5390-2"
+    },
+    {
+      "class_id": "airport",
+      "L_min_m": 18.0,
+      "L_typ_m": 45.0,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng mặt đường băng sân bay tiêu chuẩn quốc tế (từ Code 1A tối thiểu 18m đến Code 4C/D/E đường băng phản lực thương mại 45m)",
+      "standard_source": "ICAO Annex 14, Volume I: Aerodromes (Chapter 3, Section 3.1.10: Width of runways)",
+      "reference_url": "https://store.icao.int/en/annex-14-aerodromes"
+    },
+    {
+      "class_id": "helipad",
+      "L_min_m": 8.0,
+      "L_typ_m": 15.0,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng cạnh bãi tiếp đất cất hạ cánh TLOF (từ bãi trực thăng nhỏ R22 tối thiểu 8m đến bãi đỗ thương mại / bệnh viện 15m / 50ft)",
+      "standard_source": "FAA AC 150/5390-2D (Heliport Design, Chapter 2: TLOF Dimensions)",
+      "reference_url": "https://www.faa.gov/airports/resources/advisory_circulars/index.cfm/go/document.current/documentnumber/150_5390-2"
+    },
+    {
+      "class_id": "aircraft_hangar",
+      "L_min_m": 12.5,
+      "L_typ_m": 45.0,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng cửa mở lọt lòng nhà chứa máy bay (từ T-hangar cá nhân 12.5m đến nhà chứa máy bay thân hẹp thương mại A320/B737 45m)",
+      "standard_source": "FAA AC 150/5300-13B (Airport Design, Chapter 3 & Appendix E)",
+      "reference_url": "https://www.faa.gov/airports/resources/advisory_circulars/index.cfm/go/document.current/documentnumber/150_5300-13"
+    },
+    {
+      "class_id": "small_vehicle",
+      "L_min_m": 1.5,
+      "L_typ_m": 1.8,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Chiều rộng thân xe ô tô con không tính gương chiếu hậu (từ xe cỡ nhỏ đô thị A/B-segment 1.50m đến sedan hạng C/D 1.80m)",
+      "standard_source": "Regulation (EU) 2018/858 / UNECE Category M1 (Vehicle body width without mirrors)",
+      "reference_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32018R0858"
+    },
+    {
+      "class_id": "large_vehicle",
+      "L_min_m": 2.2,
+      "L_typ_m": 2.55,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng thân xe cơ giới thương mại cỡ lớn tối đa theo luật (từ xe tải trung 2.20m đến giới hạn tối đa 2.55m theo luật châu Âu)",
+      "standard_source": "Directive 96/53/EC (Maximum Authorized Dimensions for Heavy Vehicles)",
+      "reference_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A31996L0053"
+    },
+    {
+      "class_id": "bus",
+      "L_min_m": 2.3,
+      "L_typ_m": 2.55,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Chiều rộng thân xe buýt chở khách công cộng (từ xe buýt mini/midi 2.30m đến xe buýt đô thị và xe khách tiêu chuẩn 2.55m)",
+      "standard_source": "UNECE Regulation No. 107 (Category M3) / Directive 96/53/EC",
+      "reference_url": "https://unece.org/transport/vehicle-regulations-wp29"
+    },
+    {
+      "class_id": "truck",
+      "L_min_m": 2.2,
+      "L_typ_m": 2.5,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Chiều rộng thùng xe tải chở hàng (từ xe tải nhẹ/trung Category N2 2.20m đến xe tải nặng Category N3 2.50m)",
+      "standard_source": "Directive 96/53/EC / UNECE Category N2/N3 Commercial Vehicles",
+      "reference_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A31996L0053"
+    },
+    {
+      "class_id": "pickup_truck",
+      "L_min_m": 1.8,
+      "L_typ_m": 2.03,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Chiều rộng thân xe bán tải không tính gương (từ cỡ trung 1.80m như Hilux/Ranger đến cỡ lớn full-size 2.03m / 79.9 in như Ford F-150)",
+      "standard_source": "US DOT FMVSS Standard No. 108 & FHWA Vehicle Classification (Full-size Pickups)",
+      "reference_url": "https://www.fhwa.dot.gov/policyinformation/travel_monitoring/tvt.cfm"
+    },
+    {
+      "class_id": "utility_truck",
+      "L_min_m": 2.0,
+      "L_typ_m": 2.45,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng thân xe công vụ / xe kỹ thuật / xe cứu hộ trên khung gầm thương mại Class 4-5",
+      "standard_source": "FHWA Vehicle Classification Class 4-5 & xView Dataset Specifications (Lam et al., 2018)",
+      "reference_url": "https://arxiv.org/abs/1802.07856"
+    },
+    {
+      "class_id": "van",
+      "L_min_m": 1.7,
+      "L_typ_m": 2.0,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Chiều rộng thân xe van thương mại không tính gương (từ van nhỏ 1.70m như Caddy/Kangoo đến van lớn 2.00m như Transit/Sprinter)",
+      "standard_source": "Regulation (EU) 2018/858 Category N1 (Light Commercial Vehicles)",
+      "reference_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32018R0858"
+    },
+    {
+      "class_id": "trailer",
+      "L_min_m": 2.0,
+      "L_typ_m": 2.55,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Chiều rộng thùng rơ-moóc chở hàng (từ rơ-moóc nhẹ O2 2.00m đến sơ-mi rơ-moóc tiêu chuẩn O4 2.55m)",
+      "standard_source": "ISO 1726 / Directive 96/53/EC (Category O4 Freight Trailers)",
+      "reference_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A31996L0053"
+    },
+    {
+      "class_id": "truck_tractor",
+      "L_min_m": 2.45,
+      "L_typ_m": 2.5,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Chiều rộng cabin đầu kéo container chuyên dụng (Class 8 semi-truck tractor cab width)",
+      "standard_source": "Directive 96/53/EC / FHWA Class 8 Commercial Tractor",
+      "reference_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A31996L0053"
+    },
+    {
+      "class_id": "truck_tractor_w_box_trailer",
+      "L_min_m": 12.0,
+      "L_typ_m": 16.5,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài tổng thể tổ hợp xe đầu kéo kéo theo sơ-mi rơ-moóc thùng kín (tối đa 16.50m theo luật châu Âu Directive 96/53/EC)",
+      "standard_source": "Directive 96/53/EC, Annex I (Maximum Authorized Articulated Vehicle Length)",
+      "reference_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A31996L0053"
+    },
+    {
+      "class_id": "truck_tractor_w_flatbed_trailer",
+      "L_min_m": 12.0,
+      "L_typ_m": 16.5,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài tổng thể tổ hợp xe đầu kéo kéo sơ-mi rơ-moóc sàn phẳng (Flatbed articulated truck overall length)",
+      "standard_source": "Directive 96/53/EC, Annex I / xView Dataset Specifications (Lam et al., 2018)",
+      "reference_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A31996L0053"
+    },
+    {
+      "class_id": "truck_tractor_w_liquid_tank",
+      "L_min_m": 12.0,
+      "L_typ_m": 16.5,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài tổng thể tổ hợp xe đầu kéo kéo téc xi-téc chở nhiên liệu / chất lỏng (Articulated fuel tanker overall length)",
+      "standard_source": "Directive 96/53/EC, Annex I & ADR Agreement (Tank Vehicles)",
+      "reference_url": "https://unece.org/about-adr"
+    },
+    {
+      "class_id": "crane_truck",
+      "L_min_m": 9.0,
+      "L_typ_m": 12.0,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài tổng thể khung xe tải gắn cẩu tự hành khi thu gọn di chuyển trên đường (Carrier overall transport length)",
+      "standard_source": "ISO 4301-2 (Mobile cranes) / Directive 96/53/EC",
+      "reference_url": "https://www.iso.org/standard/66526.html"
+    },
+    {
+      "class_id": "pedestrian",
+      "L_min_m": 0.4,
+      "L_typ_m": 0.5,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng hai vai người trưởng thành đo qua xương mỏm cùng vai (Biacromial shoulder breadth theo ISO 7250-1)",
+      "standard_source": "ISO 7250-1:2017 (Basic human body measurements for technological design)",
+      "reference_url": "https://www.iso.org/standard/65246.html"
+    },
+    {
+      "class_id": "people",
+      "L_min_m": 1.0,
+      "L_typ_m": 2.5,
+      "critical_dimension_type": "diameter",
+      "critical_dimension_desc": "Đường kính vùng tập trung nhóm người đi bộ / đám đông từ 2-3 người đến cụm nhỏ trong ảnh UAV",
+      "standard_source": "VisDrone Benchmark Specifications (Zhu et al., IEEE TPAMI 2021)",
+      "reference_url": "https://github.com/VisDrone/VisDrone-Dataset"
+    },
+    {
+      "class_id": "bicycle",
+      "L_min_m": 0.45,
+      "L_typ_m": 0.65,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng ghi-đông tay lái xe đạp (từ tay lái cong đua 45cm đến tay lái ngang thành phố/địa hình 65cm theo ISO 4210)",
+      "standard_source": "ISO 4210-2:2015 (Cycles — Safety requirements for bicycles, Section 4.7)",
+      "reference_url": "https://www.iso.org/standard/64106.html"
+    },
+    {
+      "class_id": "motorcycle",
+      "L_min_m": 0.7,
+      "L_typ_m": 0.85,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng tay lái mô tô / xe máy hai bánh (từ xe tay ga đô thị 70cm đến xe phân khối lớn 85cm theo UNECE R78)",
+      "standard_source": "UNECE Regulation No. 78 / Regulation (EU) No 168/2013 (Category L3e)",
+      "reference_url": "https://unece.org/transport/vehicle-regulations-wp29"
+    },
+    {
+      "class_id": "tricycle",
+      "L_min_m": 0.95,
+      "L_typ_m": 1.2,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng cơ sở trục bánh sau / thùng hàng xe ba bánh chở hàng (Rear track width theo GB 7258-2017)",
+      "standard_source": "GB 7258-2017 (Technical Specifications for Safety of Power-driven Vehicles, Section 4.5) / VisDrone",
+      "reference_url": "https://openstd.samr.gov.cn/bzgk/gb/newGbInfo?hcno=9520847937A0923010E0B19BD1B1C47E"
+    },
+    {
+      "class_id": "awning_tricycle",
+      "L_min_m": 1.05,
+      "L_typ_m": 1.25,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng khung mái che chống mưa nắng của xe ba bánh chở khách / chuyển phát nhanh (Canopy roof width)",
+      "standard_source": "GB 7258-2017 (Technical Specifications for Power-driven Vehicles) / VisDrone Specifications",
+      "reference_url": "https://openstd.samr.gov.cn/bzgk/gb/newGbInfo?hcno=9520847937A0923010E0B19BD1B1C47E"
+    },
+    {
+      "class_id": "ship",
+      "L_min_m": 12.0,
+      "L_typ_m": 80.0,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài tổng thể thân tàu thủy (Length Overall - LOA từ tàu thương mại nhỏ 12m đến tàu chở hàng bách hóa 80m)",
+      "standard_source": "Civil NIIRS Reference Guide (IRSC, 1996) / IMO SOLAS",
+      "reference_url": "https://fas.org/irp/imint/niirs_c/index.html"
+    },
+    {
+      "class_id": "motorboat",
+      "L_min_m": 4.57,
+      "L_typ_m": 7.62,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài thân vỏ ca-nô / thuyền máy thể thao (15 feet đến 25 feet theo tiêu chuẩn Civil NIIRS)",
+      "standard_source": "Civil NIIRS Reference Guide (Small boats 15-20ft criterion) / ABYC Standards",
+      "reference_url": "https://fas.org/irp/imint/niirs_c/index.html"
+    },
+    {
+      "class_id": "sailboat",
+      "L_min_m": 6.0,
+      "L_typ_m": 12.0,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài thân thuyền buồm một thân (từ thuyền buồm thể thao 20ft đến du thuyền buồm tuần tiễu 40ft)",
+      "standard_source": "Civil NIIRS Reference Guide / World Sailing Offshore Special Regulations",
+      "reference_url": "https://fas.org/irp/imint/niirs_c/index.html"
+    },
+    {
+      "class_id": "tugboat",
+      "L_min_m": 18.0,
+      "L_typ_m": 28.0,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài thân tàu kéo / lai dắt cảng biển chuyên dụng (Harbor tugboat length overall)",
+      "standard_source": "IMO Harbor Craft Guidelines / Civil NIIRS Reference Guide",
+      "reference_url": "https://fas.org/irp/imint/niirs_c/index.html"
+    },
+    {
+      "class_id": "barge",
+      "L_min_m": 25.0,
+      "L_typ_m": 59.44,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài sà lan chở hàng đường thủy nội địa (sà lan mặt boong nhỏ 25m đến sà lan Jumbo Hopper 195ft: 59.44m chuẩn USACE)",
+      "standard_source": "USACE Standard Inland Barge Sizing (195ft Jumbo Hopper Barge) / USCG",
+      "reference_url": "https://www.iwr.usace.army.mil/Missions/Navigation/Waterborne-Commerce-Statistics-Center/"
+    },
+    {
+      "class_id": "fishing_vessel",
+      "L_min_m": 10.0,
+      "L_typ_m": 24.0,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài tàu đánh cá thương mại (từ tàu cá ven bờ 10m đến ngưỡng công ước Torremolinos/Cape Town 24m)",
+      "standard_source": "FAO Fisheries Technical Paper No. 483 & IMO Cape Town Agreement (24m threshold)",
+      "reference_url": "https://www.fao.org/fishery/en/vessels"
+    },
+    {
+      "class_id": "ferry",
+      "L_min_m": 30.0,
+      "L_typ_m": 85.0,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài phà chở khách và ô tô (từ phà sông cỡ nhỏ 30m đến phà hai đầu ven biển trung bình 85m)",
+      "standard_source": "IMO High Speed Craft (HSC) Code / Civil NIIRS Reference Guide",
+      "reference_url": "https://fas.org/irp/imint/niirs_c/index.html"
+    },
+    {
+      "class_id": "yacht",
+      "L_min_m": 12.0,
+      "L_typ_m": 35.0,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài du thuyền giải trí cá nhân (từ du thuyền hạng trung 40ft đến ngưỡng siêu du thuyền 35m)",
+      "standard_source": "Large Commercial Yacht Code (LY3) / Civil NIIRS Reference Guide",
+      "reference_url": "https://fas.org/irp/imint/niirs_c/index.html"
+    },
+    {
+      "class_id": "container_ship",
+      "L_min_m": 90.0,
+      "L_typ_m": 294.13,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài tàu chở hàng container (từ tàu gom hàng feeder 90m đến tàu kích thước chuẩn Panamax 294.13m / 965 ft)",
+      "standard_source": "Panama Canal Authority Vessel Requirements (Panamax LOA) / IMO",
+      "reference_url": "https://www.pancanal.com/"
+    },
+    {
+      "class_id": "oil_tanker",
+      "L_min_m": 80.0,
+      "L_typ_m": 245.0,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài tàu chở dầu thô và hóa chất (từ tàu chở dầu ven bờ đến tàu dầu cỡ Aframax 245m)",
+      "standard_source": "Civil NIIRS Reference Guide / OCIMF Tanker Sizing Guidelines",
+      "reference_url": "https://fas.org/irp/imint/niirs_c/index.html"
+    },
+    {
+      "class_id": "harbor",
+      "L_min_m": 50.0,
+      "L_typ_m": 200.0,
+      "critical_dimension_type": "extent",
+      "critical_dimension_desc": "Chiều dài phân đoạn cầu bến cảng cập tàu thương mại (Wharf / pier berth operational extent)",
+      "standard_source": "World Bank Port Development Guidelines / UNCTAD Port Planning Manual",
+      "reference_url": "https://documents.worldbank.org/"
+    },
+    {
+      "class_id": "railway_vehicle",
+      "L_min_m": 14.0,
+      "L_typ_m": 20.0,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài toa xe đường sắt tiêu chuẩn qua hai đầu móc nối (Length over buffers theo UIC 505/571)",
+      "standard_source": "UIC 505-1 & UIC 571 (Standard Railway Rolling Stock Dimensions)",
+      "reference_url": "https://uic.org/"
+    },
+    {
+      "class_id": "locomotive",
+      "L_min_m": 18.0,
+      "L_typ_m": 20.5,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài đầu máy xe lửa chính tuyến qua hai đầu móc nối (từ Siemens Vectron 18.98m đến GE ES44AC)",
+      "standard_source": "UIC 505-1 / AAR Rolling Stock Standards (Mainline Locomotives)",
+      "reference_url": "https://uic.org/"
+    },
+    {
+      "class_id": "railway_passenger_car",
+      "L_min_m": 21.0,
+      "L_typ_m": 26.4,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài toa xe lửa chở khách tiêu chuẩn quốc tế (toa UIC Type X/Y 24.5m đến Type Z chuẩn 26.40m)",
+      "standard_source": "UIC 567 Standard Passenger Car Specifications (UIC-Z 26.40m)",
+      "reference_url": "https://uic.org/"
+    },
+    {
+      "class_id": "railway_cargo_car",
+      "L_min_m": 12.0,
+      "L_typ_m": 16.5,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài toa xe lửa chở hàng bách hóa có mui (Freight boxcar length over buffers theo UIC 571-1)",
+      "standard_source": "UIC 571-1 Standard Freight Wagons (Covered wagons)",
+      "reference_url": "https://uic.org/"
+    },
+    {
+      "class_id": "railway_flat_car",
+      "L_min_m": 14.0,
+      "L_typ_m": 19.9,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài sàn toa xe lửa chở container (Flatcar length over buffers cho container 40ft/60ft theo UIC 571-2)",
+      "standard_source": "UIC 571-2 Standard Freight Flat Cars (Intermodal flat wagons)",
+      "reference_url": "https://uic.org/"
+    },
+    {
+      "class_id": "railway_tank_car",
+      "L_min_m": 2.4,
+      "L_typ_m": 2.8,
+      "critical_dimension_type": "diameter",
+      "critical_dimension_desc": "Đường kính ngoài xi-téc bồn chở chất lỏng đường sắt (Railway tank wagon cylinder outer diameter)",
+      "standard_source": "DOT-111 / UIC 571-3 Tank Wagon Standards",
+      "reference_url": "https://uic.org/"
+    },
+    {
+      "class_id": "train_station",
+      "L_min_m": 50.0,
+      "L_typ_m": 200.0,
+      "critical_dimension_type": "extent",
+      "critical_dimension_desc": "Chiều dài phân khu ke ga hành khách và nhà ga đường sắt đón tàu (Station platform and terminal extent)",
+      "standard_source": "TSI PRM (Commission Regulation EU No 1300/2014) / UIC Leaflet 700",
+      "reference_url": "https://uic.org/"
+    },
+    {
+      "class_id": "engineering_vehicle",
+      "L_min_m": 2.4,
+      "L_typ_m": 3.0,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng khung vỏ thiết bị cơ giới công trình nói chung (Earth-moving machinery chassis width)",
+      "standard_source": "ISO 6165 (Earth-moving machinery — Basic types) / xView Specifications",
+      "reference_url": "https://www.iso.org/standard/54532.html"
+    },
+    {
+      "class_id": "tower_crane",
+      "L_min_m": 30.0,
+      "L_typ_m": 55.0,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài tay cần làm việc nằm ngang của cần trục tháp xây dựng (Tower crane jib working radius)",
+      "standard_source": "ISO 4301-3 (Cranes — Tower cranes) / Liebherr EC-B Tower Cranes",
+      "reference_url": "https://www.liebherr.com/en/int/products/construction-machines/tower-cranes/tower-cranes.html"
+    },
+    {
+      "class_id": "container_crane",
+      "L_min_m": 30.48,
+      "L_typ_m": 50.0,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Tầm với cần vươn giàn cẩu bốc dỡ container bờ cảng STS qua mạn tàu (STS quay crane outreach length)",
+      "standard_source": "ISO 4301-5 (Cranes — Overhead travelling and portal bridge cranes) / Port Equipment Handbook",
+      "reference_url": "https://www.iso.org/standard/66528.html"
+    },
+    {
+      "class_id": "reach_stacker",
+      "L_min_m": 4.15,
+      "L_typ_m": 6.06,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng phủ lốp cầu trước đến bề rộng ngàm gắp container 20ft (Spreader 20ft locked width)",
+      "standard_source": "ISO 5053-1 (Industrial Trucks) / Kalmar Gloria DRG450 Technical Specifications",
+      "reference_url": "https://www.kalmarglobal.com/equipment/reachstackers/"
+    },
+    {
+      "class_id": "straddle_carrier",
+      "L_min_m": 4.8,
+      "L_typ_m": 5.0,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng phủ bì cổng xe bốc container tự hành di động (Straddle carrier outer portal width)",
+      "standard_source": "ISO 5053-1 (Industrial Trucks) / Kalmar Straddle Carrier Technical Specifications",
+      "reference_url": "https://www.kalmarglobal.com/equipment/straddle-carriers/"
+    },
+    {
+      "class_id": "mobile_crane",
+      "L_min_m": 10.5,
+      "L_typ_m": 14.5,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài di chuyển trên đường của xe cẩu tự hành nhiều trục (All-terrain mobile crane transport length)",
+      "standard_source": "ISO 4301-2 (Mobile cranes) / Liebherr LTM Mobile Crane Specifications",
+      "reference_url": "https://www.liebherr.com/en/int/products/construction-machines/mobile-and-crawler-cranes/mobile-cranes/mobile-cranes.html"
+    },
+    {
+      "class_id": "dump_truck",
+      "L_min_m": 7.5,
+      "L_typ_m": 9.0,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài tổng thể xe tải tự đổ 3-4 trục công trình giao thông (Rigid construction dumper length)",
+      "standard_source": "Directive 96/53/EC / UNECE Category N3 Commercial Vehicles",
+      "reference_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A31996L0053"
+    },
+    {
+      "class_id": "haul_truck",
+      "L_min_m": 6.1,
+      "L_typ_m": 9.76,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng ngoài lốp xe tải siêu trọng mỏ khoáng sản (từ CAT 777G 6.10m đến CAT 797F 9.76m / 32 ft)",
+      "standard_source": "Caterpillar Mining Trucks Technical Specifications (CAT 777G & CAT 797F) / ISO 6165",
+      "reference_url": "https://www.cat.com/en_US/products/new/equipment/off-highway-trucks.html"
+    },
+    {
+      "class_id": "scraper_tractor",
+      "L_min_m": 3.56,
+      "L_typ_m": 3.94,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng phủ bì máy cào đất bánh lốp chuyên dụng (từ CAT 621K 3.56m đến CAT 631K 3.94m)",
+      "standard_source": "ISO 6165 (Wheel Tractor-Scrapers) / Caterpillar 621K & 631K Specalog",
+      "reference_url": "https://www.cat.com/en_US/products/new/equipment/wheel-tractor-scrapers.html"
+    },
+    {
+      "class_id": "bulldozer",
+      "L_min_m": 3.26,
+      "L_typ_m": 4.31,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng lưỡi gạt đất chuyên dụng máy ủi (từ lưỡi bán chữ U CAT D6 3.26m đến lưỡi SU CAT D8 4.31m)",
+      "standard_source": "ISO 6165 / Caterpillar Track-Type Tractors Specifications (D6 & D8)",
+      "reference_url": "https://www.cat.com/en_US/products/new/equipment/dozers.html"
+    },
+    {
+      "class_id": "excavator",
+      "L_min_m": 2.8,
+      "L_typ_m": 3.5,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng phủ bì vệt xích máy xúc đào thủy lực (từ hạng 20 tấn CAT 320 2.98m đến hạng 50 tấn CAT 349 3.64m)",
+      "standard_source": "ISO 6165 (Hydraulic Excavators) / Caterpillar 320 & 349 Specalog",
+      "reference_url": "https://www.cat.com/en_US/products/new/equipment/excavators.html"
+    },
+    {
+      "class_id": "cement_mixer",
+      "L_min_m": 8.0,
+      "L_typ_m": 9.5,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài tổng thể xe bồn trộn bê tông tươi 3-4 trục (Transit concrete mixer truck overall length)",
+      "standard_source": "Directive 96/53/EC & ISO 6165 / UNECE Category N3",
+      "reference_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A31996L0053"
+    },
+    {
+      "class_id": "ground_grader",
+      "L_min_m": 3.66,
+      "L_typ_m": 4.27,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng lưỡi san gạt mặt đường tiêu chuẩn quốc tế (lưỡi 12ft: 3.66m và lưỡi 14ft: 4.27m)",
+      "standard_source": "ISO 6165 Motor Graders / Caterpillar Motor Grader Specifications (CAT 140)",
+      "reference_url": "https://www.cat.com/en_US/products/new/equipment/motor-graders.html"
+    },
+    {
+      "class_id": "tennis_court",
+      "L_min_m": 8.23,
+      "L_typ_m": 10.97,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng mặt sân thi đấu quần vợt kẻ vạch (sân đơn 27ft: 8.23m và sân đôi 36ft: 10.97m)",
+      "standard_source": "ITF Rules of Tennis 2024, Appendix I (The Court)",
+      "reference_url": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/"
+    },
+    {
+      "class_id": "basketball_court",
+      "L_min_m": 15.0,
+      "L_typ_m": 15.24,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng mặt sân thi đấu bóng rổ kẻ vạch tiêu chuẩn (sân FIBA 15.00m và sân NBA/NCAA 50ft: 15.24m)",
+      "standard_source": "FIBA Official Basketball Rules 2022 (Art. 2.1) / NBA Official Rules (Rule 1)",
+      "reference_url": "https://www.fiba.basketball/documents/official-basketball-rules.pdf"
+    },
+    {
+      "class_id": "baseball_diamond",
+      "L_min_m": 27.43,
+      "L_typ_m": 97.54,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Cự ly tiêu chuẩn đường chạy giữa các chốt gôn 90ft (27.43m) đến hàng rào ngoài sân 320ft (97.54m)",
+      "standard_source": "Official Baseball Rules (OBR 2023 Edition, Rule 2.01: Layout of the Field) / WBSC",
+      "reference_url": "https://www.wbsc.org/en/game-rules"
+    },
+    {
+      "class_id": "soccer_ball_field",
+      "L_min_m": 45.0,
+      "L_typ_m": 68.0,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng đường biên ngang sân bóng đá (tối thiểu 45m theo Luật 1 IFAB và chuẩn quốc tế FIFA 68m)",
+      "standard_source": "IFAB Laws of the Game 2023/24, Law 1 (The Field of Play, Field dimensions)",
+      "reference_url": "https://www.theifab.com/laws/latest/the-field-of-play/"
+    },
+    {
+      "class_id": "ground_track_field",
+      "L_min_m": 73.0,
+      "L_typ_m": 92.52,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng lòng sân trong đường chạy oval 400m (73.00m) đến mép ngoài toàn bộ 8 làn chạy (92.52m)",
+      "standard_source": "World Athletics Track and Field Facilities Manual (2019 Edition, Section 2.2.1)",
+      "reference_url": "https://worldathletics.org/about-iaaf/documents/technical-information"
+    },
+    {
+      "class_id": "swimming_pool",
+      "L_min_m": 12.5,
+      "L_typ_m": 25.0,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng mặt nước bể bơi thi đấu thể thao (từ bể ngắn 5-6 làn 12.5m đến bể chuẩn Olympic 10 làn 25.0m)",
+      "standard_source": "World Aquatics Competition Regulations 2023, Part VI (Facilities, Section 1)",
+      "reference_url": "https://www.worldaquatics.com/rules/competition-regulations"
+    },
+    {
+      "class_id": "stadium",
+      "L_min_m": 120.0,
+      "L_typ_m": 200.0,
+      "critical_dimension_type": "diameter",
+      "critical_dimension_desc": "Đường kính ngoài khán đài và mái che sân vận động (từ nhà thi đấu/sân địa phương 120m đến sân chuẩn FIFA 200m)",
+      "standard_source": "FIFA Football Stadiums: Technical Recommendations and Requirements (5th Edition) / DIOR",
+      "reference_url": "https://publications.fifa.com/en/football-stadiums-guidelines/"
+    },
+    {
+      "class_id": "golf_course",
+      "L_min_m": 50.0,
+      "L_typ_m": 150.0,
+      "critical_dimension_type": "extent",
+      "critical_dimension_desc": "Phạm vi khu vực sân tập / vùng cỏ gạt bóng green trong ảnh viễn thám DIOR (Golf green/practice complex extent)",
+      "standard_source": "USGA Recommendations for a Method of Putting Green Construction / DIOR Benchmark",
+      "reference_url": "https://www.usga.org/course-care/green-section-record.html"
+    },
+    {
+      "class_id": "bridge",
+      "L_min_m": 8.0,
+      "L_typ_m": 24.0,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng mặt cắt ngang bản mặt cầu đường bộ (từ cầu 2 làn đường nhánh 8m đến cầu cao tốc 4 làn 24m)",
+      "standard_source": "AASHTO LRFD Bridge Design Specifications (Section 2.5: Roadway Widths)",
+      "reference_url": "https://www.transportation.org/"
+    },
+    {
+      "class_id": "overpass",
+      "L_min_m": 8.0,
+      "L_typ_m": 18.0,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng bản mặt cầu vượt cạn / nhánh nút giao lập thể (từ cầu vượt 1 làn rẽ 8m đến cầu vượt đô thị 4 làn 18m)",
+      "standard_source": "AASHTO A Policy on Geometric Design of Highways and Streets (Green Book)",
+      "reference_url": "https://www.transportation.org/"
+    },
+    {
+      "class_id": "roundabout",
+      "L_min_m": 15.0,
+      "L_typ_m": 35.0,
+      "critical_dimension_type": "diameter",
+      "critical_dimension_desc": "Đường kính ngoài vòng xuyến đảo giao thông (Inscribed Circle Diameter từ mini-roundabout 15m đến chuẩn 1 làn 35m)",
+      "standard_source": "FHWA-RD-00-067: Roundabouts: An Informational Guide (Exhibit 6-1)",
+      "reference_url": "https://www.fhwa.dot.gov/publications/research/safety/00067/000676.pdf"
+    },
+    {
+      "class_id": "expressway_service_area",
+      "L_min_m": 80.0,
+      "L_typ_m": 200.0,
+      "critical_dimension_type": "extent",
+      "critical_dimension_desc": "Bề rộng khuôn viên phân khu đỗ xe và dịch vụ của trạm dừng nghỉ cao tốc",
+      "standard_source": "AASHTO Guide for Development of Rest Areas on Interstate Highways / DIOR",
+      "reference_url": "https://www.transportation.org/"
+    },
+    {
+      "class_id": "expressway_toll_station",
+      "L_min_m": 20.0,
+      "L_typ_m": 60.0,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng mái che trạm thu phí cao tốc cắt ngang qua các làn xe (từ trạm nhánh 3-4 làn đến trạm chính 10-12 làn)",
+      "standard_source": "FHWA Toll Plaza Design Guide & DIOR Dataset Specifications",
+      "reference_url": "https://www.fhwa.dot.gov/"
+    },
+    {
+      "class_id": "vehicle_lot",
+      "L_min_m": 20.0,
+      "L_typ_m": 80.0,
+      "critical_dimension_type": "extent",
+      "critical_dimension_desc": "Bề rộng phân khu cụm bãi đỗ xe ô tô tập trung (từ mô-đun 2 dãy đỗ + làn xe 20m đến bãi đỗ thương mại 80m)",
+      "standard_source": "Urban Land Institute (ULI) The Dimensions of Parking (Module Dimensions)",
+      "reference_url": "https://americas.uli.org/"
+    },
+    {
+      "class_id": "storage_tank",
+      "L_min_m": 10.0,
+      "L_typ_m": 30.0,
+      "critical_dimension_type": "diameter",
+      "critical_dimension_desc": "Đường kính ngoài bồn thép hình trụ chứa dầu công nghiệp (từ bồn hàn API 650 nhỏ 10m đến bồn thương mại 30m)",
+      "standard_source": "API Standard 650: Welded Tanks for Oil Storage (Section 5 / Table A.1a)",
+      "reference_url": "https://www.api.org/standards"
+    },
+    {
+      "class_id": "shipping_container",
+      "L_min_m": 6.06,
+      "L_typ_m": 12.19,
+      "critical_dimension_type": "length",
+      "critical_dimension_desc": "Chiều dài phủ bì danh định container vận tải biển Series 1 (container 20ft: 6.058m và container 40ft: 12.192m)",
+      "standard_source": "ISO 668:2020 Series 1 freight containers — Classification, dimensions and ratings (Table 1)",
+      "reference_url": "https://www.iso.org/standard/66373.html"
+    },
+    {
+      "class_id": "shipping_container_lot",
+      "L_min_m": 15.0,
+      "L_typ_m": 60.0,
+      "critical_dimension_type": "extent",
+      "critical_dimension_desc": "Bề rộng cụm dãy container tập kết tại bãi cảng (từ dãy 6 hàng container 15m đến phân khu bãi chuẩn 60m)",
+      "standard_source": "UNCTAD Port Development: A handbook for planners / World Bank Guidelines",
+      "reference_url": "https://unctad.org/"
+    },
+    {
+      "class_id": "chimney",
+      "L_min_m": 3.0,
+      "L_typ_m": 12.0,
+      "critical_dimension_type": "diameter",
+      "critical_dimension_desc": "Đường kính ngoài chân bệ ống khói công nghiệp (từ lò hơi nhỏ 3m đến ống khói nhà máy nhiệt điện/lọc dầu 12m)",
+      "standard_source": "CICIND Model Code for Concrete Chimneys (Part A)",
+      "reference_url": "https://www.cicind.org/"
+    },
+    {
+      "class_id": "dam",
+      "L_min_m": 6.0,
+      "L_typ_m": 10.0,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng đỉnh đập chắn nước công trình thủy lợi / thủy điện (từ đập nhỏ 6m đến mặt đường 2 làn trên đỉnh đập bê tông 10m)",
+      "standard_source": "USACE EM 1110-2-2200 (Gravity Dam Design, Section 3-3: Crest Width) / ICOLD",
+      "reference_url": "https://www.publications.usace.army.mil/USACE-Publications/Engineer-Manuals/"
+    },
+    {
+      "class_id": "windmill",
+      "L_min_m": 40.0,
+      "L_typ_m": 100.0,
+      "critical_dimension_type": "diameter",
+      "critical_dimension_desc": "Đường kính quét của 3 cánh tuabin gió phát điện (từ tuabin dưới 1MW 40m đến tuabin 2.5-3MW thương mại 100m)",
+      "standard_source": "IEC 61400-1 (Wind energy generation systems — Part 1: Design requirements)",
+      "reference_url": "https://webstore.iec.ch/publication/63704"
+    },
+    {
+      "class_id": "pylon",
+      "L_min_m": 6.0,
+      "L_typ_m": 18.0,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng sải xà ngang đỡ dây dẫn điện cao thế (từ cột đỡ 110kV 6m đến cột truyền tải 500kV 18m)",
+      "standard_source": "IEEE Standard 691 / ASCE 10-15 (Design of Latticed Steel Transmission Structures)",
+      "reference_url": "https://standards.ieee.org/ieee/691/3860/"
+    },
+    {
+      "class_id": "tower",
+      "L_min_m": 4.0,
+      "L_typ_m": 10.0,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng cạnh đáy khung giàn thép tháp viễn thông tự đứng (từ tháp 30-40m đáy 4m đến tháp 60-100m đáy 10m)",
+      "standard_source": "ANSI/TIA-222-H (Structural Standard for Antenna Supporting Structures)",
+      "reference_url": "https://tiaonline.org/standards/"
+    },
+    {
+      "class_id": "building",
+      "L_min_m": 6.0,
+      "L_typ_m": 25.0,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng nhỏ nhất cạnh đáy tòa nhà xây dựng (từ nhà ở riêng lẻ 6m đến tòa nhà chung cư/văn phòng 25m)",
+      "standard_source": "International Building Code (IBC 2021) / IRC Habitable Structures",
+      "reference_url": "https://codes.iccsafe.org/content/IBC2021P1"
+    },
+    {
+      "class_id": "shed",
+      "L_min_m": 2.5,
+      "L_typ_m": 6.0,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng nhà kho tạm / công trình phụ trợ một tầng (từ kho làm vườn 2.5m đến nhà kho nông nghiệp 6m)",
+      "standard_source": "International Residential Code (IRC 2021, Section R105.2: Accessory Structures)",
+      "reference_url": "https://codes.iccsafe.org/content/IRC2021P1"
+    },
+    {
+      "class_id": "hut_tent",
+      "L_min_m": 2.5,
+      "L_typ_m": 4.0,
+      "critical_dimension_type": "width",
+      "critical_dimension_desc": "Bề rộng chòi lều tạm cứu trợ khẩn cấp (từ lều dã chiến nhỏ 2.5m đến lều gia đình tiêu chuẩn UNHCR 4.0m x 4.0m)",
+      "standard_source": "UNHCR Emergency Shelter Guidelines & Sphere Handbook (Shelter Standard 2)",
+      "reference_url": "https://emergency.unhcr.org/emergency-assistance/shelter-and-settlement/shelter-solutions/tents"
+    },
+    {
+      "class_id": "damaged_building",
+      "L_min_m": 6.0,
+      "L_typ_m": 25.0,
+      "critical_dimension_type": "extent",
+      "critical_dimension_desc": "Phạm vi vùng đổ sụp / đống đổ nát của công trình bị hư hại do thiên tai / chiến sự",
+      "standard_source": "FEMA Urban Search and Rescue (US&R) Field Operations Guide / xView",
+      "reference_url": "https://www.fema.gov/"
+    },
+    {
+      "class_id": "facility",
+      "L_min_m": 30.0,
+      "L_typ_m": 100.0,
+      "critical_dimension_type": "extent",
+      "critical_dimension_desc": "Bề rộng khuôn viên phân khu phức hợp cơ sở công nghiệp / thương mại",
+      "standard_source": "Industrial Facility Site Planning Standards (APA) / xView Specifications",
+      "reference_url": "https://www.planning.org/"
+    },
+    {
+      "class_id": "construction_site",
+      "L_min_m": 25.0,
+      "L_typ_m": 100.0,
+      "critical_dimension_type": "extent",
+      "critical_dimension_desc": "Bề rộng mặt bằng khu vực thi công xây dựng đang hoạt động (Site active zone footprint extent)",
+      "standard_source": "OSHA Construction Guidelines (29 CFR 1926) / xView Dataset Specifications",
+      "reference_url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926"
+    }
+  ],
+  "images": [
+    {
+      "path": "images\\dota_P1053.jpg",
+      "width": 1024,
+      "height": 1024,
+      "format": "JPEG",
+      "exif_fields": 0,
+      "metadata_keys": [
+        "jfif",
+        "jfif_version",
+        "jfif_unit",
+        "jfif_density"
+      ]
+    },
+    {
+      "path": "images\\dota_P1142.jpg",
+      "width": 1024,
+      "height": 1024,
+      "format": "JPEG",
+      "exif_fields": 0,
+      "metadata_keys": [
+        "jfif",
+        "jfif_version",
+        "jfif_unit",
+        "jfif_density"
+      ]
+    },
+    {
+      "path": "images\\dota_P1470.jpg",
+      "width": 1024,
+      "height": 1024,
+      "format": "JPEG",
+      "exif_fields": 0,
+      "metadata_keys": [
+        "jfif",
+        "jfif_version",
+        "jfif_unit",
+        "jfif_density"
+      ]
+    }
+  ],
+  "questions": {
+    "count": 7,
+    "kind_counts": {
+      "Q1": 1,
+      "Q2": 1,
+      "Q3-HF": 1,
+      "Q3-LF": 1,
+      "Q4": 1,
+      "Q5": 1,
+      "Q6": 1
+    },
+    "jsonl_equal": true,
+    "duplicate_ids": [],
+    "invalid_class_ids": [],
+    "answer_not_in_choices": [],
+    "missing_images": [],
+    "image_gsd_values": {
+      "images/dota_P1142.jpg": [
+        0.25
+      ],
+      "images/dota_P1053.jpg": [
+        0.25,
+        0.3
+      ],
+      "images/dota_P1470.jpg": [
+        0.3
+      ]
+    },
+    "field_coverage": {
+      "id": 7,
+      "kind": 7,
+      "image_path": 7,
+      "gsd_m": 7,
+      "question": 7,
+      "choices": 7,
+      "answer": 7,
+      "class_id": 7,
+      "target_box_xyxy": 7,
+      "L_m": 7,
+      "rho_px": 7,
+      "p0_U_px": 7,
+      "answerable_by_sensor": 7,
+      "rho_tok": 7,
+      "isolation_flag": 7,
+      "confused_present_class": 1,
+      "target_cell": 5,
+      "unanswerable_reason": 1
+    },
+    "answer_positions": [
+      {
+        "kind": "Q1",
+        "index_0based": 0
+      },
+      {
+        "kind": "Q2",
+        "index_0based": 1
+      },
+      {
+        "kind": "Q3-HF",
+        "index_0based": 1
+      },
+      {
+        "kind": "Q3-LF",
+        "index_0based": 0
+      },
+      {
+        "kind": "Q4",
+        "index_0based": 1
+      },
+      {
+        "kind": "Q5",
+        "index_0based": 1
+      },
+      {
+        "kind": "Q6",
+        "index_0based": 2
+      }
+    ]
+  },
+  "parser_map_differences": [
+    {
+      "id": 1,
+      "production": "ship",
+      "test": "baseball_diamond"
+    },
+    {
+      "id": 2,
+      "production": "storage_tank",
+      "test": "bridge"
+    },
+    {
+      "id": 3,
+      "production": "baseball_diamond",
+      "test": "ground_track_field"
+    },
+    {
+      "id": 4,
+      "production": "tennis_court",
+      "test": "small_vehicle"
+    },
+    {
+      "id": 5,
+      "production": "basketball_court",
+      "test": "large_vehicle"
+    },
+    {
+      "id": 6,
+      "production": "ground_track_field",
+      "test": "ship"
+    },
+    {
+      "id": 7,
+      "production": "harbor",
+      "test": "tennis_court"
+    },
+    {
+      "id": 8,
+      "production": "bridge",
+      "test": "basketball_court"
+    },
+    {
+      "id": 9,
+      "production": "large_vehicle",
+      "test": "storage_tank"
+    },
+    {
+      "id": 10,
+      "production": "small_vehicle",
+      "test": "soccer_ball_field"
+    },
+    {
+      "id": 11,
+      "production": "helicopter",
+      "test": "roundabout"
+    },
+    {
+      "id": 12,
+      "production": "roundabout",
+      "test": "harbor"
+    },
+    {
+      "id": 13,
+      "production": "soccer_ball_field",
+      "test": "swimming_pool"
+    },
+    {
+      "id": 14,
+      "production": "swimming_pool",
+      "test": "helicopter"
+    },
+    {
+      "id": 15,
+      "production": "container_crane",
+      "test": null
+    },
+    {
+      "id": 16,
+      "production": "airport",
+      "test": null
+    },
+    {
+      "id": 17,
+      "production": "helipad",
+      "test": null
+    }
+  ],
+  "objects": {
+    "dota_P1053": [
+      {
+        "obj_idx": 0,
+        "class_id": "small_vehicle",
+        "pts": [
+          [
+            170.000384,
+            504.000512
+          ],
+          [
+            153.99936,
+            513.000448
+          ],
+          [
+            135.999488,
+            478.999552
+          ],
+          [
+            152.000512,
+            468.999168
+          ]
+        ],
+        "bbox": [
+          136.0,
+          469.0,
+          170.0,
+          513.0
+        ],
+        "center": [
+          153.0,
+          491.2
+        ],
+        "cell": "A2",
+        "major_len_px": 38.5,
+        "minor_len_px": 18.4,
+        "angle_deg": 62.1,
+        "direction": "Đông Bắc - Tây Nam"
+      },
+      {
+        "obj_idx": 1,
+        "class_id": "small_vehicle",
+        "pts": [
+          [
+            282.999808,
+            184.000512
+          ],
+          [
+            267.000832,
+            192.999424
+          ],
+          [
+            250.999808,
+            160.001024
+          ],
+          [
+            268.000256,
+            150.00064
+          ]
+        ],
+        "bbox": [
+          251.0,
+          150.0,
+          283.0,
+          193.0
+        ],
+        "center": [
+          267.3,
+          171.8
+        ],
+        "cell": "A1",
+        "major_len_px": 36.7,
+        "minor_len_px": 18.4,
+        "angle_deg": 64.1,
+        "direction": "Đông Bắc - Tây Nam"
+      },
+      {
+        "obj_idx": 2,
+        "class_id": "small_vehicle",
+        "pts": [
+          [
+            284.99968,
+            328.999936
+          ],
+          [
+            269.999104,
+            339.00032
+          ],
+          [
+            252.99968,
+            309.000192
+          ],
+          [
+            267.000832,
+            298.999808
+          ]
+        ],
+        "bbox": [
+          253.0,
+          299.0,
+          285.0,
+          339.0
+        ],
+        "center": [
+          268.7,
+          319.0
+        ],
+        "cell": "A1",
+        "major_len_px": 34.5,
+        "minor_len_px": 18.0,
+        "angle_deg": 60.5,
+        "direction": "Đông Bắc - Tây Nam"
+      },
+      {
+        "obj_idx": 3,
+        "class_id": "small_vehicle",
+        "pts": [
+          [
+            188.000256,
+            231.000064
+          ],
+          [
+            173.000704,
+            237.000704
+          ],
+          [
+            164.000768,
+            210.999296
+          ],
+          [
+            177.999872,
+            204.99968
+          ]
+        ],
+        "bbox": [
+          164.0,
+          205.0,
+          188.0,
+          237.0
+        ],
+        "center": [
+          175.8,
+          221.0
+        ],
+        "cell": "A1",
+        "major_len_px": 27.5,
+        "minor_len_px": 16.2,
+        "angle_deg": 70.9,
+        "direction": "Đông Bắc - Tây Nam"
+      },
+      {
+        "obj_idx": 4,
+        "class_id": "swimming_pool",
+        "pts": [
+          [
+            519.000064,
+            166.00064
+          ],
+          [
+            705.999872,
+            172.99968
+          ],
+          [
+            698.999808,
+            305.999872
+          ],
+          [
+            510.999552,
+            295.999488
+          ]
+        ],
+        "bbox": [
+          511.0,
+          166.0,
+          706.0,
+          306.0
+        ],
+        "center": [
+          608.7,
+          235.2
+        ],
+        "cell": "B1",
+        "major_len_px": 187.1,
+        "minor_len_px": 133.2,
+        "angle_deg": 2.1,
+        "direction": "Đông Bắc - Tây Nam"
+      },
+      {
+        "obj_idx": 5,
+        "class_id": "tennis_court",
+        "pts": [
+          [
+            835.999744,
+            220.99968
+          ],
+          [
+            922.000384,
+            227.00032
+          ],
+          [
+            910.999552,
+            405.999616
+          ],
+          [
+            827.999232,
+            401.000448
+          ]
+        ],
+        "bbox": [
+          828.0,
+          221.0,
+          922.0,
+          406.0
+        ],
+        "center": [
+          874.2,
+          313.8
+        ],
+        "cell": "C1",
+        "major_len_px": 179.3,
+        "minor_len_px": 86.2,
+        "angle_deg": 93.5,
+        "direction": "Tây Bắc - Đông Nam"
+      },
+      {
+        "obj_idx": 6,
+        "class_id": "tennis_court",
+        "pts": [
+          [
+            924.99968,
+            558.999552
+          ],
+          [
+            1010.999296,
+            563.00032
+          ],
+          [
+            1001.99936,
+            744.999936
+          ],
+          [
+            912.999424,
+            739.00032
+          ]
+        ],
+        "bbox": [
+          913.0,
+          559.0,
+          1011.0,
+          745.0
+        ],
+        "center": [
+          962.7,
+          651.5
+        ],
+        "cell": "C2",
+        "major_len_px": 182.2,
+        "minor_len_px": 86.1,
+        "angle_deg": 92.8,
+        "direction": "Tây Bắc - Đông Nam"
+      },
+      {
+        "obj_idx": 7,
+        "class_id": "tennis_court",
+        "pts": [
+          [
+            790.00064,
+            519.000064
+          ],
+          [
+            873.99936,
+            522.999808
+          ],
+          [
+            864.999424,
+            704.0
+          ],
+          [
+            778.999808,
+            700.000256
+          ]
+        ],
+        "bbox": [
+          779.0,
+          519.0,
+          874.0,
+          704.0
+        ],
+        "center": [
+          827.0,
+          611.5
+        ],
+        "cell": "C2",
+        "major_len_px": 181.2,
+        "minor_len_px": 84.1,
+        "angle_deg": 92.8,
+        "direction": "Tây Bắc - Đông Nam"
+      },
+      {
+        "obj_idx": 8,
+        "class_id": "tennis_court",
+        "pts": [
+          [
+            652.000256,
+            510.000128
+          ],
+          [
+            736.999424,
+            516.000768
+          ],
+          [
+            727.000064,
+            696.000512
+          ],
+          [
+            641.000448,
+            690.000896
+          ]
+        ],
+        "bbox": [
+          641.0,
+          510.0,
+          737.0,
+          696.0
+        ],
+        "center": [
+          689.3,
+          603.0
+        ],
+        "cell": "C2",
+        "major_len_px": 180.3,
+        "minor_len_px": 85.2,
+        "angle_deg": 93.2,
+        "direction": "Tây Bắc - Đông Nam"
+      },
+      {
+        "obj_idx": 9,
+        "class_id": "tennis_court",
+        "pts": [
+          [
+            512.999424,
+            528.999424
+          ],
+          [
+            599.000064,
+            534.00064
+          ],
+          [
+            588.99968,
+            714.999808
+          ],
+          [
+            503.000064,
+            709.000192
+          ]
+        ],
+        "bbox": [
+          503.0,
+          529.0,
+          599.0,
+          715.0
+        ],
+        "center": [
+          551.0,
+          621.8
+        ],
+        "cell": "B2",
+        "major_len_px": 181.3,
+        "minor_len_px": 86.1,
+        "angle_deg": 93.2,
+        "direction": "Tây Bắc - Đông Nam"
+      },
+      {
+        "obj_idx": 10,
+        "class_id": "tennis_court",
+        "pts": [
+          [
+            375.000064,
+            522.000384
+          ],
+          [
+            462.001152,
+            528.0
+          ],
+          [
+            451.999744,
+            707.00032
+          ],
+          [
+            365.000704,
+            700.000256
+          ]
+        ],
+        "bbox": [
+          365.0,
+          522.0,
+          462.0,
+          707.0
+        ],
+        "center": [
+          413.5,
+          614.3
+        ],
+        "cell": "B2",
+        "major_len_px": 179.3,
+        "minor_len_px": 87.2,
+        "angle_deg": 93.2,
+        "direction": "Tây Bắc - Đông Nam"
+      },
+      {
+        "obj_idx": 11,
+        "class_id": "tennis_court",
+        "pts": [
+          [
+            229.999616,
+            661.999616
+          ],
+          [
+            314.999808,
+            666.999808
+          ],
+          [
+            305.000448,
+            848.0
+          ],
+          [
+            220.000256,
+            840.999936
+          ]
+        ],
+        "bbox": [
+          220.0,
+          662.0,
+          315.0,
+          848.0
+        ],
+        "center": [
+          267.5,
+          754.5
+        ],
+        "cell": "A3",
+        "major_len_px": 181.3,
+        "minor_len_px": 85.1,
+        "angle_deg": 93.2,
+        "direction": "Tây Bắc - Đông Nam"
+      },
+      {
+        "obj_idx": 12,
+        "class_id": "tennis_court",
+        "pts": [
+          [
+            94.9999616,
+            654.000128
+          ],
+          [
+            179.999744,
+            660.000768
+          ],
+          [
+            168.999936,
+            839.999488
+          ],
+          [
+            82.0000768,
+            835.00032
+          ]
+        ],
+        "bbox": [
+          82.0,
+          654.0,
+          180.0,
+          840.0
+        ],
+        "center": [
+          131.5,
+          747.3
+        ],
+        "cell": "A3",
+        "major_len_px": 180.3,
+        "minor_len_px": 85.2,
+        "angle_deg": 93.5,
+        "direction": "Tây Bắc - Đông Nam"
+      }
+    ],
+    "dota_P1142": [
+      {
+        "obj_idx": 0,
+        "class_id": "airplane",
+        "pts": [
+          [
+            797.999104,
+            706.999296
+          ],
+          [
+            640.999424,
+            461.999104
+          ],
+          [
+            911.0016,
+            272.999424
+          ],
+          [
+            1066.99776,
+            527.0016
+          ]
+        ],
+        "bbox": [
+          641.0,
+          273.0,
+          1024.0,
+          707.0
+        ],
+        "center": [
+          854.2,
+          492.2
+        ],
+        "cell": "C2",
+        "major_len_px": 329.6,
+        "minor_len_px": 291.0,
+        "angle_deg": 145.0,
+        "direction": "Tây Bắc - Đông Nam"
+      }
+    ],
+    "dota_P1470": [
+      {
+        "obj_idx": 0,
+        "class_id": "soccer_ball_field",
+        "pts": [
+          [
+            247.002112,
+            19.0002176
+          ],
+          [
+            652.00128,
+            19.0002176
+          ],
+          [
+            652.00128,
+            287.996928
+          ],
+          [
+            247.002112,
+            287.996928
+          ]
+        ],
+        "bbox": [
+          247.0,
+          19.0,
+          652.0,
+          288.0
+        ],
+        "center": [
+          449.5,
+          153.5
+        ],
+        "cell": "B1",
+        "major_len_px": 405.0,
+        "minor_len_px": 269.0,
+        "angle_deg": 0.0,
+        "direction": "Đông Bắc - Tây Nam"
+      },
+      {
+        "obj_idx": 1,
+        "class_id": "basketball_court",
+        "pts": [
+          [
+            674.998272,
+            20.998144
+          ],
+          [
+            798.001152,
+            20.998144
+          ],
+          [
+            798.001152,
+            235.00288
+          ],
+          [
+            674.998272,
+            235.00288
+          ]
+        ],
+        "bbox": [
+          675.0,
+          21.0,
+          798.0,
+          235.0
+        ],
+        "center": [
+          736.5,
+          128.0
+        ],
+        "cell": "C1",
+        "major_len_px": 214.0,
+        "minor_len_px": 123.0,
+        "angle_deg": 90.0,
+        "direction": "Tây Bắc - Đông Nam"
+      },
+      {
+        "obj_idx": 2,
+        "class_id": "basketball_court",
+        "pts": [
+          [
+            799.997952,
+            20.998144
+          ],
+          [
+            923.997184,
+            20.998144
+          ],
+          [
+            923.997184,
+            235.00288
+          ],
+          [
+            799.997952,
+            235.00288
+          ]
+        ],
+        "bbox": [
+          800.0,
+          21.0,
+          924.0,
+          235.0
+        ],
+        "center": [
+          862.0,
+          128.0
+        ],
+        "cell": "C1",
+        "major_len_px": 214.0,
+        "minor_len_px": 124.0,
+        "angle_deg": 90.0,
+        "direction": "Tây Bắc - Đông Nam"
+      },
+      {
+        "obj_idx": 3,
+        "class_id": "basketball_court",
+        "pts": [
+          [
+            927.002624,
+            19.0002176
+          ],
+          [
+            1046.99904,
+            19.0002176
+          ],
+          [
+            1046.99904,
+            232.998912
+          ],
+          [
+            927.002624,
+            232.998912
+          ]
+        ],
+        "bbox": [
+          927.0,
+          19.0,
+          1024.0,
+          233.0
+        ],
+        "center": [
+          987.0,
+          126.0
+        ],
+        "cell": "C1",
+        "major_len_px": 214.0,
+        "minor_len_px": 120.0,
+        "angle_deg": 90.0,
+        "direction": "Tây Bắc - Đông Nam"
+      }
+    ]
+  },
+  "actual_question_geometry": [
+    {
+      "kind": "Q1",
+      "rho_from_json": 136.44,
+      "bbox_minor_px": [
+        291.0
+      ],
+      "aspect_ratios": [
+        0.8829
+      ]
+    },
+    {
+      "kind": "Q2",
+      "rho_from_json": 50.0,
+      "bbox_minor_px": [],
+      "aspect_ratios": []
+    },
+    {
+      "kind": "Q3-HF",
+      "rho_from_json": 136.44,
+      "bbox_minor_px": [
+        291.0
+      ],
+      "aspect_ratios": [
+        0.8829
+      ]
+    },
+    {
+      "kind": "Q3-LF",
+      "rho_from_json": 83.33,
+      "bbox_minor_px": [
+        133.2
+      ],
+      "aspect_ratios": [
+        0.7119
+      ]
+    },
+    {
+      "kind": "Q4",
+      "rho_from_json": 6.0,
+      "bbox_minor_px": [
+        18.4,
+        18.0,
+        16.2
+      ],
+      "aspect_ratios": [
+        0.5014,
+        0.5217,
+        0.5891
+      ]
+    },
+    {
+      "kind": "Q5",
+      "rho_from_json": 50.8,
+      "bbox_minor_px": [
+        124.0
+      ],
+      "aspect_ratios": [
+        0.5794
+      ]
+    },
+    {
+      "kind": "Q6",
+      "rho_from_json": 7.2,
+      "bbox_minor_px": [
+        18.4
+      ],
+      "aspect_ratios": [
+        0.4779
+      ]
+    }
+  ],
+  "behavior_checks": {
+    "q2_fallback": {
+      "input": "controlled basketball-only subset of real P1470 labels",
+      "answer": "Không",
+      "queried_class": "basketball_court",
+      "annotated_instances": 3
+    },
+    "q6_below_band": {
+      "rho_px": 3.6,
+      "p0_U_px": 12.0,
+      "answer": "Xe sedan",
+      "answerable_by_sensor": true,
+      "unanswerable_reason": "0.5*p0_U <= rho_px < p0_U (Độ phân giải cảm biến 7.2px < 12.0px, không đủ số chu kỳ điểm ảnh để phân biệt chi tiết loại con)"
+    },
+    "q5_two_objects": {
+      "answer_box": [
+        675.0,
+        21.0,
+        798.0,
+        235.0
+      ],
+      "leftmost_box": [
+        675.0,
+        21.0,
+        798.0,
+        235.0
+      ],
+      "requested_rank": 2
+    },
+    "generate_q4_single_object_error": "ValueError: min() iterable argument is empty",
+    "generate_q5_single_object_error": "IndexError: list index out of range"
+  }
+}
