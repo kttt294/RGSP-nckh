@@ -1,0 +1,315 @@
+{
+  "requested_per_kind": 1,
+  "selected_counts": {
+    "Q1": 1,
+    "Q2": 1,
+    "Q3-HF": 1,
+    "Q3-LF": 1,
+    "Q4": 1,
+    "Q5": 1,
+    "Q6": 1
+  },
+  "complete": true,
+  "configuration_issues": [],
+  "input_errors": [],
+  "image_provenance": [
+    {
+      "image": "images/dota_P1053.jpg",
+      "size_px": [1024, 1024],
+      "gsd_reference_m": 0.3,
+      "display_to_reference_scale": 1.0,
+      "source_gsd_m": 0.3,
+      "native_to_image_scale": 1.0,
+      "resampling_method": null,
+      "gsd_source": "Metadata header trong labels/dota_P1053.txt",
+      "gsd_metadata_path": null,
+      "pixel_scale_source": "raw dataset image (identity, scale=1.0)",
+      "label_path": "labels/dota_P1053.txt",
+      "label_format": "yolo_obb"
+    },
+    {
+      "image": "images/dota_P1142.jpg",
+      "size_px": [1024, 1024],
+      "gsd_reference_m": 0.25,
+      "display_to_reference_scale": 1.0,
+      "source_gsd_m": 0.25,
+      "native_to_image_scale": 1.0,
+      "resampling_method": null,
+      "gsd_source": "Metadata header trong labels/dota_P1142.txt",
+      "gsd_metadata_path": null,
+      "pixel_scale_source": "raw dataset image (identity, scale=1.0)",
+      "label_path": "labels/dota_P1142.txt",
+      "label_format": "yolo_obb"
+    },
+    {
+      "image": "images/dota_P1470.jpg",
+      "size_px": [1024, 1024],
+      "gsd_reference_m": 0.3,
+      "display_to_reference_scale": 1.0,
+      "source_gsd_m": 0.3,
+      "native_to_image_scale": 1.0,
+      "resampling_method": null,
+      "gsd_source": "Metadata header trong labels/dota_P1470.txt",
+      "gsd_metadata_path": null,
+      "pixel_scale_source": "raw dataset image (identity, scale=1.0)",
+      "label_path": "labels/dota_P1470.txt",
+      "label_format": "yolo_obb"
+    }
+  ],
+  "rejection_counts": {
+    "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation": 24,
+    "Hướng gần ranh giới hai bin chéo, nhãn mơ hồ": 2,
+    "Thiếu màu đã kiểm trên ảnh tham chiếu mịn cho target": 3,
+    "Cần ít nhất 2 instance để sinh Q4 theo giao thức hiện tại": 5,
+    "Hỏi vật thể thứ hai nên cần ít nhất 2 instance": 5,
+    "Không có candidate": 1,
+    "OBB gần vuông: cạnh ngắn/cạnh dài > 0.8": 1,
+    "Thiếu khoảng cách láng giềng theo token từ view tham chiếu": 7
+  },
+  "rejections": [
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q1",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q1",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-HF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-HF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-HF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-HF",
+      "reason": "Hướng gần ranh giới hai bin chéo, nhãn mơ hồ"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-HF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-HF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-HF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-HF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-HF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-HF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-HF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-HF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-LF",
+      "reason": "Thiếu màu đã kiểm trên ảnh tham chiếu mịn cho target"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-LF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-LF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-LF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-LF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-LF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-LF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-LF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-LF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-LF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-LF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q3-LF",
+      "reason": "Q1-iso/Q3 yêu cầu tối đa 3 instance cùng lớp hoặc có review isolation"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q4",
+      "reason": "Cần ít nhất 2 instance để sinh Q4 theo giao thức hiện tại"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q4",
+      "reason": "Cần ít nhất 2 instance để sinh Q4 theo giao thức hiện tại"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q4",
+      "reason": "Cần ít nhất 2 instance để sinh Q4 theo giao thức hiện tại"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q5",
+      "reason": "Hỏi vật thể thứ hai nên cần ít nhất 2 instance"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q5",
+      "reason": "Hỏi vật thể thứ hai nên cần ít nhất 2 instance"
+    },
+    {
+      "image": "images/dota_P1053.jpg",
+      "kind": "Q5",
+      "reason": "Hỏi vật thể thứ hai nên cần ít nhất 2 instance"
+    },
+    {
+      "image": "images/dota_P1142.jpg",
+      "kind": "Q2",
+      "reason": "Không có candidate"
+    },
+    {
+      "image": "images/dota_P1142.jpg",
+      "kind": "Q3-HF",
+      "reason": "OBB gần vuông: cạnh ngắn/cạnh dài > 0.8"
+    },
+    {
+      "image": "images/dota_P1142.jpg",
+      "kind": "Q3-LF",
+      "reason": "Thiếu màu đã kiểm trên ảnh tham chiếu mịn cho target"
+    },
+    {
+      "image": "images/dota_P1142.jpg",
+      "kind": "Q4",
+      "reason": "Cần ít nhất 2 instance để sinh Q4 theo giao thức hiện tại"
+    },
+    {
+      "image": "images/dota_P1142.jpg",
+      "kind": "Q5",
+      "reason": "Hỏi vật thể thứ hai nên cần ít nhất 2 instance"
+    },
+    {
+      "image": "images/dota_P1470.jpg",
+      "kind": "Q1",
+      "reason": "Thiếu khoảng cách láng giềng theo token từ view tham chiếu"
+    },
+    {
+      "image": "images/dota_P1470.jpg",
+      "kind": "Q3-HF",
+      "reason": "Hướng gần ranh giới hai bin chéo, nhãn mơ hồ"
+    },
+    {
+      "image": "images/dota_P1470.jpg",
+      "kind": "Q3-HF",
+      "reason": "Thiếu khoảng cách láng giềng theo token từ view tham chiếu"
+    },
+    {
+      "image": "images/dota_P1470.jpg",
+      "kind": "Q3-HF",
+      "reason": "Thiếu khoảng cách láng giềng theo token từ view tham chiếu"
+    },
+    {
+      "image": "images/dota_P1470.jpg",
+      "kind": "Q3-HF",
+      "reason": "Thiếu khoảng cách láng giềng theo token từ view tham chiếu"
+    },
+    {
+      "image": "images/dota_P1470.jpg",
+      "kind": "Q3-LF",
+      "reason": "Thiếu màu đã kiểm trên ảnh tham chiếu mịn cho target"
+    },
+    {
+      "image": "images/dota_P1470.jpg",
+      "kind": "Q3-LF",
+      "reason": "Thiếu khoảng cách láng giềng theo token từ view tham chiếu"
+    },
+    {
+      "image": "images/dota_P1470.jpg",
+      "kind": "Q3-LF",
+      "reason": "Thiếu khoảng cách láng giềng theo token từ view tham chiếu"
+    },
+    {
+      "image": "images/dota_P1470.jpg",
+      "kind": "Q3-LF",
+      "reason": "Thiếu khoảng cách láng giềng theo token từ view tham chiếu"
+    },
+    {
+      "image": "images/dota_P1470.jpg",
+      "kind": "Q4",
+      "reason": "Cần ít nhất 2 instance để sinh Q4 theo giao thức hiện tại"
+    },
+    {
+      "image": "images/dota_P1470.jpg",
+      "kind": "Q5",
+      "reason": "Hỏi vật thể thứ hai nên cần ít nhất 2 instance"
+    }
+  ],
+  "rejections_truncated": false,
+  "calibration_id": "RS-CALIB-001",
+  "note": "Q2 isolation_flag=not_applicable. Với ảnh giảm mẫu có kiểm soát, gsd_m/rho_px dùng mức lấy mẫu mới; nguồn và phép biến đổi ở image_provenance.",
+  "qa_written": true
+}

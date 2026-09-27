@@ -1,0 +1,36 @@
+{
+  "seed": 42,
+  "calibration": {
+    "id": "RS-CALIB-001",
+    "status": "calibrated",
+    "source": "Thực nghiệm hiệu chỉnh tâm vật lý RS-Solve",
+    "thresholds_px": {
+      "detection": 6.0,
+      "hard_negative": 8.0,
+      "orientation": 12.0,
+      "color_lf": 4.0,
+      "counting": 25.0,
+      "grounding": 5.0
+    }
+  },
+  "images": {
+    "images/dota_P1053.jpg": {
+      "color_reviews": {
+        "6": {
+          "status": "verified",
+          "value": "Màu xanh dương",
+          "source": "Kiểm tra trực quan ảnh tham chiếu mịn"
+        }
+      },
+      "isolation_reviews": {
+        "2": {
+          "nearest_same_class_tokens": 14.8,
+          "reference_view": "ViT-14",
+          "source": "Khoảng cách đo được 207px / 14px = 14.8 tokens"
+        }
+      }
+    },
+    "images/dota_P1142.jpg": {},
+    "images/dota_P1470.jpg": {}
+  }
+}
