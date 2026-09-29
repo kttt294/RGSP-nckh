@@ -417,8 +417,9 @@ def make_sample(scene, kind, cid, box, rho, p0, question, options, truth, flag, 
     if truth not in options or ABSTAIN in options or len(set(options)) != len(options):
         raise InvalidInput("Lựa chọn không hợp lệ hoặc thiếu đáp án sự thật")
     answerable = rho >= p0
+    prompt = (GRID_PREFIX + question) if cell is not None else question
     q = {"id": "", "kind": kind, "image_path": scene.image_path, "gsd_m": scene.gsd_m,
-         "question": GRID_PREFIX + question, "choices": list(options) + [ABSTAIN],
+         "question": prompt, "choices": list(options) + [ABSTAIN],
          "answer": truth if answerable else ABSTAIN, "class_id": cid,
          "target_box_xyxy": None if box is None else [round(v, 3) for v in box],
          "L_m": rho * scene.gsd_m if L_m is None else L_m,

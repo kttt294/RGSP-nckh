@@ -1,0 +1,810 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20881.jpg",
+        "type_id": 6,
+        "bounds_imcoords": "82,326,93,343"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              82,
+              326
+            ],
+            [
+              93,
+              326
+            ],
+            [
+              93,
+              343
+            ],
+            [
+              82,
+              343
+            ],
+            [
+              82,
+              326
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20881.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "155,344,177,355"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              155,
+              344
+            ],
+            [
+              177,
+              344
+            ],
+            [
+              177,
+              355
+            ],
+            [
+              155,
+              355
+            ],
+            [
+              155,
+              344
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20881.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "154,416,170,429"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              154,
+              416
+            ],
+            [
+              170,
+              416
+            ],
+            [
+              170,
+              429
+            ],
+            [
+              154,
+              429
+            ],
+            [
+              154,
+              416
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20881.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "169,402,184,413"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              169,
+              402
+            ],
+            [
+              184,
+              402
+            ],
+            [
+              184,
+              413
+            ],
+            [
+              169,
+              413
+            ],
+            [
+              169,
+              402
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20881.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "234,375,256,388"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              234,
+              375
+            ],
+            [
+              256,
+              375
+            ],
+            [
+              256,
+              388
+            ],
+            [
+              234,
+              388
+            ],
+            [
+              234,
+              375
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20881.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "256,385,278,395"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              256,
+              385
+            ],
+            [
+              278,
+              385
+            ],
+            [
+              278,
+              395
+            ],
+            [
+              256,
+              395
+            ],
+            [
+              256,
+              385
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20881.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "313,406,331,415"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              313,
+              406
+            ],
+            [
+              331,
+              406
+            ],
+            [
+              331,
+              415
+            ],
+            [
+              313,
+              415
+            ],
+            [
+              313,
+              406
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20881.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "430,310,451,319"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              430,
+              310
+            ],
+            [
+              451,
+              310
+            ],
+            [
+              451,
+              319
+            ],
+            [
+              430,
+              319
+            ],
+            [
+              430,
+              310
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20881.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "342,416,362,426"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              342,
+              416
+            ],
+            [
+              362,
+              416
+            ],
+            [
+              362,
+              426
+            ],
+            [
+              342,
+              426
+            ],
+            [
+              342,
+              416
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20881.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "365,425,388,437"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              365,
+              425
+            ],
+            [
+              388,
+              425
+            ],
+            [
+              388,
+              437
+            ],
+            [
+              365,
+              437
+            ],
+            [
+              365,
+              425
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20881.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "451,459,471,470"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              451,
+              459
+            ],
+            [
+              471,
+              459
+            ],
+            [
+              471,
+              470
+            ],
+            [
+              451,
+              470
+            ],
+            [
+              451,
+              459
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20881.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "491,475,510,486"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              491,
+              475
+            ],
+            [
+              510,
+              475
+            ],
+            [
+              510,
+              486
+            ],
+            [
+              491,
+              486
+            ],
+            [
+              491,
+              475
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20881.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "60,171,83,183"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              60,
+              171
+            ],
+            [
+              83,
+              171
+            ],
+            [
+              83,
+              183
+            ],
+            [
+              60,
+              183
+            ],
+            [
+              60,
+              171
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20881.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "240,223,266,236"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              240,
+              223
+            ],
+            [
+              266,
+              223
+            ],
+            [
+              266,
+              236
+            ],
+            [
+              240,
+              236
+            ],
+            [
+              240,
+              223
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20881.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "442,129,458,141"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              442,
+              129
+            ],
+            [
+              458,
+              129
+            ],
+            [
+              458,
+              141
+            ],
+            [
+              442,
+              141
+            ],
+            [
+              442,
+              129
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20881.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "495,314,512,326"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              495,
+              314
+            ],
+            [
+              512,
+              314
+            ],
+            [
+              512,
+              326
+            ],
+            [
+              495,
+              326
+            ],
+            [
+              495,
+              314
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20882.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "20,310,41,319"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              20,
+              310
+            ],
+            [
+              41,
+              310
+            ],
+            [
+              41,
+              319
+            ],
+            [
+              20,
+              319
+            ],
+            [
+              20,
+              310
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20882.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "41,459,61,470"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              41,
+              459
+            ],
+            [
+              61,
+              459
+            ],
+            [
+              61,
+              470
+            ],
+            [
+              41,
+              470
+            ],
+            [
+              41,
+              459
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20882.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "81,475,100,486"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              81,
+              475
+            ],
+            [
+              100,
+              475
+            ],
+            [
+              100,
+              486
+            ],
+            [
+              81,
+              486
+            ],
+            [
+              81,
+              475
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20882.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "480,468,506,477"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              480,
+              468
+            ],
+            [
+              506,
+              468
+            ],
+            [
+              506,
+              477
+            ],
+            [
+              480,
+              477
+            ],
+            [
+              480,
+              468
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20882.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "32,129,48,141"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              32,
+              129
+            ],
+            [
+              48,
+              129
+            ],
+            [
+              48,
+              141
+            ],
+            [
+              32,
+              141
+            ],
+            [
+              32,
+              129
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20882.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "85,314,107,326"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              85,
+              314
+            ],
+            [
+              107,
+              314
+            ],
+            [
+              107,
+              326
+            ],
+            [
+              85,
+              326
+            ],
+            [
+              85,
+              314
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "image_id": "xview_20882.jpg",
+        "type_id": 5,
+        "bounds_imcoords": "106,483,130,496"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              106,
+              483
+            ],
+            [
+              130,
+              483
+            ],
+            [
+              130,
+              496
+            ],
+            [
+              106,
+              496
+            ],
+            [
+              106,
+              483
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
