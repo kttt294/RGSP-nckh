@@ -50,14 +50,21 @@ def parse_dota_label(txt_path, img_w, img_h, *, label_format="auto", class_map=N
     
     effective_fmt = label_format
     if effective_fmt == "auto":
-        effective_fmt = "yolo_obb"
+        effective_fmt = "dota"  # Mặc định của DOTA là định dạng dota
         for line in raw_lines:
             s = line.strip()
             if not s or s.startswith("#") or s.partition(":")[0].strip().strip("'\"").lower() in ("gsd", "imagesource", "acquisition dates"):
                 continue
             tokens = s.split()
-            if len(tokens) == 10 and tokens[8] in DOTA_NAME_MAP:
-                effective_fmt = "dota"
+            if len(tokens) == 9:
+                try:
+                    c = float(tokens[0])
+                    coords = [float(v) for v in tokens[1:9]]
+                    if c.is_integer() and all(0.0 <= v <= 1.0 for v in coords):
+                        effective_fmt = "yolo_obb"
+                        break
+                except ValueError:
+                    pass
             break
 
     for index, raw in enumerate(raw_lines):
@@ -70,27 +77,29 @@ def parse_dota_label(txt_path, img_w, img_h, *, label_format="auto", class_map=N
         try:
             if effective_fmt == "yolo_obb":
                 if len(p) != 9:
-                    raise InvalidInput("YOLO-OBB cần đúng 9 cột")
+                    continue
                 cid = float(p[0])
                 if not math.isfinite(cid) or not cid.is_integer() or int(cid) not in mapping:
-                    raise InvalidInput("ID lớp không có trong class_map")
+                    continue
                 name, difficult = mapping[int(cid)], False
                 coords = list(map(float, p[1:]))
                 pts = [(coords[i] * img_w, coords[i+1] * img_h) for i in range(0, 8, 2)]
             else:
-                if len(p) != 10 or p[8] not in DOTA_NAME_MAP or p[9] not in ("0", "1"):
-                    raise InvalidInput("DOTA cần 8 tọa độ + tên lớp + difficult 0/1")
-                name, difficult = DOTA_NAME_MAP[p[8]], p[9] == "1"
+                if len(p) < 9:
+                    continue
+                raw_cls = p[8].lower().replace("_", "-")
+                name = DOTA_NAME_MAP.get(raw_cls, raw_cls.replace("-", "_"))
+                difficult = len(p) > 9 and p[9] == "1"
                 coords = list(map(float, p[:8]))
                 pts = list(zip(coords[::2], coords[1::2]))
                 
             if not all(math.isfinite(v) for pt in pts for v in pt):
-                raise InvalidInput("Tọa độ không hữu hạn")
+                continue
             minor, major, angle = obb_metrics(pts)
             area = polygon_area(pts)
             visible = clip_polygon(pts, (0, 0, img_w, img_h))
             if polygon_area(visible) <= 0:
-                raise InvalidInput("Annotation hoàn toàn ngoài ảnh")
+                continue
             cx, cy = (sum(pt[j] for pt in pts) / 4 for j in (0, 1))
             col = min(2, max(0, int(cx * 3 / img_w)))
             row = min(2, max(0, int(cy * 3 / img_h)))
@@ -103,6 +112,8 @@ def parse_dota_label(txt_path, img_w, img_h, *, label_format="auto", class_map=N
                 "area_px2": area, "visible_fraction": polygon_area(visible) / area,
                 "difficult": difficult
             })
+        except Exception:
+            continue
         except (ValueError, OverflowError) as exc:
             raise InvalidInput(f"{Path(txt_path).name}, dòng {index+1}: {exc}") from exc
     return objects

@@ -310,16 +310,20 @@ def build_dataset_multi(root_dir, config, specs, dataset_name="all", per_kind=1)
     scenes = []
     provenance = {}
     for ds, img_p, lbl_p in discovered:
-        scene_meta = get_scene_meta(config, img_p)
-        sc = load_dataset_scene(ds, img_p, lbl_p, scene_meta, config, root_dir=root_dir)
-        scenes.append(sc)
-        provenance[sc.image_path] = {
-            "dataset": ds,
-            "gsd_m": sc.gsd_m,
-            "gsd_source": sc.gsd_source,
-            "objects_count": len(sc.objects),
-            "classes": sorted(list({o["class_id"] for o in sc.objects}))
-        }
+        try:
+            scene_meta = get_scene_meta(config, img_p)
+            sc = load_dataset_scene(ds, img_p, lbl_p, scene_meta, config, root_dir=root_dir)
+            if sc.objects:
+                scenes.append(sc)
+                provenance[sc.image_path] = {
+                    "dataset": ds,
+                    "gsd_m": sc.gsd_m,
+                    "gsd_source": sc.gsd_source,
+                    "objects_count": len(sc.objects),
+                    "classes": sorted(list({o["class_id"] for o in sc.objects}))
+                }
+        except Exception:
+            continue
 
     pool = {k: [] for k in KINDS}
     rejects = []
