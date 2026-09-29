@@ -371,7 +371,8 @@ def main():
                         help="Tên dataset cần trích xuất (mặc định: all)")
     parser.add_argument("--per-kind", type=int, default=1, help="Số câu hỏi tối thiểu cho mỗi kind (mặc định: 1)")
     parser.add_argument("--output-prefix", default="rs_solve_questions", help="Tiền tố file xuất ra (json/jsonl)")
-    parser.add_argument("--data-dir", default=str(BASE_DIR), help="Thư mục dữ liệu gốc")
+    parser.add_argument("--root-dir", "--data-dir", dest="data_dir", default=str(BASE_DIR), help="Thư mục dữ liệu gốc")
+    parser.add_argument("--allow-partial", action="store_true", help="Cho phép xuất kết quả ngay cả khi chưa đủ hạn ngạch")
     args = parser.parse_args()
 
     config = load_config()
@@ -380,9 +381,14 @@ def main():
     print(f"=== BẮT ĐẦU SINH DỮ LIỆU RS-SOLVE [{args.dataset.upper()}] ===")
     samples, report = build_dataset_multi(args.data_dir, config, specs, args.dataset, args.per_kind)
 
-    out_json = BASE_DIR / f"{args.output_prefix}.json"
-    out_jsonl = BASE_DIR / f"{args.output_prefix}.jsonl"
-    out_rep = BASE_DIR / f"{args.output_prefix}_build_report.json"
+    pref = Path(args.output_prefix)
+    if not pref.is_absolute():
+        pref = BASE_DIR / pref
+    pref.parent.mkdir(parents=True, exist_ok=True)
+
+    out_json = pref.parent / f"{pref.name}.json"
+    out_jsonl = pref.parent / f"{pref.name}.jsonl"
+    out_rep = pref.parent / f"{pref.name}_build_report.json"
 
     out_json.write_text(json.dumps(samples, ensure_ascii=False, indent=2), encoding="utf-8")
     with out_jsonl.open("w", encoding="utf-8") as f:
@@ -392,7 +398,7 @@ def main():
 
     print(f"Hoàn thành: {len(samples)} câu hỏi được tạo.")
     print(f"Thống kê theo kind: {report['counts_by_kind']}")
-    print(f"Đã lưu: {out_json.name}, {out_jsonl.name}, {out_rep.name}")
+    print(f"Đã lưu: {out_json.as_posix()}, {out_jsonl.as_posix()}, {out_rep.as_posix()}")
 
 
 if __name__ == "__main__":
