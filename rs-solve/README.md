@@ -221,3 +221,78 @@ python -X utf8 -m unittest discover -s "C:\Users\trang\Desktop\rgsp_nckh\rs-solv
 ```
 
 Bộ kiểm thử bao gồm 34 test cases kiểm tra tính toàn vẹn hình học OBB, kiểm soát GSD, logic Johnson footprint, phân vùng lưới 3x3 và tính nhất quán đầu ra.
+
+---
+
+## 6. Cơ chế chọn đối tượng và ảnh tạo câu hỏi (Q1 đến Q6)
+
+Quá trình chọn đối tượng (object) và ảnh trong RS-Solve hoạt động theo nguyên lý **Quét toàn diện & Lọc đa tầng (Exhaustive Scan with Multi-stage Filtering)**. Hệ thống tự động bóc tách toàn bộ đối tượng trong ảnh, phân chia vào lưới không gian $3 \times 3$ (từ ô `A1` đến `C3`), sau đó lần lượt duyệt qua 6 bộ lọc chuyên biệt (`generate_q1` đến `generate_q5` và probe `generate_q6`).
+
+Chỉ những đối tượng thỏa mãn 100% tiêu chí hình học, không gian và siêu dữ liệu kiểm soát chất lượng mới được chuyển thành mẫu câu hỏi; mọi trường hợp không đạt đều bị loại bỏ an toàn (`raise SkipSample`).
+
+### 6.1. Quy tắc chi tiết cho từng loại câu hỏi
+
+1. **Q1: Phát hiện sự hiện diện (Detection)**
+   - *Phạm vi:* Toàn ảnh.
+   - *Cơ chế chọn:* Với mỗi lớp xuất hiện trong ảnh, chọn **1 đối tượng có kích thước lớn nhất** (`minor_len_px` cực đại) làm đại diện.
+   - *Điều kiện lọc:*
+     - Phần nhìn thấy $\ge 50\%$ diện tích và không gắn cờ `difficult`.
+     - Tính cô lập (`require_isolated`): Số cá thể cùng lớp trong ảnh $\le 3$, hoặc khoảng cách tới vật thể láng giềng gần nhất $\ge 4$ ViT tokens (tương đương $\approx 56\text{ px}$).
+
+2. **Q2: Phủ định gây nhầm lẫn (Hard Negative Existence)**
+   - *Phạm vi:* Toàn ảnh.
+   - *Cơ chế chọn:* Quét danh mục các cặp lớp dễ gây nhầm lẫn thị giác (`CONFUSING_PAIRS`): *(airplane, helicopter)*, *(bridge, dam)*, *(baseball_diamond, ground_track_field)*, *(basketball_court, tennis_court)*...
+   - *Điều kiện lọc:*
+     - Trong ảnh **CÓ MẶT lớp gây nhầm lẫn ($P$)** nhưng **HOÀN TOÀN VẮNG MẶT lớp được hỏi ($A$)**.
+     - Lớp vắng mặt $A$ phải được chứng minh đầy đủ thông qua trạng thái gán nhãn toàn diện (`require_complete`) hoặc biên bản kiểm duyệt vắng mặt (`absence_reviews`).
+     - Có thông số kích thước vật lý tiên nghiệm $L_{\min}$ hợp lệ trong `physical_sizes.json`.
+
+3. **Q3-HF: Hướng trục xoay (High-Frequency Orientation)**
+   - *Phạm vi:* Từng ô lưới $3 \times 3$.
+   - *Cơ chế chọn:* Quét từng đối tượng đơn lẻ trong ô.
+   - *Điều kiện lọc:*
+     - **Duy nhất trong ô (`require_unique_target`):** Trong ô đó chỉ có đúng 1 đối tượng thuộc lớp này.
+     - **Có độ thuôn dài rõ nét:** Tỷ lệ cạnh ngắn / cạnh dài $\le 0.8$ (loại bỏ vật thể tròn hoặc gần vuông vì không thể xác định trục).
+     - **Góc chéo an toàn:** Góc xoay OBB phải nằm trong khoảng $25^\circ \le \theta \le 65^\circ$ hoặc $115^\circ \le \theta \le 155^\circ$ (loại bỏ vùng đệm $\pm 25^\circ$ quanh trục ngang $0^\circ$ và trục dọc $90^\circ$ để tránh nhập nhằng ranh giới).
+
+4. **Q3-LF: Màu sắc chủ đạo (Low-Frequency Color)**
+   - *Phạm vi:* Từng ô lưới $3 \times 3$.
+   - *Cơ chế chọn:* Quét từng đối tượng đơn lẻ trong ô.
+   - *Điều kiện lọc:*
+     - Là mục tiêu duy nhất thuộc lớp đó trong ô.
+     - **Bắt buộc có xác nhận của con người:** Phải có bản ghi `color_reviews` trong metadata đạt trạng thái `"verified"` hoặc `"reviewed"` với nguồn trích xuất minh bạch. Không bao giờ tự động đoán màu nếu chưa có kiểm duyệt.
+
+5. **Q4: Đếm số lượng trong ô (Counting)**
+   - *Phạm vi:* Từng ô lưới $3 \times 3$.
+   - *Cơ chế chọn:* Gom nhóm các đối tượng theo cặp `(ô lưới, lớp)`.
+   - *Điều kiện lọc:*
+     - Trong ô lưới phải có **tối thiểu 2 đối tượng** cùng lớp (`len(objects) >= 2`).
+     - Lớp đối tượng này phải được đánh dấu đã gán nhãn đầy đủ trên toàn ảnh (`require_complete`).
+     - Từng đối tượng phải nhìn rõ và có ít nhất $50\%$ diện tích nằm trong ô lưới (`in_cell`).
+
+6. **Q5: Định vị tọa độ hộp bao (Grounding)**
+   - *Phạm vi:* Từng ô lưới $3 \times 3$.
+   - *Cơ chế chọn:* Gom nhóm các đối tượng theo cặp `(ô lưới, lớp)`.
+   - *Điều kiện lọc:*
+     - Phải có **ít nhất 2 đối tượng** cùng lớp trong ô để hỏi đối tượng thứ hai theo thứ tự từ trái sang phải.
+     - Tâm hoành độ $X$ giữa các đối tượng liền kề phải cách nhau $> 1.0\text{ px}$ (tránh mơ hồ trật tự không gian).
+     - Không gian ô lưới phải đủ rộng để thuật toán sinh ngẫu nhiên được ít nhất 2 hộp bao giả (distractor boxes) thỏa mãn $\text{IoU} \le 0.1$.
+
+7. **Q6: Thử thách từ chối (Abstention Probe / Hard Sensor Boundary)**
+   - *Phạm vi:* Trích xuất từ kho câu hỏi Q3-HF, Q4, Q5 đã được sinh.
+   - *Cơ chế chọn:* Lọc các câu hỏi có kích thước điểm ảnh của đối tượng rơi vào đúng **vùng biên giới hạn phân giải của cảm biến**:
+     $$0.5 \times p_0 \le \rho_{\text{px}} < p_0$$
+   - *Ý nghĩa:* Đối tượng lúc này quá mờ dưới ngưỡng cảm biến Johnson $p_0$, Ground Truth bắt buộc là `ABSTAIN` ("Không thể xác định từ ảnh") nhằm kiểm tra khả năng tự nhận thức giới hạn và phát hiện ảo giác (hallucination) của MLLM.
+
+### 6.2. Bảng tổng hợp tiêu chí chọn lọc
+
+| Dạng câu hỏi | Phạm vi khảo sát | Điều kiện số lượng obj | Điều kiện hình học / Không gian đặc thù |
+| :--- | :--- | :--- | :--- |
+| **Q1 (Detection)** | Toàn ảnh | 1 obj lớn nhất / class | Cô lập ($\ge 4$ ViT tokens), nhìn rõ $\ge 50\%$ |
+| **Q2 (Hard Negative)** | Toàn ảnh | Không có obj câu hỏi | Thuộc cặp nhầm lẫn, ảnh có $P$ và vắng mặt $A$ |
+| **Q3-HF (Orientation)**| Từng ô $3 \times 3$ | Duy nhất 1 obj / class / ô | Tỷ lệ $w/h \le 0.8$; góc xoay $45^\circ \pm 20^\circ$ hoặc $135^\circ \pm 20^\circ$ |
+| **Q3-LF (Color)** | Từng ô $3 \times 3$ | Duy nhất 1 obj / class / ô | Bắt buộc có Human Review trong metadata |
+| **Q4 (Counting)** | Từng ô $3 \times 3$ | $\ge 2$ objs cùng lớp / ô | Lớp gán nhãn đầy đủ; mỗi obj nằm trong ô $\ge 50\%$ |
+| **Q5 (Grounding)** | Từng ô $3 \times 3$ | $\ge 2$ objs cùng lớp / ô | Tâm X cách nhau $> 1\text{ px}$; sinh đủ 2 hộp distractor |
+| **Q6 (Abstention)** | Kế thừa Q3/Q4/Q5| 1 câu hỏi tương ứng | Rơi vào vùng mờ vật lý ($0.5 p_0 \le \rho_{\text{px}} < p_0$) |
+

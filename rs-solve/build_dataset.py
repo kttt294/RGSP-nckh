@@ -137,6 +137,14 @@ def load_dataset_scene(dataset_name, img_path, label_path, meta, config, root_di
     elif dataset_name == "visdrone":
         gsd_source = "uav_flight_altitude_estimated"
 
+    # Ưu tiên cao nhất: nếu người dùng cấu hình rõ gsd_m trong metadata
+    if "gsd_m" in meta and meta["gsd_m"] is not None:
+        try:
+            gsd_m = float(meta["gsd_m"])
+            gsd_source = meta.get("gsd_source", "metadata_override")
+        except (ValueError, TypeError):
+            pass
+
     # Gọi parser chuyên biệt
     ds = dataset_name.lower()
     if ds == "dota":
