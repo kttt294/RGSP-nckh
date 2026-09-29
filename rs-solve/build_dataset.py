@@ -185,9 +185,16 @@ def load_dataset_scene(dataset_name, img_path, label_path, meta, config, root_di
 
 
 def discover_scenes(root_dir, dataset_filter="all"):
-    """Tự động phát hiện các cặp (ảnh, nhãn, dataset) trong thư mục gốc hoặc sample_data/."""
+    """Tự động phát hiện các cặp (ảnh, nhãn, dataset) trong thư mục gốc, sample_data/ hoặc Kaggle input."""
     root = Path(root_dir)
     discovered = []
+    image_exts = ("*.jpg", "*.jpeg", "*.png", "*.tif", "*.JPG", "*.PNG")
+
+    def find_images(folder):
+        imgs = []
+        for ext in image_exts:
+            imgs.extend(folder.glob(ext))
+        return sorted(imgs)
     
     # 1. Kiểm tra sample_data/ trước
     sample_dir = root / "sample_data"
@@ -198,12 +205,12 @@ def discover_scenes(root_dir, dataset_filter="all"):
             if not ds_path.is_dir():
                 continue
             if ds == "dota":
-                for img in (ds_path / "images").glob("*.jpg"):
+                for img in find_images(ds_path / "images"):
                     lbl = ds_path / "labels" / f"{img.stem}.txt"
                     if lbl.exists():
                         discovered.append(("dota", img, lbl))
             elif ds == "visdrone":
-                for img in (ds_path / "images").glob("*.jpg"):
+                for img in find_images(ds_path / "images"):
                     lbl = ds_path / "annotations" / f"{img.stem}.txt"
                     if lbl.exists():
                         discovered.append(("visdrone", img, lbl))
@@ -213,18 +220,18 @@ def discover_scenes(root_dir, dataset_filter="all"):
                     ds_path / "annotations" if (ds_path / "annotations").is_dir() else ds_path / "labels"
                 )
                 if img_dir.is_dir() and lbl_dir.is_dir():
-                    for img in img_dir.glob("*.jpg"):
+                    for img in find_images(img_dir):
                         lbl = lbl_dir / f"{img.stem}.xml"
                         if lbl.exists():
                             discovered.append(("dior", img, lbl))
             elif ds == "xview":
                 lbl = ds_path / "labels" / "xview_sample.geojson"
-                for img in (ds_path / "images").glob("*.jpg"):
+                for img in find_images(ds_path / "images"):
                     if lbl.exists():
                         discovered.append(("xview", img, lbl))
             elif ds == "isaid":
                 lbl = ds_path / "annotations" / "iSAID_sample.json"
-                for img in (ds_path / "images").glob("*.jpg"):
+                for img in find_images(ds_path / "images"):
                     if lbl.exists():
                         discovered.append(("isaid", img, lbl))
                         
@@ -233,11 +240,64 @@ def discover_scenes(root_dir, dataset_filter="all"):
         img_dir = root / "images"
         lbl_dir = root / "labels"
         if img_dir.is_dir() and lbl_dir.is_dir():
-            for img in sorted(img_dir.glob("*.jpg")):
+            for img in find_images(img_dir):
                 lbl = lbl_dir / f"{img.stem}.txt"
                 if lbl.exists():
                     discovered.append(("dota", img, lbl))
+
+    # 3. Quét đệ quy thích ứng các dataset gắn trên Kaggle (/kaggle/input)
+    if not discovered and root.is_dir():
+        for sub in [p for p in root.iterdir() if p.is_dir()]:
+            sub_name = sub.name.lower()
+            # DOTA: tìm nhãn trong labelTxt hoặc labels
+            for lbl_cand in list(sub.rglob("labelTxt")) + list(sub.rglob("labels")):
+                if lbl_cand.is_dir():
+                    parent = lbl_cand.parent
+                    img_cand = parent / "images" if (parent / "images").is_dir() else sub / "images"
+                    if img_cand.is_dir():
+                        for img in find_images(img_cand):
+                            txt = lbl_cand / f"{img.stem}.txt"
+                            if txt.is_file():
+                                discovered.append(("dota", img, txt))
+            # DIOR: tìm Annotations và images / JPEGImages
+            for ann_cand in list(sub.rglob("Annotations")) + list(sub.rglob("annotations")):
+                if ann_cand.is_dir() and ("dior" in sub_name or "dior" in ann_cand.as_posix().lower()):
+                    parent = ann_cand.parent
+                    img_cand = parent / "images" if (parent / "images").is_dir() else (parent / "JPEGImages")
+                    if not img_cand.is_dir() and (sub / "images").is_dir():
+                        img_cand = sub / "images"
+                    if img_cand.is_dir():
+                        for img in find_images(img_cand):
+                            xml = ann_cand / f"{img.stem}.xml"
+                            if xml.is_file():
+                                discovered.append(("dior", img, xml))
+            # VisDrone: tìm annotations và images
+            for ann_cand in sub.rglob("annotations"):
+                if ann_cand.is_dir() and "visdrone" in sub_name:
+                    parent = ann_cand.parent
+                    img_cand = parent / "images" if (parent / "images").is_dir() else (sub / "images")
+                    if img_cand.is_dir():
+                        for img in find_images(img_cand):
+                            txt = ann_cand / f"{img.stem}.txt"
+                            if txt.is_file():
+                                discovered.append(("visdrone", img, txt))
+            # iSAID: tìm file COCO json và images
+            for json_file in sub.rglob("*.json"):
+                if "isaid" in sub_name or "isaid" in json_file.name.lower():
+                    img_cand = json_file.parent / "images" if (json_file.parent / "images").is_dir() else (sub / "images")
+                    if img_cand.is_dir():
+                        for img in find_images(img_cand):
+                            discovered.append(("isaid", img, json_file))
+            # xView: tìm file geojson và images
+            for geojson_file in sub.rglob("*.geojson"):
+                img_cand = geojson_file.parent / "images" if (geojson_file.parent / "images").is_dir() else (sub / "images")
+                if img_cand.is_dir():
+                    for img in find_images(img_cand):
+                        discovered.append(("xview", img, geojson_file))
                     
+    if dataset_filter != "all":
+        discovered = [item for item in discovered if item[0] == dataset_filter]
+
     return discovered
 
 
