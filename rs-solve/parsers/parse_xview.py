@@ -49,31 +49,45 @@ XVIEW_ID_MAP = {
 }
 
 
+_XVIEW_CACHE = {}
+
+
+def _get_xview_features(geojson_path):
+    p_str = str(Path(geojson_path).resolve())
+    if p_str not in _XVIEW_CACHE:
+        path = Path(geojson_path)
+        if not path.is_file():
+            raise InvalidInput(f"Tệp nhãn xView GeoJSON không tồn tại: {geojson_path}")
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except Exception as exc:
+            raise InvalidInput(f"Lỗi đọc file GeoJSON {path.name}: {exc}") from exc
+        
+        features = data.get("features", [])
+        by_name = {}
+        for f in features:
+            img_id = f.get("properties", {}).get("image_id", "").lower()
+            if img_id:
+                by_name.setdefault(img_id, []).append(f)
+                stem = Path(img_id).stem.lower()
+                if stem != img_id:
+                    by_name.setdefault(stem, []).append(f)
+        _XVIEW_CACHE[p_str] = (by_name, features)
+    return _XVIEW_CACHE[p_str]
+
+
 def parse_xview_label(geojson_path, image_name, img_w, img_h, *, class_map=None):
     """Trích xuất danh sách đối tượng cho một ảnh từ tệp GeoJSON của xView."""
-    path = Path(geojson_path)
-    if not path.is_file():
-        raise InvalidInput(f"Tệp nhãn xView GeoJSON không tồn tại: {geojson_path}")
-        
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-    except Exception as exc:
-        raise InvalidInput(f"Lỗi đọc file GeoJSON {path.name}: {exc}") from exc
-        
+    by_name, features = _get_xview_features(geojson_path)
     id_mapping = XVIEW_ID_MAP if class_map is None else class_map
     target_name = Path(image_name).name.lower()
+    target_stem = Path(image_name).stem.lower()
     objects = []
     
-    features = data.get("features", [])
-    matched_features = []
-    for f in features:
-        props = f.get("properties", {})
-        img_id = props.get("image_id", "").lower()
-        if img_id == target_name or Path(img_id).stem == Path(target_name).stem:
-            matched_features.append(f)
-            
+    matched_features = by_name.get(target_name) or by_name.get(target_stem) or []
+    
     # Nếu tệp geojson chỉ dành riêng cho 1 ảnh (như file mẫu) thì dùng toàn bộ
-    if not matched_features and len(features) > 0 and len({f.get("properties", {}).get("image_id") for f in features}) == 1:
+    if not matched_features and len(features) > 0 and len({f.get("properties", {}).get("image_id") for f in features}) <= 1:
         matched_features = features
         
     for index, feat in enumerate(matched_features):

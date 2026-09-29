@@ -9,10 +9,11 @@
   "enable_tpu": false,
   "enable_internet": true,
   "dataset_sources": [
-    "shuaitt/diordata",
-    "banuprasadb/visdrone-dataset",
     "chandlertimm/dota-data",
-    "usharengaraju/isaid-dataset",
+    "piumalnipun/dota-labletxt",
+    "shuaitt/diordata",
+    "kefanzhan/diordataset",
+    "abhimanyubhowmik1/visdrone",
     "hassanmojab/xview-dataset"
   ]
 }

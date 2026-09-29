@@ -371,6 +371,8 @@ def generate_q1(scene, specs, config, rejects):
         require_visible(o)
         require_isolated(scene, o)
         cid = o["class_id"]
+        if cid not in specs:
+            raise SkipSample(f"Class {cid} không có trong specs")
         return make_sample(
             scene, "Q1", cid, o["bbox"], native_footprint(scene, o), threshold(config, "Q1"),
             f"Trong toàn ảnh có {specs[cid]['display_name_vi']} ({cid}) không?",
@@ -390,6 +392,8 @@ def generate_q2(scene, specs, config, rejects):
 
     def build(pair):
         a, p = pair
+        if a not in specs:
+            raise SkipSample(f"Class {a} không có trong specs")
         review = scene.meta.get("absence_reviews", {}).get(a, {})
         if not (review.get("absent") is True and has_source(review.get("source"))):
             if a not in scene.meta.get("source_classes", []):
@@ -418,11 +422,13 @@ def generate_q3_hf(scene, specs, config, rejects):
         require_unique_target(scene, o)
         if o["minor_len_px"] / o["major_len_px"] > 0.8:
             raise SkipSample("Đối tượng gần vuông (w/h > 0.8), trục không xác định")
+        cid = o["class_id"]
+        if cid not in specs:
+            raise SkipSample(f"Class {cid} không có trong specs")
         truth = orientation_answer(o)
         rng = rng_for(config, scene, "Q3-HF", o["obj_idx"])
         options = list(ORIENTATION_CHOICES)
         rng.shuffle(options)
-        cid = o["class_id"]
         return make_sample(
             scene, "Q3-HF", cid, o["bbox"], native_footprint(scene, o), threshold(config, "Q3-HF"),
             f"Trục dài của {specs[cid]['display_name_vi']} ở ô {o['cell']} gần với đường chéo nào của ảnh?",
@@ -435,11 +441,13 @@ def generate_q3_lf(scene, specs, config, rejects):
     """Q3-LF: Màu sắc đặc trưng của đối tượng (Low Frequency / Color)."""
     def build(o):
         require_unique_target(scene, o)
+        cid = o["class_id"]
+        if cid not in specs:
+            raise SkipSample(f"Class {cid} không có trong specs")
         color = dominant_color(scene, o)
         rng = rng_for(config, scene, "Q3-LF", o["obj_idx"])
         options = [color] + rng.sample([c for c in COLOR_CHOICES if c != color], 5)
         rng.shuffle(options)
-        cid = o["class_id"]
         return make_sample(
             scene, "Q3-LF", cid, o["bbox"], native_footprint(scene, o), threshold(config, "Q3-LF"),
             f"{specs[cid]['display_name_vi']} ở ô {o['cell']} có màu chủ đạo nào?",
@@ -452,6 +460,8 @@ def generate_q4(scene, specs, config, rejects):
     """Q4: Đếm số lượng đối tượng trong ô lưới (Counting)."""
     def build(group):
         (cell, cid), objects = group
+        if cid not in specs:
+            raise SkipSample(f"Class {cid} không có trong specs")
         require_complete(scene, cid)
         if len(objects) < 2:
             raise SkipSample("Cần ít nhất 2 instance để sinh Q4")
@@ -477,6 +487,8 @@ def generate_q5(scene, specs, config, rejects):
     """Q5: Định vị hộp bao đối tượng theo mô tả không gian (Grounding)."""
     def build(group):
         (cell, cid), objects = group
+        if cid not in specs:
+            raise SkipSample(f"Class {cid} không có trong specs")
         require_complete(scene, cid)
         if len(objects) < 2:
             raise SkipSample("Hỏi vật thể thứ hai nên cần ít nhất 2 instance")

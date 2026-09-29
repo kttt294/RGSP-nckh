@@ -60,7 +60,7 @@ def parse_dota_label(txt_path, img_w, img_h, *, label_format="auto", class_map=N
                 try:
                     c = float(tokens[0])
                     coords = [float(v) for v in tokens[1:9]]
-                    if c.is_integer() and all(0.0 <= v <= 1.0 for v in coords):
+                    if c.is_integer() and all(-0.5 <= v <= 1.5 for v in coords):
                         effective_fmt = "yolo_obb"
                         break
                 except ValueError:
@@ -87,6 +87,11 @@ def parse_dota_label(txt_path, img_w, img_h, *, label_format="auto", class_map=N
             else:
                 if len(p) < 9:
                     continue
+                try:
+                    float(p[8])
+                    continue  # Token thứ 9 là số, không phải tên lớp hợp lệ
+                except ValueError:
+                    pass
                 raw_cls = p[8].lower().replace("_", "-")
                 name = DOTA_NAME_MAP.get(raw_cls, raw_cls.replace("-", "_"))
                 difficult = len(p) > 9 and p[9] == "1"

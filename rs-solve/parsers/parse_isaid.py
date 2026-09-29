@@ -25,34 +25,53 @@ def polygon_to_points(flat_coords):
     return list(zip(flat_coords[::2], flat_coords[1::2]))
 
 
+_ISAID_CACHE = {}
+
+
+def _get_isaid_data(json_path):
+    p_str = str(Path(json_path).resolve())
+    if p_str not in _ISAID_CACHE:
+        path = Path(json_path)
+        if not path.is_file():
+            raise InvalidInput(f"Tệp nhãn iSAID không tồn tại: {json_path}")
+        data = json.loads(path.read_text(encoding="utf-8"))
+        cats = {c["id"]: c["name"] for c in data.get("categories", [])}
+        
+        # Index annotations by image_id
+        anns_by_img = {}
+        for a in data.get("annotations", []):
+            anns_by_img.setdefault(a.get("image_id"), []).append(a)
+            
+        # Map filenames and stems to image_id
+        img_id_map = {}
+        for img in data.get("images", []):
+            iid = img.get("id")
+            fname = Path(img.get("file_name", "")).name.lower()
+            stem = Path(fname).stem
+            img_id_map[fname] = iid
+            img_id_map[stem] = iid
+            img_id_map[str(iid)] = iid
+            
+        _ISAID_CACHE[p_str] = (cats, anns_by_img, img_id_map, data.get("annotations", []))
+    return _ISAID_CACHE[p_str]
+
+
 def parse_isaid_label(json_path, image_name_or_id, img_w, img_h, *, category_map=None):
     """Trích xuất danh sách đối tượng của một ảnh cụ thể từ tệp chú thích iSAID COCO JSON."""
-    path = Path(json_path)
-    if not path.is_file():
-        raise InvalidInput(f"Tệp nhãn iSAID không tồn tại: {json_path}")
-    
-    data = json.loads(path.read_text(encoding="utf-8"))
-    cats = {c["id"]: c["name"] for c in data.get("categories", [])} if category_map is None else category_map
+    cats_cached, anns_by_img, img_id_map, all_anns = _get_isaid_data(json_path)
+    cats = cats_cached if category_map is None else category_map
 
-    # Tìm image_id tương ứng
-    target_img_id = None
-    target_stem = Path(str(image_name_or_id)).stem.lower()
+    target_key = Path(str(image_name_or_id)).stem.lower()
+    target_img_id = img_id_map.get(target_key) or img_id_map.get(Path(str(image_name_or_id)).name.lower())
     
-    for img in data.get("images", []):
-        file_stem = Path(img.get("file_name", "")).stem.lower()
-        if file_stem == target_stem or str(img.get("id")) == str(image_name_or_id):
-            target_img_id = img["id"]
-            break
-            
     if target_img_id is None:
-        # Nếu không tìm thấy theo tên, thử dùng trực tiếp nếu image_name_or_id là số
         try:
             target_img_id = int(image_name_or_id)
         except (ValueError, TypeError):
             pass
 
     objects = []
-    anns = [a for a in data.get("annotations", []) if target_img_id is None or a.get("image_id") == target_img_id]
+    anns = anns_by_img.get(target_img_id) if target_img_id is not None else all_anns
     
     for index, ann in enumerate(anns):
         cat_id = ann.get("category_id")

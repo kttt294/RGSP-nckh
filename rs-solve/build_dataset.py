@@ -15,9 +15,20 @@ from __future__ import annotations
 import argparse
 from collections import Counter
 import json
+import os
 from pathlib import Path
 import sys
 from PIL import Image
+
+try:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    if hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
+Image.MAX_IMAGE_PIXELS = None
 
 from core_generators import (
     Scene, InvalidInput, SkipSample, GENERATORS, generate_q6,
@@ -117,7 +128,7 @@ def load_dataset_scene(dataset_name, img_path, label_path, meta, config, root_di
 
     with Image.open(img_p) as img:
         img_w, img_h = img.size
-        pixels = img.copy()
+        pixels = None
 
     # Xác định GSD
     gsd_source = "dataset_default"
@@ -245,58 +256,92 @@ def discover_scenes(root_dir, dataset_filter="all"):
                 if lbl.exists():
                     discovered.append(("dota", img, lbl))
 
-    # 3. Quét đệ quy thích ứng các dataset gắn trên Kaggle (/kaggle/input)
+    # 3. Quét thích ứng toàn diện cho Kaggle (/kaggle/input) và thư mục dữ liệu lớn
     if not discovered and root.is_dir():
-        for sub in [p for p in root.iterdir() if p.is_dir()]:
-            sub_name = sub.name.lower()
-            # DOTA: tìm nhãn trong labelTxt hoặc labels
-            for lbl_cand in list(sub.rglob("labelTxt")) + list(sub.rglob("labels")):
-                if lbl_cand.is_dir():
-                    parent = lbl_cand.parent
-                    img_cand = parent / "images" if (parent / "images").is_dir() else sub / "images"
-                    if img_cand.is_dir():
-                        for img in find_images(img_cand):
-                            txt = lbl_cand / f"{img.stem}.txt"
-                            if txt.is_file():
-                                discovered.append(("dota", img, txt))
-            # DIOR: tìm Annotations và images / JPEGImages
-            for ann_cand in list(sub.rglob("Annotations")) + list(sub.rglob("annotations")):
-                if ann_cand.is_dir() and ("dior" in sub_name or "dior" in ann_cand.as_posix().lower()):
-                    parent = ann_cand.parent
-                    img_cand = parent / "images" if (parent / "images").is_dir() else (parent / "JPEGImages")
-                    if not img_cand.is_dir() and (sub / "images").is_dir():
-                        img_cand = sub / "images"
-                    if img_cand.is_dir():
-                        for img in find_images(img_cand):
-                            xml = ann_cand / f"{img.stem}.xml"
-                            if xml.is_file():
-                                discovered.append(("dior", img, xml))
-            # VisDrone: tìm annotations và images
-            for ann_cand in sub.rglob("annotations"):
-                if ann_cand.is_dir() and "visdrone" in sub_name:
-                    parent = ann_cand.parent
-                    img_cand = parent / "images" if (parent / "images").is_dir() else (sub / "images")
-                    if img_cand.is_dir():
-                        for img in find_images(img_cand):
-                            txt = ann_cand / f"{img.stem}.txt"
-                            if txt.is_file():
-                                discovered.append(("visdrone", img, txt))
-            # iSAID: tìm file COCO json và images
-            for json_file in sub.rglob("*.json"):
-                if "isaid" in sub_name or "isaid" in json_file.name.lower():
-                    img_cand = json_file.parent / "images" if (json_file.parent / "images").is_dir() else (sub / "images")
-                    if img_cand.is_dir():
-                        for img in find_images(img_cand):
-                            discovered.append(("isaid", img, json_file))
-            # xView: tìm file geojson và images
-            for geojson_file in sub.rglob("*.geojson"):
-                img_cand = geojson_file.parent / "images" if (geojson_file.parent / "images").is_dir() else (sub / "images")
-                if img_cand.is_dir():
-                    for img in find_images(img_cand):
-                        discovered.append(("xview", img, geojson_file))
-                    
+        dota_labels = {}
+        dota_images = {}
+        dior_xmls = {}
+        dior_images = {}
+        visdrone_labels = {}
+        visdrone_images = {}
+        xview_geojsons = []
+        xview_images = []
+        isaid_jsons = []
+        isaid_images = []
+
+        for dirpath, _, filenames in os.walk(root):
+            dp_norm = dirpath.replace("\\", "/").lower()
+            for fname in filenames:
+                fn_lower = fname.lower()
+                full_path = Path(dirpath) / fname
+                stem = Path(fname).stem
+
+                # 3.1 xView GeoJSON & Images
+                if fn_lower.endswith(".geojson"):
+                    xview_geojsons.append(full_path)
+                elif fn_lower.endswith((".tif", ".tiff")):
+                    xview_images.append(full_path)
+
+                # 3.2 DIOR XML
+                elif fn_lower.endswith(".xml"):
+                    dior_xmls[stem] = full_path
+
+                # 3.3 DOTA TXT
+                elif fn_lower.endswith(".txt") and ("labeltxt" in dp_norm or "dota" in dp_norm or "dota" in fn_lower):
+                    dota_labels[stem] = full_path
+
+                # 3.4 VisDrone TXT
+                elif fn_lower.endswith(".txt") and "visdrone" in dp_norm and "ann" in dp_norm:
+                    visdrone_labels[stem] = full_path
+
+                # 3.5 iSAID JSON
+                elif fn_lower.endswith(".json") and "isaid" in dp_norm:
+                    isaid_jsons.append(full_path)
+
+                # Images (JPG / PNG)
+                elif fn_lower.endswith((".jpg", ".jpeg", ".png")):
+                    if "visdrone" in dp_norm:
+                        visdrone_images[stem] = full_path
+                    elif "dior" in dp_norm or (stem.isdigit() and len(stem) == 5):
+                        dior_images[stem] = full_path
+                    elif "dota" in dp_norm or stem.startswith("P"):
+                        dota_images[stem] = full_path
+                    elif "isaid" in dp_norm:
+                        isaid_images.append(full_path)
+
+        # Ghép cặp DOTA theo file stem
+        for stem, img in dota_images.items():
+            if stem in dota_labels:
+                discovered.append(("dota", img, dota_labels[stem]))
+
+        # Ghép cặp DIOR theo file stem
+        for stem, img in dior_images.items():
+            if stem in dior_xmls:
+                discovered.append(("dior", img, dior_xmls[stem]))
+
+        # Ghép cặp VisDrone theo file stem
+        for stem, img in visdrone_images.items():
+            if stem in visdrone_labels:
+                discovered.append(("visdrone", img, visdrone_labels[stem]))
+
+        # Ghép cặp xView
+        if xview_geojsons and xview_images:
+            gj = xview_geojsons[0]
+            for img in xview_images:
+                discovered.append(("xview", img, gj))
+
+        # Ghép cặp iSAID
+        if isaid_jsons and isaid_images:
+            js = isaid_jsons[0]
+            for img in isaid_images:
+                discovered.append(("isaid", img, js))
+
     if dataset_filter != "all":
         discovered = [item for item in discovered if item[0] == dataset_filter]
+
+    counts = Counter(d[0] for d in discovered)
+    print(f"[discover_scenes] Tìm thấy {len(discovered):,} ứng viên: " +
+          ", ".join(f"{k.upper()}={v:,}" for k, v in counts.items()))
 
     return discovered
 
@@ -309,26 +354,45 @@ def build_dataset_multi(root_dir, config, specs, dataset_name="all", per_kind=1)
 
     scenes = []
     provenance = {}
-    for ds, img_p, lbl_p in discovered:
+    errors = Counter()
+    dataset_counts = Counter()
+
+    for idx, (ds, img_p, lbl_p) in enumerate(discovered):
         try:
             scene_meta = get_scene_meta(config, img_p)
             sc = load_dataset_scene(ds, img_p, lbl_p, scene_meta, config, root_dir=root_dir)
             if sc.objects:
                 scenes.append(sc)
-                provenance[sc.image_path] = {
-                    "dataset": ds,
-                    "gsd_m": sc.gsd_m,
-                    "gsd_source": sc.gsd_source,
-                    "objects_count": len(sc.objects),
-                    "classes": sorted(list({o["class_id"] for o in sc.objects}))
-                }
-        except Exception:
+                dataset_counts[ds] += 1
+                if len(provenance) < 100:  # Giữ sample 100 scene đại diện cho báo cáo
+                    provenance[sc.image_path] = {
+                        "dataset": ds,
+                        "gsd_m": sc.gsd_m,
+                        "gsd_source": sc.gsd_source,
+                        "objects_count": len(sc.objects),
+                        "classes": sorted(list({o["class_id"] for o in sc.objects}))
+                    }
+                if len(scenes) % 500 == 0:
+                    print(f"  [Tiến độ nạp scene] Đã xử lý {len(scenes):,} ảnh hợp lệ...")
+            else:
+                errors[f"{ds}_no_objects"] += 1
+        except Exception as exc:
+            errors[f"{ds}_{type(exc).__name__}"] += 1
+            if sum(errors.values()) <= 10:
+                print(f"  [Cảnh báo scene {ds} {img_p.name}]: {exc}")
             continue
+
+    print(f"=== ĐÃ NẠP {len(scenes):,} SCENE HỢP LỆ ===")
+    for ds, count in dataset_counts.items():
+        print(f"  - {ds.upper()}: {count:,} scene")
+    if errors:
+        print(f"  - Tổng số scene bỏ qua do lỗi / rỗng: {sum(errors.values()):,} ({dict(errors.most_common(5))})")
 
     pool = {k: [] for k in KINDS}
     rejects = []
 
     # Sinh Q1 đến Q5
+    print("=== BẮT ĐẦU SINH CÂU HỎI TỪ CÁC SCENE ===")
     for sc in scenes:
         for generator in GENERATORS:
             for sample in generator(sc, specs, config, rejects):
@@ -339,6 +403,10 @@ def build_dataset_multi(root_dir, config, specs, dataset_name="all", per_kind=1)
         q6 = generate_q6(base)
         if q6:
             pool["Q6"].append(q6)
+
+    print("Tổng số câu hỏi sinh được trong pool trước khi cắt quota:")
+    for k, v in pool.items():
+        print(f"  {k:8s}: {len(v):,}")
 
     # Cắt quota theo per_kind
     selected = []
@@ -361,10 +429,14 @@ def build_dataset_multi(root_dir, config, specs, dataset_name="all", per_kind=1)
         "counts_by_kind": kind_counts,
         "total_questions": len(selected),
         "scenes_processed": len(scenes),
-        "scene_provenance": provenance,
+        "dataset_scene_counts": dict(dataset_counts),
+        "scene_provenance_sample": provenance,
         "rejects_count": len(rejects),
         "rejects_sample": rejects[:20],
+        "load_errors_count": dict(errors)
     }
+
+    return selected, report
 
     return selected, report
 
