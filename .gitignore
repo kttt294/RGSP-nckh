@@ -30,6 +30,7 @@ Thumbs.db
 kaggle_benchmark_*/
 kaggle_output*/
 .pytest_cache/
+docs/
 *kernel-metadata.json
 *report.md
 *.jsonl
