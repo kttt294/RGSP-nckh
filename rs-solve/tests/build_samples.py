@@ -24,7 +24,7 @@ import statistics
 import sys
 from PIL import Image
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 ABSTAIN = "Không thể xác định từ ảnh"
 KINDS = ("Q1", "Q2", "Q3-HF", "Q3-LF", "Q4", "Q5", "Q6")
 GRID_PREFIX = "Chia ảnh thành lưới 3x3: cột A-C từ trái sang phải, hàng 1-3 từ trên xuống. "

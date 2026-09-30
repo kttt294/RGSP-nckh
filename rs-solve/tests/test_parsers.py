@@ -1,7 +1,10 @@
-"""Kiểm thử đơn vị cho 5 parser dữ liệu viễn thám trong rs-solve/parsers/."""
+import sys
 import unittest
 from pathlib import Path
 from PIL import Image
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(BASE_DIR))
 
 from parsers import (
     parse_dota_label,
@@ -12,7 +15,6 @@ from parsers import (
     parse_visdrone_label,
 )
 
-BASE_DIR = Path(__file__).resolve().parent
 SAMPLE_DIR = BASE_DIR / "sample_data"
 
 

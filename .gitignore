@@ -26,8 +26,10 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Benchmark outputs & datasets
+# Outputs & datasets
 kaggle_benchmark_*/
 kaggle_output*/
+.pytest_cache/
+*report.md
 *.jsonl
 *.log
