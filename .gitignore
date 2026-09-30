@@ -25,3 +25,9 @@ venv/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Benchmark outputs & datasets
+kaggle_benchmark_*/
+kaggle_output*/
+*.jsonl
+*.log

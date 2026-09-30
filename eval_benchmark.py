@@ -1,64 +1,158 @@
 import sys
 sys.stdout.reconfigure(encoding="utf-8")
 import json
+import math
 from pathlib import Path
-from collections import Counter
+from collections import Counter, defaultdict
 
-rep_p = Path(r"c:\Users\trang\Desktop\rgsp_nckh\kaggle_final_benchmark\rs_solve_full_benchmark_build_report.json")
-jsonl_p = Path(r"c:\Users\trang\Desktop\rgsp_nckh\kaggle_final_benchmark\rs_solve_full_benchmark.jsonl")
+report_path = Path(r"c:\Users\trang\Desktop\rgsp_nckh\kaggle_benchmark_v4\rs_solve_full_benchmark_build_report.json")
+jsonl_path = Path(r"c:\Users\trang\Desktop\rgsp_nckh\kaggle_benchmark_v4\rs_solve_full_benchmark.jsonl")
 
-rep = json.loads(rep_p.read_text(encoding="utf-8"))
+print("=" * 80)
+print("BÁO CÁO ĐÁNH GIÁ KHOA HỌC TẬP DỮ LIỆU RS-SOLVE BENCHMARK (KAGGLE RUN V4)")
+print("=" * 80)
 
-print("=" * 60)
-print("BÁO CÁO THẨM ĐỊNH TẬP DỮ LIỆU BENCHMARK RS-SOLVE")
-print("=" * 60)
-print(f"Tổng số câu hỏi sinh được: {rep.get('total_questions', 0):,} câu")
-print(f"Tổng số scene/ảnh đã xử lý: {rep.get('scenes_processed', 0):,} ảnh")
-print(f"Tổng số ứng viên bị lọc bởi QA: {rep.get('rejects_count', 0):,} lần")
+if not report_path.exists() or not jsonl_path.exists():
+    print(f"Lỗi: Không tìm thấy file dữ liệu tại {report_path} hoặc {jsonl_path}")
+    sys.exit(1)
 
-print("\n--- 1. Phân bổ số lượng câu hỏi theo từng loại (Kind) ---")
-for k, v in rep.get("counts_by_kind", {}).items():
-    print(f"  {k:8s}: {v:6,} câu")
+report = json.loads(report_path.read_text(encoding="utf-8"))
 
-print("\n--- 2. Phân bổ số lượng ảnh theo từng dataset ---")
-ds_counts = Counter()
-obj_counts = Counter()
-for path, meta in rep.get("scene_provenance", {}).items():
-    ds = meta.get("dataset", "unknown")
-    ds_counts[ds] += 1
-    obj_counts[ds] += meta.get("objects_count", 0)
+print(f"\n[1] TỔNG QUAN TẬP DỮ LIỆU (BUILD REPORT)")
+print(f"  • Tổng số câu hỏi sinh thành công: {report.get('total_questions', 0):,} câu")
+print(f"  • Số scenes/ảnh đã nạp và xử lý : {report.get('scenes_processed', 0):,} ảnh")
+print(f"  • Số lượng rejects (bị lọc bởi QA) : {report.get('rejects_count', 0):,} lần")
 
-for ds, count in ds_counts.most_common():
-    print(f"  {ds:10s}: {count:5,} ảnh ({obj_counts[ds]:,} objects)")
+kinds_counter = Counter()
+dataset_counter = Counter()
+answer_types = Counter()
+kind_answer_table = defaultdict(Counter)
+rho_px_values = []
+rho_px_by_kind = defaultdict(list)
+rho_px_bins = Counter()
+density_counter = Counter()
+johnson_counter = Counter()
+class_counter = Counter()
+grid_table = defaultdict(Counter)
 
-print("\n--- 3. Kiểm tra tính toàn vẹn trên file JSONL ---")
-kinds_in_jsonl = Counter()
-abstain_count = 0
-answerable_count = 0
-classes_in_benchmark = Counter()
+total_lines = 0
+sample_questions = defaultdict(list)
 
-with jsonl_p.open(encoding="utf-8") as f:
+with jsonl_path.open(encoding="utf-8") as f:
     for line in f:
+        total_lines += 1
         item = json.loads(line)
-        kinds_in_jsonl[item["kind"]] += 1
-        if item.get("answer") == "Không thể xác định từ ảnh":
-            abstain_count += 1
-        else:
-            answerable_count += 1
-        classes_in_benchmark[item.get("class_id")] += 1
+        kind = item.get("kind", "unknown")
+        kinds_counter[kind] += 1
+        
+        img_p = item.get("image_path", "")
+        ds_name = "unknown"
+        if "dota" in img_p.lower():
+            ds_name = "DOTA"
+        elif "dior" in img_p.lower():
+            ds_name = "DIOR"
+        elif "visdrone" in img_p.lower():
+            ds_name = "VisDrone"
+        elif "xview" in img_p.lower():
+            ds_name = "xView"
+        elif "isaid" in img_p.lower():
+            ds_name = "iSAID"
+        dataset_counter[ds_name] += 1
+        
+        ans = item.get("answer", "")
+        is_abstain = (ans == "Không thể xác định từ ảnh")
+        ans_status = "Abstain (Không thể xác định)" if is_abstain else "Answerable"
+        answer_types[ans_status] += 1
+        kind_answer_table[kind][ans_status] += 1
+        
+        rho = item.get("rho_px", None)
+        if rho is not None:
+            rho_px_values.append(rho)
+            rho_px_by_kind[kind].append(rho)
+            
+            if rho < 2:
+                rbin = "< 2"
+            elif rho < 4:
+                rbin = "2-4"
+            elif rho < 8:
+                rbin = "4-8"
+            elif rho < 16:
+                rbin = "8-16"
+            else:
+                rbin = ">= 16"
+            rho_px_bins[rbin] += 1
+            
+            dens = item.get("isolation_flag", "medium")
+            density_counter[dens] += 1
+            grid_table[rbin][dens] += 1
+            
+        j_lvl = item.get("johnson_level")
+        if j_lvl:
+            johnson_counter[j_lvl] += 1
+            
+        cls_name = item.get("class_id") or item.get("class_name")
+        if cls_name:
+            class_counter[cls_name] += 1
+            
+        if len(sample_questions[kind]) < 2:
+            sample_questions[kind].append(item)
 
-print(f"Tổng số dòng trong JSONL: {sum(kinds_in_jsonl.values()):,}")
-print(f"Số câu trả lời được (Answerable): {answerable_count:,} ({answerable_count/sum(kinds_in_jsonl.values())*100:.1f}%)")
-print(f"Số câu từ chối vật lý (Abstain/Sensor Limit): {abstain_count:,} ({abstain_count/sum(kinds_in_jsonl.values())*100:.1f}%)")
-print(f"Số lượng lớp đối tượng xuất hiện: {len(classes_in_benchmark)} lớp")
-print("Top 10 lớp xuất hiện nhiều nhất:")
-for c, cnt in classes_in_benchmark.most_common(10):
-    print(f"  - {c:20s}: {cnt:5,} câu")
+print(f"\n[2] PHÂN BỔ THEO LOẠI CÂU HỎI (KIND / QUESTION TYPE)")
+print(f"{'Loại câu hỏi (Kind)':<20} | {'Số lượng':<10} | {'Tỷ lệ %':<8} | {'Answerable':<12} | {'Abstain':<10} | {'% Abstain':<10}")
+print("-" * 80)
+for k, count in sorted(kinds_counter.items(), key=lambda x: x[0]):
+    pct = count / total_lines * 100
+    ans_cnt = kind_answer_table[k]["Answerable"]
+    abs_cnt = kind_answer_table[k]["Abstain (Không thể xác định)"]
+    abs_pct = abs_cnt / count * 100 if count > 0 else 0
+    print(f"{k:<20} | {count:<10,} | {pct:6.2f}% | {ans_cnt:<12,} | {abs_cnt:<10,} | {abs_pct:8.2f}%")
+print("-" * 80)
+print(f"{'TỔNG CỘNG':<20} | {total_lines:<10,} | 100.00% | {answer_types['Answerable']:<12,} | {answer_types['Abstain (Không thể xác định)']:<10,} | {answer_types['Abstain (Không thể xác định)']/total_lines*100:8.2f}%")
 
-print("\n--- 4. Phân tích các lý do từ chối (Rejection/Skip QA) ---")
+print(f"\n[3] PHÂN BỔ THEO DATASET NGUỒN")
+for ds, count in dataset_counter.most_common():
+    print(f"  • {ds:<12}: {count:6,} câu ({count/total_lines*100:5.2f}%)")
+
+print(f"\n[4] THỐNG KÊ PHÂN BỐ VẬT LÝ RHO_PX (FOOTPRINT IN PIXELS)")
+if rho_px_values:
+    rho_sorted = sorted(rho_px_values)
+    n = len(rho_sorted)
+    min_v = rho_sorted[0]
+    q25 = rho_sorted[int(0.25 * n)]
+    median_v = rho_sorted[int(0.50 * n)]
+    q75 = rho_sorted[int(0.75 * n)]
+    max_v = rho_sorted[-1]
+    mean_v = sum(rho_sorted) / n
+    print(f"  • Số mẫu có rho_px   : {n:,} / {total_lines:,}")
+    print(f"  • Min - Max           : {min_v:.2f} px - {max_v:.2f} px")
+    print(f"  • Q25 - Median - Q75  : {q25:.2f} px | {median_v:.2f} px | {q75:.2f} px")
+    print(f"  • Mean ± Std          : {mean_v:.2f} px")
+
+print(f"\n[5] MA TRẬN PHÂN TẦNG THEO BẢNG III-b (RHO_PX x MẬT ĐỘ / ISOLATION)")
+print(f"{'rho_px Bin':<12} | {'Thưa (isolated)':<16} | {'Trung bình':<12} | {'Dày (aggregated)':<18} | {'Tổng':<10}")
+print("-" * 75)
+bin_order = ["< 2", "2-4", "4-8", "8-16", ">= 16"]
+for b in bin_order:
+    iso = grid_table[b]["isolated"]
+    med = grid_table[b]["medium"]
+    agg = grid_table[b]["aggregated"]
+    tot = iso + med + agg
+    print(f"{b:<12} | {iso:<16,} | {med:<12,} | {agg:<18,} | {tot:<10,}")
+print("-" * 75)
+
+print(f"\n[6] PHÂN LOẠI TIÊU CHÍ JOHNSON (Q3-HF)")
+for jlvl, jcnt in johnson_counter.most_common():
+    print(f"  • {jlvl:<20}: {jcnt:6,} câu")
+
+print(f"\n[7] ĐA DẠNG LỚP ĐỐI TƯỢNG (CLASSES)")
+print(f"  • Tổng số lớp đối tượng: {len(class_counter)} lớp")
+print(f"  • Top 10 lớp phổ biến nhất:")
+for c, cnt in class_counter.most_common(10):
+    print(f"     - {c:<25}: {cnt:5,} câu ({cnt/total_lines*100:5.2f}%)")
+
+print(f"\n[8] PHÂN TÍCH LÝ DO REJECTS TRONG BUILD REPORT")
 reject_reasons = Counter()
-for r in rep.get("rejects_sample", []):
-    reason = r.get("reason", "unknown")
-    reject_reasons[reason] += 1
-for r, cnt in reject_reasons.most_common(5):
-    print(f"  - {r}")
+for r in report.get("rejects_sample", []):
+    reject_reasons[r.get("reason", "unknown")] += 1
+for reason, count in reject_reasons.most_common(10):
+    print(f"  • {reason:<45}: {count} mẫu trong sample")
