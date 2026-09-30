@@ -13,10 +13,12 @@ Cách chạy:
 """
 from __future__ import annotations
 import argparse
-from collections import Counter
+from collections import Counter, defaultdict
 import json
+import math
 import os
 from pathlib import Path
+import random
 import sys
 from PIL import Image
 
@@ -346,6 +348,22 @@ def discover_scenes(root_dir, dataset_filter="all"):
     return discovered
 
 
+def get_sample_dataset(sample: dict) -> str:
+    """Xác định nguồn dataset từ đường dẫn ảnh hoặc trường meta."""
+    p = sample.get("image_path", "").replace("\\", "/").lower()
+    if "dota" in p:
+        return "dota"
+    elif "dior" in p:
+        return "dior"
+    elif "visdrone" in p:
+        return "visdrone"
+    elif "xview" in p:
+        return "xview"
+    elif "isaid" in p:
+        return "isaid"
+    return "other"
+
+
 def build_dataset_multi(root_dir, config, specs, dataset_name="all", per_kind=1):
     """Quy trình sinh câu hỏi trắc nghiệm hoàn chỉnh từ các dataset được chọn."""
     discovered = discover_scenes(root_dir, dataset_name)
@@ -408,26 +426,70 @@ def build_dataset_multi(root_dir, config, specs, dataset_name="all", per_kind=1)
     for k, v in pool.items():
         print(f"  {k:8s}: {len(v):,}")
 
-    # Cắt quota theo per_kind
+    # Gán ID duy nhất cho toàn bộ pool thô
+    pool_counters = Counter()
+    for kind in KINDS:
+        for item in pool[kind]:
+            pool_counters[kind] += 1
+            item["id"] = f"POOL-{kind.replace('-', '')}-{pool_counters[kind]:06d}"
+
+    # Lấy mẫu phân tầng cân bằng (Stratified Sampling) theo từng dataset
+    rng = random.Random(42)
     selected = []
     kind_counts = {}
-    for kind in KINDS:
-        items = pool[kind][:per_kind]
-        kind_counts[kind] = len(items)
-        selected.extend(items)
+    selected_by_ds_and_kind = defaultdict(Counter)
+    pool_by_ds_and_kind = defaultdict(Counter)
 
-    # Đánh số ID
+    for kind in KINDS:
+        kind_pool = pool[kind]
+        ds_groups = defaultdict(list)
+        for item in kind_pool:
+            ds = get_sample_dataset(item)
+            ds_groups[ds].append(item)
+            pool_by_ds_and_kind[kind][ds] += 1
+
+        # Xáo trộn ngẫu nhiên từng dataset để câu hỏi rải đều khắp các ảnh
+        for ds in ds_groups:
+            rng.shuffle(ds_groups[ds])
+
+        # Phân bổ đều quota giữa các dataset khả dụng (Water-filling allocation)
+        needed = per_kind
+        chosen = []
+        active_datasets = sorted(list(ds_groups.keys()))
+
+        while needed > 0 and any(ds_groups[ds] for ds in active_datasets):
+            remaining_ds = [ds for ds in active_datasets if ds_groups[ds]]
+            if not remaining_ds:
+                break
+            share = max(1, math.ceil(needed / len(remaining_ds)))
+            for ds in remaining_ds:
+                take = min(share, len(ds_groups[ds]), needed)
+                chosen.extend(ds_groups[ds][:take])
+                ds_groups[ds] = ds_groups[ds][take:]
+                needed -= take
+                if needed <= 0:
+                    break
+
+        kind_counts[kind] = len(chosen)
+        selected.extend(chosen)
+        for item in chosen:
+            selected_by_ds_and_kind[kind][get_sample_dataset(item)] += 1
+
+    # Đánh số ID chuẩn hóa cho tập benchmark chọn lọc
     counters = Counter()
     for item in selected:
         counters[item["kind"]] += 1
-        item["id"] = f"RS-SOLVE-{item['kind'].replace('-', '')}-{counters[item['kind']]:03d}"
+        item["id"] = f"RS-SOLVE-{item['kind'].replace('-', '')}-{counters[item['kind']]:05d}"
 
     report = {
         "dataset_filter": dataset_name,
         "complete": all(kind_counts[k] >= per_kind for k in KINDS),
         "requested_per_kind": per_kind,
         "counts_by_kind": kind_counts,
+        "selected_by_dataset_and_kind": {k: dict(v) for k, v in selected_by_ds_and_kind.items()},
+        "pool_by_dataset_and_kind": {k: dict(v) for k, v in pool_by_ds_and_kind.items()},
         "total_questions": len(selected),
+        "total_pool_questions": sum(len(v) for v in pool.values()),
         "scenes_processed": len(scenes),
         "dataset_scene_counts": dict(dataset_counts),
         "scene_provenance_sample": provenance,
@@ -436,9 +498,7 @@ def build_dataset_multi(root_dir, config, specs, dataset_name="all", per_kind=1)
         "load_errors_count": dict(errors)
     }
 
-    return selected, report
-
-    return selected, report
+    return selected, report, pool
 
 
 def main():
@@ -455,7 +515,7 @@ def main():
     specs = load_specs()
 
     print(f"=== BẮT ĐẦU SINH DỮ LIỆU RS-SOLVE [{args.dataset.upper()}] ===")
-    samples, report = build_dataset_multi(args.data_dir, config, specs, args.dataset, args.per_kind)
+    samples, report, pool = build_dataset_multi(args.data_dir, config, specs, args.dataset, args.per_kind)
 
     pref = Path(args.output_prefix)
     if not pref.is_absolute():
@@ -465,6 +525,7 @@ def main():
     out_json = pref.parent / f"{pref.name}.json"
     out_jsonl = pref.parent / f"{pref.name}.jsonl"
     out_rep = pref.parent / f"{pref.name}_build_report.json"
+    out_pool_jsonl = pref.parent / f"{pref.name}_full_pool.jsonl"
 
     out_json.write_text(json.dumps(samples, ensure_ascii=False, indent=2), encoding="utf-8")
     with out_jsonl.open("w", encoding="utf-8") as f:
@@ -472,9 +533,17 @@ def main():
             f.write(json.dumps(s, ensure_ascii=False) + "\n")
     out_rep.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    print(f"Hoàn thành: {len(samples)} câu hỏi được tạo.")
+    total_pool_saved = 0
+    with out_pool_jsonl.open("w", encoding="utf-8") as f:
+        for kind in KINDS:
+            for item in pool.get(kind, []):
+                f.write(json.dumps(item, ensure_ascii=False) + "\n")
+                total_pool_saved += 1
+
+    print(f"Hoàn thành: {len(samples):,} câu hỏi chọn lọc chuẩn hóa.")
     print(f"Thống kê theo kind: {report['counts_by_kind']}")
-    print(f"Đã lưu: {out_json.as_posix()}, {out_jsonl.as_posix()}, {out_rep.as_posix()}")
+    print(f"Đã lưu full pool: {total_pool_saved:,} câu hỏi tại {out_pool_jsonl.as_posix()}")
+    print(f"Đã lưu benchmark: {out_json.as_posix()}, {out_jsonl.as_posix()}, {out_rep.as_posix()}")
 
 
 if __name__ == "__main__":
