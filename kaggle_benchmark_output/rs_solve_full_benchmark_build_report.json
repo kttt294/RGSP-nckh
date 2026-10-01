@@ -1,0 +1,1309 @@
+{
+  "dataset_filter": "all",
+  "complete": false,
+  "requested_per_kind": 6000,
+  "counts_by_kind": {
+    "Q1": 6000,
+    "Q2": 6000,
+    "Q3-HF": 332,
+    "Q3-LF": 0,
+    "Q4": 6000,
+    "Q5": 6000,
+    "Q6": 6000
+  },
+  "selected_by_dataset_and_kind": {
+    "Q1": {
+      "dior": 1575,
+      "dota": 1275,
+      "visdrone": 1575,
+      "xview": 1575
+    },
+    "Q2": {
+      "dior": 4805,
+      "dota": 1195
+    },
+    "Q3-HF": {
+      "dota": 332
+    },
+    "Q4": {
+      "dior": 1500,
+      "dota": 1500,
+      "visdrone": 1500,
+      "xview": 1500
+    },
+    "Q5": {
+      "dior": 1500,
+      "dota": 1500,
+      "visdrone": 1500,
+      "xview": 1500
+    },
+    "Q6": {
+      "dior": 1500,
+      "dota": 1500,
+      "visdrone": 1500,
+      "xview": 1500
+    }
+  },
+  "pool_by_dataset_and_kind": {
+    "Q1": {
+      "dota": 1275,
+      "dior": 23621,
+      "visdrone": 7691,
+      "xview": 1840
+    },
+    "Q2": {
+      "dota": 1195,
+      "dior": 5737
+    },
+    "Q3-HF": {
+      "dota": 332
+    },
+    "Q4": {
+      "dota": 9160,
+      "dior": 26703,
+      "visdrone": 49650,
+      "xview": 16220
+    },
+    "Q5": {
+      "dota": 7317,
+      "dior": 19975,
+      "visdrone": 44042,
+      "xview": 10559
+    },
+    "Q6": {
+      "dota": 3624,
+      "dior": 7958,
+      "visdrone": 17265,
+      "xview": 5087
+    }
+  },
+  "total_questions": 30332,
+  "total_pool_questions": 259251,
+  "scenes_processed": 34806,
+  "dataset_scene_counts": {
+    "dota": 1868,
+    "dior": 23463,
+    "visdrone": 8629,
+    "xview": 846
+  },
+  "scene_provenance_sample": {
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2595.png": {
+      "dataset": "dota",
+      "gsd_m": 0.252915954135,
+      "gsd_source": "label_header",
+      "objects_count": 23,
+      "classes": [
+        "ground_track_field",
+        "small_vehicle",
+        "soccer_ball_field",
+        "tennis_court"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0524.png": {
+      "dataset": "dota",
+      "gsd_m": 0.263157695007,
+      "gsd_source": "label_header",
+      "objects_count": 14,
+      "classes": [
+        "harbor",
+        "ship",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1651.png": {
+      "dataset": "dota",
+      "gsd_m": 0.72,
+      "gsd_source": "label_header",
+      "objects_count": 23,
+      "classes": [
+        "bridge",
+        "storage_tank"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2242.png": {
+      "dataset": "dota",
+      "gsd_m": 0.272210276005,
+      "gsd_source": "label_header",
+      "objects_count": 321,
+      "classes": [
+        "airplane",
+        "helicopter",
+        "large_vehicle",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2789.png": {
+      "dataset": "dota",
+      "gsd_m": 0.10293325277,
+      "gsd_source": "label_header",
+      "objects_count": 116,
+      "classes": [
+        "harbor",
+        "large_vehicle",
+        "ship",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1128.png": {
+      "dataset": "dota",
+      "gsd_m": 0.3,
+      "gsd_source": "dataset_default",
+      "objects_count": 3,
+      "classes": [
+        "airplane"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1179.png": {
+      "dataset": "dota",
+      "gsd_m": 0.288501286197,
+      "gsd_source": "label_header",
+      "objects_count": 139,
+      "classes": [
+        "airplane",
+        "helicopter",
+        "roundabout",
+        "small_vehicle",
+        "storage_tank"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1742.png": {
+      "dataset": "dota",
+      "gsd_m": 0.72,
+      "gsd_source": "label_header",
+      "objects_count": 17,
+      "classes": [
+        "airplane",
+        "baseball_diamond",
+        "ground_track_field"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2135.png": {
+      "dataset": "dota",
+      "gsd_m": 0.3,
+      "gsd_source": "dataset_default",
+      "objects_count": 55,
+      "classes": [
+        "small_vehicle",
+        "tennis_court"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2420.png": {
+      "dataset": "dota",
+      "gsd_m": 0.957792126381,
+      "gsd_source": "label_header",
+      "objects_count": 1,
+      "classes": [
+        "roundabout"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1666.png": {
+      "dataset": "dota",
+      "gsd_m": 0.72,
+      "gsd_source": "label_header",
+      "objects_count": 7,
+      "classes": [
+        "roundabout",
+        "soccer_ball_field",
+        "storage_tank"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2617.png": {
+      "dataset": "dota",
+      "gsd_m": 0.114196973007,
+      "gsd_source": "label_header",
+      "objects_count": 39,
+      "classes": [
+        "large_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2011.png": {
+      "dataset": "dota",
+      "gsd_m": 0.2660774455,
+      "gsd_source": "label_header",
+      "objects_count": 20,
+      "classes": [
+        "baseball_diamond",
+        "ground_track_field",
+        "small_vehicle",
+        "soccer_ball_field",
+        "tennis_court"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2044.png": {
+      "dataset": "dota",
+      "gsd_m": 0.264032221682,
+      "gsd_source": "label_header",
+      "objects_count": 11,
+      "classes": [
+        "basketball_court",
+        "small_vehicle",
+        "tennis_court"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2231.png": {
+      "dataset": "dota",
+      "gsd_m": 0.285369035458,
+      "gsd_source": "label_header",
+      "objects_count": 224,
+      "classes": [
+        "airplane",
+        "large_vehicle",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0801.png": {
+      "dataset": "dota",
+      "gsd_m": 0.127848639081,
+      "gsd_source": "label_header",
+      "objects_count": 465,
+      "classes": [
+        "harbor",
+        "ship",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1880.png": {
+      "dataset": "dota",
+      "gsd_m": 0.289159985443,
+      "gsd_source": "label_header",
+      "objects_count": 48,
+      "classes": [
+        "large_vehicle",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0841.png": {
+      "dataset": "dota",
+      "gsd_m": 0.26912515696,
+      "gsd_source": "label_header",
+      "objects_count": 496,
+      "classes": [
+        "airplane",
+        "large_vehicle",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2766.png": {
+      "dataset": "dota",
+      "gsd_m": 0.286142277051,
+      "gsd_source": "label_header",
+      "objects_count": 404,
+      "classes": [
+        "bridge",
+        "large_vehicle",
+        "ship",
+        "storage_tank"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2541.png": {
+      "dataset": "dota",
+      "gsd_m": 0.944361380116,
+      "gsd_source": "label_header",
+      "objects_count": 10,
+      "classes": [
+        "bridge",
+        "roundabout",
+        "soccer_ball_field"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2721.png": {
+      "dataset": "dota",
+      "gsd_m": 2.23960816743,
+      "gsd_source": "label_header",
+      "objects_count": 39,
+      "classes": [
+        "bridge",
+        "ground_track_field",
+        "roundabout",
+        "soccer_ball_field"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1825.png": {
+      "dataset": "dota",
+      "gsd_m": 0.134467642712,
+      "gsd_source": "label_header",
+      "objects_count": 22,
+      "classes": [
+        "large_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0989.png": {
+      "dataset": "dota",
+      "gsd_m": 0.277647582591,
+      "gsd_source": "label_header",
+      "objects_count": 32,
+      "classes": [
+        "harbor",
+        "ship",
+        "small_vehicle",
+        "swimming_pool"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2608.png": {
+      "dataset": "dota",
+      "gsd_m": 0.122617438543,
+      "gsd_source": "label_header",
+      "objects_count": 216,
+      "classes": [
+        "basketball_court",
+        "large_vehicle",
+        "roundabout",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2255.png": {
+      "dataset": "dota",
+      "gsd_m": 0.561145495881,
+      "gsd_source": "label_header",
+      "objects_count": 7,
+      "classes": [
+        "baseball_diamond"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2294.png": {
+      "dataset": "dota",
+      "gsd_m": 1.11382802943,
+      "gsd_source": "label_header",
+      "objects_count": 4,
+      "classes": [
+        "harbor",
+        "ship"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2571.png": {
+      "dataset": "dota",
+      "gsd_m": 0.121828543773,
+      "gsd_source": "label_header",
+      "objects_count": 13,
+      "classes": [
+        "small_vehicle",
+        "tennis_court"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1809.png": {
+      "dataset": "dota",
+      "gsd_m": 0.202347000518,
+      "gsd_source": "label_header",
+      "objects_count": 3927,
+      "classes": [
+        "airplane",
+        "helicopter",
+        "large_vehicle",
+        "roundabout",
+        "small_vehicle",
+        "storage_tank"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1693.png": {
+      "dataset": "dota",
+      "gsd_m": 0.72,
+      "gsd_source": "label_header",
+      "objects_count": 9,
+      "classes": [
+        "baseball_diamond",
+        "ground_track_field",
+        "roundabout"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0336.png": {
+      "dataset": "dota",
+      "gsd_m": 0.124491589001,
+      "gsd_source": "label_header",
+      "objects_count": 28,
+      "classes": [
+        "harbor",
+        "ship",
+        "small_vehicle",
+        "swimming_pool"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1429.png": {
+      "dataset": "dota",
+      "gsd_m": 0.13692435515,
+      "gsd_source": "label_header",
+      "objects_count": 23,
+      "classes": [
+        "harbor",
+        "ship"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1234.png": {
+      "dataset": "dota",
+      "gsd_m": 1.0,
+      "gsd_source": "label_header",
+      "objects_count": 190,
+      "classes": [
+        "bridge",
+        "harbor",
+        "ship",
+        "storage_tank"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1973.png": {
+      "dataset": "dota",
+      "gsd_m": 0.112240029026,
+      "gsd_source": "label_header",
+      "objects_count": 86,
+      "classes": [
+        "large_vehicle",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1315.png": {
+      "dataset": "dota",
+      "gsd_m": 1.0,
+      "gsd_source": "label_header",
+      "objects_count": 33,
+      "classes": [
+        "bridge",
+        "ship"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0651.png": {
+      "dataset": "dota",
+      "gsd_m": 0.133618023015,
+      "gsd_source": "label_header",
+      "objects_count": 15,
+      "classes": [
+        "tennis_court"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2375.png": {
+      "dataset": "dota",
+      "gsd_m": 0.55152882474,
+      "gsd_source": "label_header",
+      "objects_count": 4,
+      "classes": [
+        "ground_track_field",
+        "roundabout",
+        "soccer_ball_field",
+        "tennis_court"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1134.png": {
+      "dataset": "dota",
+      "gsd_m": 0.10567272576,
+      "gsd_source": "label_header",
+      "objects_count": 3,
+      "classes": [
+        "airplane",
+        "large_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1075.png": {
+      "dataset": "dota",
+      "gsd_m": 0.280259174212,
+      "gsd_source": "label_header",
+      "objects_count": 424,
+      "classes": [
+        "harbor",
+        "ship",
+        "small_vehicle",
+        "swimming_pool",
+        "tennis_court"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0543.png": {
+      "dataset": "dota",
+      "gsd_m": 0.127544230092,
+      "gsd_source": "label_header",
+      "objects_count": 6,
+      "classes": [
+        "harbor",
+        "ship",
+        "swimming_pool"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0525.png": {
+      "dataset": "dota",
+      "gsd_m": 0.141762490619,
+      "gsd_source": "label_header",
+      "objects_count": 8,
+      "classes": [
+        "harbor",
+        "ship"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0374.png": {
+      "dataset": "dota",
+      "gsd_m": 0.123528568431,
+      "gsd_source": "label_header",
+      "objects_count": 33,
+      "classes": [
+        "baseball_diamond",
+        "basketball_court",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1983.png": {
+      "dataset": "dota",
+      "gsd_m": 0.240861518904,
+      "gsd_source": "label_header",
+      "objects_count": 299,
+      "classes": [
+        "large_vehicle",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1452.png": {
+      "dataset": "dota",
+      "gsd_m": 0.120141586859,
+      "gsd_source": "label_header",
+      "objects_count": 44,
+      "classes": [
+        "large_vehicle",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2413.png": {
+      "dataset": "dota",
+      "gsd_m": 0.909697133546,
+      "gsd_source": "label_header",
+      "objects_count": 5,
+      "classes": [
+        "roundabout"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1371.png": {
+      "dataset": "dota",
+      "gsd_m": 1.0,
+      "gsd_source": "label_header",
+      "objects_count": 4,
+      "classes": [
+        "storage_tank"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1101.png": {
+      "dataset": "dota",
+      "gsd_m": 0.136569405667,
+      "gsd_source": "label_header",
+      "objects_count": 8,
+      "classes": [
+        "small_vehicle",
+        "tennis_court"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0761.png": {
+      "dataset": "dota",
+      "gsd_m": 0.133372619155,
+      "gsd_source": "label_header",
+      "objects_count": 115,
+      "classes": [
+        "harbor",
+        "large_vehicle",
+        "ship",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1586.png": {
+      "dataset": "dota",
+      "gsd_m": 0.72,
+      "gsd_source": "label_header",
+      "objects_count": 14,
+      "classes": [
+        "baseball_diamond",
+        "ground_track_field",
+        "roundabout",
+        "soccer_ball_field",
+        "storage_tank"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2462.png": {
+      "dataset": "dota",
+      "gsd_m": 0.965625106134,
+      "gsd_source": "label_header",
+      "objects_count": 69,
+      "classes": [
+        "ground_track_field",
+        "large_vehicle",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0558.png": {
+      "dataset": "dota",
+      "gsd_m": 0.287140549185,
+      "gsd_source": "label_header",
+      "objects_count": 10,
+      "classes": [
+        "harbor",
+        "ship"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2385.png": {
+      "dataset": "dota",
+      "gsd_m": 1.04999408771,
+      "gsd_source": "label_header",
+      "objects_count": 2,
+      "classes": [
+        "bridge"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1752.png": {
+      "dataset": "dota",
+      "gsd_m": 0.72,
+      "gsd_source": "label_header",
+      "objects_count": 13,
+      "classes": [
+        "bridge",
+        "ground_track_field",
+        "roundabout",
+        "storage_tank"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0117.png": {
+      "dataset": "dota",
+      "gsd_m": 0.416863727568,
+      "gsd_source": "label_header",
+      "objects_count": 18,
+      "classes": [
+        "baseball_diamond",
+        "large_vehicle",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1149.png": {
+      "dataset": "dota",
+      "gsd_m": 0.112244396295,
+      "gsd_source": "label_header",
+      "objects_count": 17,
+      "classes": [
+        "airplane",
+        "helicopter"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1601.png": {
+      "dataset": "dota",
+      "gsd_m": 0.72,
+      "gsd_source": "label_header",
+      "objects_count": 25,
+      "classes": [
+        "airplane",
+        "roundabout",
+        "storage_tank"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0864.png": {
+      "dataset": "dota",
+      "gsd_m": 0.251228128249,
+      "gsd_source": "label_header",
+      "objects_count": 708,
+      "classes": [
+        "harbor",
+        "roundabout",
+        "ship",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0454.png": {
+      "dataset": "dota",
+      "gsd_m": 0.123524985796,
+      "gsd_source": "label_header",
+      "objects_count": 138,
+      "classes": [
+        "large_vehicle",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0650.png": {
+      "dataset": "dota",
+      "gsd_m": 0.12349598957,
+      "gsd_source": "label_header",
+      "objects_count": 9,
+      "classes": [
+        "small_vehicle",
+        "tennis_court"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1156.png": {
+      "dataset": "dota",
+      "gsd_m": 0.100850749498,
+      "gsd_source": "label_header",
+      "objects_count": 13,
+      "classes": [
+        "airplane"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0583.png": {
+      "dataset": "dota",
+      "gsd_m": 0.120120476522,
+      "gsd_source": "label_header",
+      "objects_count": 12,
+      "classes": [
+        "harbor",
+        "ship"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0019.png": {
+      "dataset": "dota",
+      "gsd_m": 0.108079065446,
+      "gsd_source": "label_header",
+      "objects_count": 109,
+      "classes": [
+        "harbor",
+        "large_vehicle",
+        "ship",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0725.png": {
+      "dataset": "dota",
+      "gsd_m": 0.131069668972,
+      "gsd_source": "label_header",
+      "objects_count": 55,
+      "classes": [
+        "harbor",
+        "ship",
+        "small_vehicle",
+        "swimming_pool"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2214.png": {
+      "dataset": "dota",
+      "gsd_m": 0.273855978674,
+      "gsd_source": "label_header",
+      "objects_count": 89,
+      "classes": [
+        "airplane",
+        "large_vehicle",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2587.png": {
+      "dataset": "dota",
+      "gsd_m": 0.110071726694,
+      "gsd_source": "label_header",
+      "objects_count": 22,
+      "classes": [
+        "basketball_court",
+        "ground_track_field",
+        "small_vehicle",
+        "tennis_court"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1314.png": {
+      "dataset": "dota",
+      "gsd_m": 1.0,
+      "gsd_source": "label_header",
+      "objects_count": 40,
+      "classes": [
+        "bridge",
+        "ship"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1720.png": {
+      "dataset": "dota",
+      "gsd_m": 0.72,
+      "gsd_source": "label_header",
+      "objects_count": 2,
+      "classes": [
+        "bridge",
+        "roundabout"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1940.png": {
+      "dataset": "dota",
+      "gsd_m": 0.234853941907,
+      "gsd_source": "label_header",
+      "objects_count": 193,
+      "classes": [
+        "large_vehicle",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2791.png": {
+      "dataset": "dota",
+      "gsd_m": 0.217856042578,
+      "gsd_source": "label_header",
+      "objects_count": 24,
+      "classes": [
+        "airplane",
+        "helicopter"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0079.png": {
+      "dataset": "dota",
+      "gsd_m": 0.125623720528,
+      "gsd_source": "label_header",
+      "objects_count": 4,
+      "classes": [
+        "roundabout",
+        "small_vehicle",
+        "swimming_pool"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2768.png": {
+      "dataset": "dota",
+      "gsd_m": 0.581286820883,
+      "gsd_source": "label_header",
+      "objects_count": 15,
+      "classes": [
+        "baseball_diamond",
+        "basketball_court",
+        "ground_track_field",
+        "swimming_pool",
+        "tennis_court"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1759.png": {
+      "dataset": "dota",
+      "gsd_m": 0.72,
+      "gsd_source": "label_header",
+      "objects_count": 2,
+      "classes": [
+        "roundabout"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0130.png": {
+      "dataset": "dota",
+      "gsd_m": 1.09795935169,
+      "gsd_source": "label_header",
+      "objects_count": 71,
+      "classes": [
+        "baseball_diamond",
+        "ground_track_field",
+        "swimming_pool",
+        "tennis_court"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1242.png": {
+      "dataset": "dota",
+      "gsd_m": 1.0,
+      "gsd_source": "label_header",
+      "objects_count": 293,
+      "classes": [
+        "bridge",
+        "harbor",
+        "roundabout",
+        "ship",
+        "storage_tank"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0882.png": {
+      "dataset": "dota",
+      "gsd_m": 0.142261568145,
+      "gsd_source": "label_header",
+      "objects_count": 72,
+      "classes": [
+        "basketball_court",
+        "small_vehicle",
+        "swimming_pool",
+        "tennis_court"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1007.png": {
+      "dataset": "dota",
+      "gsd_m": 0.249529531034,
+      "gsd_source": "label_header",
+      "objects_count": 121,
+      "classes": [
+        "harbor",
+        "ship",
+        "small_vehicle",
+        "swimming_pool"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1432.png": {
+      "dataset": "dota",
+      "gsd_m": 0.284865884922,
+      "gsd_source": "label_header",
+      "objects_count": 24,
+      "classes": [
+        "basketball_court",
+        "ground_track_field",
+        "soccer_ball_field"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1995.png": {
+      "dataset": "dota",
+      "gsd_m": 0.205138692458,
+      "gsd_source": "label_header",
+      "objects_count": 106,
+      "classes": [
+        "large_vehicle",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2374.png": {
+      "dataset": "dota",
+      "gsd_m": 0.528829752173,
+      "gsd_source": "label_header",
+      "objects_count": 3,
+      "classes": [
+        "bridge",
+        "ground_track_field",
+        "soccer_ball_field"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1029.png": {
+      "dataset": "dota",
+      "gsd_m": 0.260650598048,
+      "gsd_source": "label_header",
+      "objects_count": 45,
+      "classes": [
+        "harbor",
+        "ship",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1508.png": {
+      "dataset": "dota",
+      "gsd_m": 0.143821882711,
+      "gsd_source": "label_header",
+      "objects_count": 34,
+      "classes": [
+        "airplane",
+        "helicopter",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0189.png": {
+      "dataset": "dota",
+      "gsd_m": 0.133544232333,
+      "gsd_source": "label_header",
+      "objects_count": 62,
+      "classes": [
+        "large_vehicle",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2408.png": {
+      "dataset": "dota",
+      "gsd_m": 0.946823695435,
+      "gsd_source": "label_header",
+      "objects_count": 2,
+      "classes": [
+        "ground_track_field",
+        "soccer_ball_field"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2488.png": {
+      "dataset": "dota",
+      "gsd_m": 0.954911058768,
+      "gsd_source": "label_header",
+      "objects_count": 39,
+      "classes": [
+        "large_vehicle",
+        "roundabout",
+        "storage_tank",
+        "swimming_pool"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0411.png": {
+      "dataset": "dota",
+      "gsd_m": 0.540163847855,
+      "gsd_source": "label_header",
+      "objects_count": 51,
+      "classes": [
+        "harbor",
+        "large_vehicle",
+        "ship",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1266.png": {
+      "dataset": "dota",
+      "gsd_m": 1.0,
+      "gsd_source": "label_header",
+      "objects_count": 12,
+      "classes": [
+        "bridge",
+        "harbor",
+        "ship"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2271.png": {
+      "dataset": "dota",
+      "gsd_m": 0.568724078092,
+      "gsd_source": "label_header",
+      "objects_count": 1860,
+      "classes": [
+        "airplane",
+        "helicopter",
+        "large_vehicle",
+        "roundabout",
+        "small_vehicle",
+        "storage_tank"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1860.png": {
+      "dataset": "dota",
+      "gsd_m": 0.108927234905,
+      "gsd_source": "label_header",
+      "objects_count": 44,
+      "classes": [
+        "large_vehicle",
+        "ship",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2794.png": {
+      "dataset": "dota",
+      "gsd_m": 0.104173662747,
+      "gsd_source": "label_header",
+      "objects_count": 191,
+      "classes": [
+        "ground_track_field",
+        "large_vehicle",
+        "ship",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0261.png": {
+      "dataset": "dota",
+      "gsd_m": 0.266759271818,
+      "gsd_source": "label_header",
+      "objects_count": 199,
+      "classes": [
+        "airplane",
+        "large_vehicle",
+        "ship",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1763.png": {
+      "dataset": "dota",
+      "gsd_m": 0.72,
+      "gsd_source": "label_header",
+      "objects_count": 4,
+      "classes": [
+        "bridge",
+        "roundabout"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P1332.png": {
+      "dataset": "dota",
+      "gsd_m": 1.0,
+      "gsd_source": "label_header",
+      "objects_count": 38,
+      "classes": [
+        "bridge",
+        "ship"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0579.png": {
+      "dataset": "dota",
+      "gsd_m": 0.124294213576,
+      "gsd_source": "label_header",
+      "objects_count": 11,
+      "classes": [
+        "harbor",
+        "ship"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2363.png": {
+      "dataset": "dota",
+      "gsd_m": 0.561797695245,
+      "gsd_source": "label_header",
+      "objects_count": 5,
+      "classes": [
+        "bridge",
+        "storage_tank"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2598.png": {
+      "dataset": "dota",
+      "gsd_m": 0.113068841441,
+      "gsd_source": "label_header",
+      "objects_count": 50,
+      "classes": [
+        "ground_track_field",
+        "large_vehicle",
+        "small_vehicle",
+        "soccer_ball_field",
+        "tennis_court"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2027.png": {
+      "dataset": "dota",
+      "gsd_m": 0.13671856693,
+      "gsd_source": "label_header",
+      "objects_count": 121,
+      "classes": [
+        "large_vehicle",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0887.png": {
+      "dataset": "dota",
+      "gsd_m": 0.13341356526,
+      "gsd_source": "label_header",
+      "objects_count": 276,
+      "classes": [
+        "harbor",
+        "ship",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0696.png": {
+      "dataset": "dota",
+      "gsd_m": 0.278256910237,
+      "gsd_source": "label_header",
+      "objects_count": 737,
+      "classes": [
+        "harbor",
+        "ship",
+        "small_vehicle",
+        "swimming_pool"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2724.png": {
+      "dataset": "dota",
+      "gsd_m": 2.239491769,
+      "gsd_source": "label_header",
+      "objects_count": 18,
+      "classes": [
+        "bridge",
+        "ground_track_field",
+        "roundabout",
+        "soccer_ball_field"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P0007.png": {
+      "dataset": "dota",
+      "gsd_m": 0.127603145209,
+      "gsd_source": "label_header",
+      "objects_count": 158,
+      "classes": [
+        "large_vehicle",
+        "small_vehicle"
+      ]
+    },
+    "datasets/chandlertimm/dota-data/DOTA/val/images/P2239.png": {
+      "dataset": "dota",
+      "gsd_m": 0.274663821627,
+      "gsd_source": "label_header",
+      "objects_count": 32,
+      "classes": [
+        "airplane",
+        "small_vehicle"
+      ]
+    }
+  },
+  "rejects_count": 3438004,
+  "rejects_sample": [
+    {
+      "image_path": "datasets/chandlertimm/dota-data/DOTA/val/images/P2595.png",
+      "kind": "Q1",
+      "target": "{'obj_idx': 16, 'class_id': 'small_vehicle', 'pts': [(312.0, 162.0), (304.0, 154.0), (318.0, 141.0), (323.0, 148.0)], 'bbox': [304.0, 141.0, 323.0, 162.0], 'center': (314.25, 151.25), 'cell': 'A1', 'minor_len_px': 11.305956727948626, 'major_len_px': 19.10497317454282, 'angle_deg': 137.12109639666144, 'area_px2': 181.5, 'visible_fraction': 1.0, 'difficult': True}",
+      "reason": "Instance difficult hoặc nhìn thấy dưới 50% diện tích"
+    },
+    {
+      "image_path": "datasets/chandlertimm/dota-data/DOTA/val/images/P2595.png",
+      "kind": "Q1",
+      "target": "{'obj_idx': 10, 'class_id': 'tennis_court', 'pts': [(296.0, 564.0), (345.0, 559.0), (351.0, 654.0), (304.0, 658.0)], 'bbox': [296.0, 559.0, 351.0, 658.0], 'center': (324.0, 608.75), 'cell': 'B2', 'minor_len_px': 49.2475015050955, 'major_len_px': 95.16660966697111, 'angle_deg': 85.13548556223952, 'area_px2': 4567.5, 'visible_fraction': 1.0, 'difficult': False}",
+      "reason": "Quá 3 instance cùng lớp trong khung ảnh"
+    },
+    {
+      "image_path": "datasets/chandlertimm/dota-data/DOTA/val/images/P2595.png",
+      "kind": "Q1",
+      "target": "{'obj_idx': 4, 'class_id': 'soccer_ball_field', 'pts': [(615.0, 404.0), (898.0, 390.0), (927.0, 815.0), (644.0, 837.0)], 'bbox': [615.0, 390.0, 927.0, 837.0], 'center': (771.0, 611.5), 'cell': 'C2', 'minor_len_px': 283.8375629959362, 'major_len_px': 433.97004504919465, 'angle_deg': 86.16836054960963, 'area_px2': 121929.0, 'visible_fraction': 1.0, 'difficult': False}",
+      "reason": "Khoảng cách láng giềng nhỏ hơn 4 token"
+    },
+    {
+      "image_path": "datasets/chandlertimm/dota-data/DOTA/val/images/P2595.png",
+      "kind": "Q1",
+      "target": "{'obj_idx': 5, 'class_id': 'ground_track_field', 'pts': [(562.0, 264.0), (928.0, 248.0), (969.0, 939.0), (614.0, 961.0)], 'bbox': [562.0, 248.0, 968.0, 961.0], 'center': (768.25, 603.0), 'cell': 'C2', 'minor_len_px': 366.2888557140353, 'major_len_px': 698.8817907657174, 'angle_deg': 86.45381071842235, 'area_px2': 251070.5, 'visible_fraction': 0.9999663129870541, 'difficult': False}",
+      "reason": "Khoảng cách láng giềng nhỏ hơn 4 token"
+    },
+    {
+      "image_path": "datasets/chandlertimm/dota-data/DOTA/val/images/P2595.png",
+      "kind": "Q3-HF",
+      "target": "{'obj_idx': 2, 'class_id': 'small_vehicle', 'pts': [(66.0, 1256.0), (67.0, 1265.0), (49.0, 1267.0), (49.0, 1258.0)], 'bbox': [49.0, 1256.0, 67.0, 1267.0], 'center': (57.75, 1261.5), 'cell': 'A3', 'minor_len_px': 9.05538513813758, 'major_len_px': 18.110770276274835, 'angle_deg': 173.65980825409008, 'area_px2': 158.5, 'visible_fraction': 1.0, 'difficult': True}",
+      "reason": "Instance difficult hoặc nhìn thấy dưới 50% diện tích"
+    },
+    {
+      "image_path": "datasets/chandlertimm/dota-data/DOTA/val/images/P2595.png",
+      "kind": "Q3-HF",
+      "target": "{'obj_idx': 3, 'class_id': 'tennis_court', 'pts': [(174.0, 815.0), (219.0, 810.0), (230.0, 903.0), (185.0, 909.0)], 'bbox': [174.0, 810.0, 230.0, 909.0], 'center': (202.0, 859.25), 'cell': 'A2', 'minor_len_px': 45.392383286428284, 'major_len_px': 94.64142856064677, 'angle_deg': 83.32553095288242, 'area_px2': 4268.0, 'visible_fraction': 1.0, 'difficult': False}",
+      "reason": "Quá 3 instance cùng lớp trong khung ảnh"
+    },
+    {
+      "image_path": "datasets/chandlertimm/dota-data/DOTA/val/images/P2595.png",
+      "kind": "Q3-HF",
+      "target": "{'obj_idx': 4, 'class_id': 'soccer_ball_field', 'pts': [(615.0, 404.0), (898.0, 390.0), (927.0, 815.0), (644.0, 837.0)], 'bbox': [615.0, 390.0, 927.0, 837.0], 'center': (771.0, 611.5), 'cell': 'C2', 'minor_len_px': 283.8375629959362, 'major_len_px': 433.97004504919465, 'angle_deg': 86.16836054960963, 'area_px2': 121929.0, 'visible_fraction': 1.0, 'difficult': False}",
+      "reason": "Khoảng cách láng giềng nhỏ hơn 4 token"
+    },
+    {
+      "image_path": "datasets/chandlertimm/dota-data/DOTA/val/images/P2595.png",
+      "kind": "Q3-HF",
+      "target": "{'obj_idx': 5, 'class_id': 'ground_track_field', 'pts': [(562.0, 264.0), (928.0, 248.0), (969.0, 939.0), (614.0, 961.0)], 'bbox': [562.0, 248.0, 968.0, 961.0], 'center': (768.25, 603.0), 'cell': 'C2', 'minor_len_px': 366.2888557140353, 'major_len_px': 698.8817907657174, 'angle_deg': 86.45381071842235, 'area_px2': 251070.5, 'visible_fraction': 0.9999663129870541, 'difficult': False}",
+      "reason": "Khoảng cách láng giềng nhỏ hơn 4 token"
+    },
+    {
+      "image_path": "datasets/chandlertimm/dota-data/DOTA/val/images/P2595.png",
+      "kind": "Q3-HF",
+      "target": "{'obj_idx': 6, 'class_id': 'tennis_court', 'pts': [(195.0, 344.0), (239.0, 342.0), (245.0, 436.0), (199.0, 441.0)], 'bbox': [195.0, 342.0, 245.0, 441.0], 'center': (219.5, 390.75), 'cell': 'A1', 'minor_len_px': 46.17959115426703, 'major_len_px': 97.08157904407369, 'angle_deg': 87.39743779750019, 'area_px2': 4315.0, 'visible_fraction': 1.0, 'difficult': False}",
+      "reason": "Quá 3 instance cùng lớp trong khung ảnh"
+    },
+    {
+      "image_path": "datasets/chandlertimm/dota-data/DOTA/val/images/P2595.png",
+      "kind": "Q3-HF",
+      "target": "{'obj_idx': 7, 'class_id': 'tennis_court', 'pts': [(264.0, 339.0), (311.0, 336.0), (317.0, 432.0), (269.0, 436.0)], 'bbox': [264.0, 336.0, 317.0, 436.0], 'center': (290.25, 385.75), 'cell': 'A1', 'minor_len_px': 48.15603691179939, 'major_len_px': 97.18536982977122, 'angle_deg': 86.42366562500266, 'area_px2': 4603.0, 'visible_fraction': 1.0, 'difficult': False}",
+      "reason": "Quá 3 instance cùng lớp trong khung ảnh"
+    },
+    {
+      "image_path": "datasets/chandlertimm/dota-data/DOTA/val/images/P2595.png",
+      "kind": "Q3-HF",
+      "target": "{'obj_idx': 8, 'class_id': 'tennis_court', 'pts': [(333.0, 335.0), (379.0, 330.0), (387.0, 428.0), (338.0, 433.0)], 'bbox': [333.0, 330.0, 387.0, 433.0], 'center': (359.25, 381.5), 'cell': 'B1', 'minor_len_px': 49.24435622258227, 'major_len_px': 99.32267304207744, 'angle_deg': 85.33314162856101, 'area_px2': 4687.5, 'visible_fraction': 1.0, 'difficult': False}",
+      "reason": "Quá 3 instance cùng lớp trong khung ảnh"
+    },
+    {
+      "image_path": "datasets/chandlertimm/dota-data/DOTA/val/images/P2595.png",
+      "kind": "Q3-HF",
+      "target": "{'obj_idx': 9, 'class_id': 'tennis_court', 'pts': [(404.0, 329.0), (449.0, 327.0), (455.0, 422.0), (409.0, 425.0)], 'bbox': [404.0, 327.0, 455.0, 425.0], 'center': (429.25, 375.75), 'cell': 'B1', 'minor_len_px': 46.09377365906488, 'major_len_px': 96.13012014972207, 'angle_deg': 87.0185387800178, 'area_px2': 4359.0, 'visible_fraction': 1.0, 'difficult': False}",
+      "reason": "Quá 3 instance cùng lớp trong khung ảnh"
+    },
+    {
+      "image_path": "datasets/chandlertimm/dota-data/DOTA/val/images/P2595.png",
+      "kind": "Q3-HF",
+      "target": "{'obj_idx': 10, 'class_id': 'tennis_court', 'pts': [(296.0, 564.0), (345.0, 559.0), (351.0, 654.0), (304.0, 658.0)], 'bbox': [296.0, 559.0, 351.0, 658.0], 'center': (324.0, 608.75), 'cell': 'B2', 'minor_len_px': 49.2475015050955, 'major_len_px': 95.16660966697111, 'angle_deg': 85.13548556223952, 'area_px2': 4567.5, 'visible_fraction': 1.0, 'difficult': False}",
+      "reason": "Quá 3 instance cùng lớp trong khung ảnh"
+    },
+    {
+      "image_path": "datasets/chandlertimm/dota-data/DOTA/val/images/P2595.png",
+      "kind": "Q3-HF",
+      "target": "{'obj_idx': 11, 'class_id': 'tennis_court', 'pts': [(370.0, 558.0), (416.0, 554.0), (425.0, 652.0), (378.0, 653.0)], 'bbox': [370.0, 554.0, 425.0, 653.0], 'center': (397.25, 604.25), 'cell': 'B2', 'minor_len_px': 46.90993726156188, 'major_len_px': 98.41124419046048, 'angle_deg': 85.03025927188969, 'area_px2': 4508.5, 'visible_fraction': 1.0, 'difficult': False}",
+      "reason": "Quá 3 instance cùng lớp trong khung ảnh"
+    },
+    {
+      "image_path": "datasets/chandlertimm/dota-data/DOTA/val/images/P2595.png",
+      "kind": "Q3-HF",
+      "target": "{'obj_idx': 12, 'class_id': 'tennis_court', 'pts': [(220.0, 568.0), (266.0, 565.0), (275.0, 662.0), (229.0, 666.0)], 'bbox': [220.0, 565.0, 275.0, 666.0], 'center': (247.5, 615.25), 'cell': 'A2', 'minor_len_px': 46.17304436370978, 'major_len_px': 98.63594666340907, 'angle_deg': 84.75286109838356, 'area_px2': 4516.5, 'visible_fraction': 1.0, 'difficult': True}",
+      "reason": "Instance difficult hoặc nhìn thấy dưới 50% diện tích"
+    },
+    {
+      "image_path": "datasets/chandlertimm/dota-data/DOTA/val/images/P2595.png",
+      "kind": "Q3-HF",
+      "target": "{'obj_idx': 13, 'class_id': 'tennis_court', 'pts': [(252.0, 805.0), (297.0, 798.0), (310.0, 894.0), (263.0, 899.0)], 'bbox': [252.0, 798.0, 310.0, 899.0], 'center': (280.5, 849.0), 'cell': 'A2', 'minor_len_px': 47.24586165785621, 'major_len_px': 96.87620966986674, 'angle_deg': 82.28810758734112, 'area_px2': 4442.0, 'visible_fraction': 1.0, 'difficult': False}",
+      "reason": "Quá 3 instance cùng lớp trong khung ảnh"
+    },
+    {
+      "image_path": "datasets/chandlertimm/dota-data/DOTA/val/images/P2595.png",
+      "kind": "Q3-HF",
+      "target": "{'obj_idx': 14, 'class_id': 'small_vehicle', 'pts': [(69.0, 1275.0), (70.0, 1282.0), (54.0, 1286.0), (52.0, 1279.0)], 'bbox': [52.0, 1275.0, 70.0, 1286.0], 'center': (61.25, 1280.5), 'cell': 'A3', 'minor_len_px': 7.271998845786129, 'major_len_px': 17.464249196573007, 'angle_deg': 166.7594800848128, 'area_px2': 121.5, 'visible_fraction': 1.0, 'difficult': False}",
+      "reason": "Quá 3 instance cùng lớp trong khung ảnh"
+    },
+    {
+      "image_path": "datasets/chandlertimm/dota-data/DOTA/val/images/P2595.png",
+      "kind": "Q3-HF",
+      "target": "{'obj_idx': 15, 'class_id': 'tennis_court', 'pts': [(324.0, 795.0), (370.0, 788.0), (381.0, 884.0), (335.0, 891.0)], 'bbox': [324.0, 788.0, 381.0, 891.0], 'center': (352.5, 839.5), 'cell': 'B2', 'minor_len_px': 46.49783576528847, 'major_len_px': 98.3460790735669, 'angle_deg': 83.46336635120294, 'area_px2': 4493.0, 'visible_fraction': 1.0, 'difficult': False}",
+      "reason": "Quá 3 instance cùng lớp trong khung ảnh"
+    },
+    {
+      "image_path": "datasets/chandlertimm/dota-data/DOTA/val/images/P2595.png",
+      "kind": "Q3-HF",
+      "target": "{'obj_idx': 16, 'class_id': 'small_vehicle', 'pts': [(312.0, 162.0), (304.0, 154.0), (318.0, 141.0), (323.0, 148.0)], 'bbox': [304.0, 141.0, 323.0, 162.0], 'center': (314.25, 151.25), 'cell': 'A1', 'minor_len_px': 11.305956727948626, 'major_len_px': 19.10497317454282, 'angle_deg': 137.12109639666144, 'area_px2': 181.5, 'visible_fraction': 1.0, 'difficult': True}",
+      "reason": "Instance difficult hoặc nhìn thấy dưới 50% diện tích"
+    },
+    {
+      "image_path": "datasets/chandlertimm/dota-data/DOTA/val/images/P2595.png",
+      "kind": "Q3-HF",
+      "target": "{'obj_idx': 17, 'class_id': 'small_vehicle', 'pts': [(588.0, 65.0), (584.0, 57.0), (602.0, 49.0), (607.0, 57.0)], 'bbox': [584.0, 49.0, 607.0, 65.0], 'center': (595.25, 57.0), 'cell': 'B1', 'minor_len_px': 9.341184719229261, 'major_len_px': 21.01766561826588, 'angle_deg': 156.03751102542182, 'area_px2': 184.0, 'visible_fraction': 1.0, 'difficult': True}",
+      "reason": "Instance difficult hoặc nhìn thấy dưới 50% diện tích"
+    }
+  ],
+  "load_errors_count": {
+    "dota_no_objects": 1,
+    "xview_no_objects": 281
+  }
+}

@@ -26,12 +26,14 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Outputs & datasets
-kaggle_benchmark_*/
-kaggle_output*/
-.pytest_cache/
+# Documentation (ignored by user)
 docs/
+
+# Testing & metadata
+.pytest_cache/
 *kernel-metadata.json
-*report.md
-*.jsonl
 *.log
+*report.md
+
+# Large files > 100MB (exceeds GitHub limit)
+*_full_pool.jsonl
