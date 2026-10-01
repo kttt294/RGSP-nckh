@@ -36,4 +36,4 @@ docs/
 *report.md
 
 # Large files > 100MB (exceeds GitHub limit)
-*_full_pool.jsonl
+*_full_pool*.jsonl
