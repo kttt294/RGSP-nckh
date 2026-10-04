@@ -397,10 +397,67 @@ class ClosedAPI_Adapter(BaseModelAdapter):
         }
 
 
+class LLaVAOneVision_Adapter(BaseModelAdapter):
+    """Bộ điều hợp cho LLaVA-OneVision-7B (và LLaVA-NeXT-Interleave).
+    
+    Vision Encoder: SigLIP-SO400M@384
+    Patch size: p=14, không gộp -> P = 14 px/token / ô.
+    Hỗ trợ biến thiên trần: grid in {1x1, 2x2, 3x3}.
+    """
+
+    def __init__(self, model_path: str = "lmms-lab/llava-onevision-qwen2-7b-ov", grid: str = "2x2", device: str = "cuda"):
+        super().__init__("LLaVA-OneVision-7B", effective_patch_size_P=14.0)
+        self.grid = grid
+        self.model_path = model_path
+        self.device = device
+        self.model = None
+        self.processor = None
+
+    def lazy_load(self):
+        if self.model is None:
+            import torch
+            from transformers import LlavaOnevisionForConditionalGeneration, AutoProcessor
+            print(f"[LLaVA-OneVision] Loading model from {self.model_path} with grid={self.grid}...")
+            self.model = LlavaOnevisionForConditionalGeneration.from_pretrained(
+                self.model_path,
+                torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
+                device_map="auto"
+            )
+            self.processor = AutoProcessor.from_pretrained(self.model_path)
+
+    def compute_s(self, img_w: int, img_h: int) -> float:
+        grid_dim = int(self.grid.split("x")[0]) * 384
+        max_dim = max(img_w, img_h)
+        return min(1.0, grid_dim / max_dim)
+
+    def predict(self, image_path: Path, question: str, choices: List[str]) -> Dict[str, Any]:
+        self.lazy_load()
+        import torch
+        image = Image.open(image_path).convert("RGB")
+        prompt = f"<image>\n{format_multiple_choice_prompt(question, choices)}"
+        messages = [{"role": "user", "content": [{"type": "image"}, {"type": "text", "text": prompt}]}]
+        text = self.processor.apply_chat_template(messages, add_generation_prompt=True)
+        inputs = self.processor(text=text, images=image, return_tensors="pt").to(self.model.device)
+
+        with torch.no_grad():
+            outputs = self.model.generate(**inputs, max_new_tokens=64, do_sample=False)
+
+        raw_text = self.processor.decode(outputs[0][inputs.input_ids.shape[1]:], skip_special_tokens=True).strip()
+        pred_choice, pred_letter = parse_choice_from_text(raw_text, choices)
+        return {
+            "predicted_choice": pred_choice,
+            "predicted_letter": pred_letter,
+            "confidence": 0.8,
+            "raw_response": raw_text
+        }
+
+
 def get_model_adapter(model_key: str, **kwargs) -> BaseModelAdapter:
     """Factory lấy adapter theo tên mô hình."""
     key = model_key.lower().replace("-", "_").replace(".", "_")
-    if "qwen" in key:
+    if "onevision" in key or "llava_ov" in key:
+        return LLaVAOneVision_Adapter(**kwargs)
+    elif "qwen" in key:
         return Qwen2_5_VL_Adapter(**kwargs)
     elif "intern" in key:
         return InternVL_Adapter(**kwargs)
@@ -415,4 +472,4 @@ def get_model_adapter(model_key: str, **kwargs) -> BaseModelAdapter:
     elif "mock" in key:
         return MockAdapter(**kwargs)
     else:
-        raise ValueError(f"Mô hình chưa được hỗ trợ: {model_key}. Các mô hình khả dụng: qwen2.5-vl, internvl, llava-1.5, geochat, gpt-4o, gemini-1.5-pro, mock")
+        raise ValueError(f"Mô hình chưa được hỗ trợ: {model_key}. Các mô hình khả dụng: qwen2.5-vl, internvl, llava-1.5, llava-onevision, geochat, gpt-4o, gemini-1.5-pro, mock")
