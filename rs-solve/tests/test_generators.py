@@ -201,6 +201,36 @@ class TestCoreGenerators(unittest.TestCase):
         self.assertIn(cg.GRID_PREFIX, q["question"])
         self.assertIn(cg.ORIENTATION_CHOICES[0], q["choices"])
 
+    def test_q3_lf_color_extraction_and_generation(self):
+        from generate_q3_lf_automated import classify_pixel_hsv, build_q3_lf_sample
+        # 1. Kiểm tra phân loại pixel HSV sang 6 màu chuẩn
+        self.assertEqual(classify_pixel_hsv(0, 100, 200), "Màu đỏ")
+        self.assertEqual(classify_pixel_hsv(100, 150, 200), "Màu xanh dương")
+        self.assertEqual(classify_pixel_hsv(50, 150, 200), "Màu xanh lá cây")
+        self.assertEqual(classify_pixel_hsv(25, 150, 200), "Màu vàng")
+        self.assertEqual(classify_pixel_hsv(0, 10, 220), "Màu trắng")
+        self.assertEqual(classify_pixel_hsv(0, 10, 80), "Màu đen / xám")
+        self.assertIsNone(classify_pixel_hsv(0, 0, 20))  # Lọc bóng tối sâu
+
+        # 2. Kiểm tra tạo câu hỏi Q3-LF giải được (answerable)
+        obj = make_mock_obj(0, "airplane", [120, 120, 150, 150], cell="B2")
+        scene = self.create_mock_scene([obj])
+        q = build_q3_lf_sample(scene, obj, self.specs, self.config, "Màu trắng", answerable=True)
+        self.assertEqual(q["kind"], "Q3-LF")
+        self.assertEqual(q["answer"], "Màu trắng")
+        self.assertTrue(q["answerable_by_sensor"])
+        self.assertEqual(len(q["choices"]), 7)
+        self.assertIn("Màu trắng", q["choices"])
+        self.assertIn(cg.ABSTAIN, q["choices"])
+
+        # 3. Kiểm tra tạo câu hỏi Q3-LF không giải được (unanswerable / Johnson abstention)
+        obj_tiny = make_mock_obj(1, "airplane", [120, 120, 122, 122], cell="B2")
+        q_unans = build_q3_lf_sample(scene, obj_tiny, self.specs, self.config, "Màu đỏ", answerable=False)
+        self.assertEqual(q_unans["kind"], "Q3-LF")
+        self.assertEqual(q_unans["answer"], cg.ABSTAIN)
+        self.assertFalse(q_unans["answerable_by_sensor"])
+        self.assertIn("unanswerable_reason", q_unans)
+
     def test_q4_counting_generation(self):
         objs = [
             make_mock_obj(i, "small_vehicle", [120 + i * 20, 120, 135 + i * 20, 140], cell="B2")
