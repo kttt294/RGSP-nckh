@@ -37,3 +37,7 @@ docs/
 
 # Large files > 100MB (exceeds GitHub limit)
 *_full_pool*.jsonl
+
+# Eval outputs
+eval_outputs/
+eval_reports/
