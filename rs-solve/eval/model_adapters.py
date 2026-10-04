@@ -97,17 +97,23 @@ class BaseModelAdapter(abc.ABC):
         s = self.compute_s(img_w, img_h)
         return (rho_px * s) / self.P
 
-    @abc.abstractmethod
-    def predict(self, image_path: Path, question: str, choices: List[str]) -> Dict[str, Any]:
-        """Thực hiện suy luận trên 1 mẫu câu hỏi.
-        
-        Returns dict chứa:
-            - 'predicted_choice': tên lựa chọn (khớp với 1 phần tử trong choices)
-            - 'predicted_letter': ký tự 'A', 'B', 'C'...
-            - 'confidence': float (0.0 đến 1.0)
-            - 'raw_response': văn bản sinh thô
-        """
-        pass
+    def unload(self):
+        """Giải phóng bộ nhớ GPU sau khi chạy xong mô hình."""
+        if hasattr(self, "model"):
+            self.model = None
+        if hasattr(self, "processor"):
+            self.processor = None
+        if hasattr(self, "tokenizer"):
+            self.tokenizer = None
+        import gc
+        gc.collect()
+        try:
+            import torch
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
+                print(f"[{self.model_name}] Đã giải phóng hoàn toàn bộ nhớ GPU VRAM.")
+        except Exception:
+            pass
 
 
 class MockAdapter(BaseModelAdapter):

@@ -1,0 +1,19 @@
+{
+  "id": "kieuthithutrang/rs-solve-multimodel-pilot-evaluation",
+  "title": "RS-Solve Multi-Model Pilot Evaluation",
+  "code_file": "eval_multimodel_pilot.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "chandlertimm/dota-data",
+    "piumalnipun/dota-labletxt",
+    "shuaitt/diordata",
+    "kefanzhan/diordataset",
+    "abhimanyubhowmik1/visdrone",
+    "hassanmojab/xview-dataset"
+  ]
+}

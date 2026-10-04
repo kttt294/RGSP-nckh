@@ -42,3 +42,4 @@ docs/
 eval_outputs/
 eval_reports/
 kaggle_eval_worker/
+kaggle_pilot_worker/

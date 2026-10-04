@@ -808,6 +808,72 @@ def evaluate_prediction_file(
     return full_data
 
 
+def generate_cross_model_comparison_report(all_results: List[Dict[str, Any]], output_dir: Path) -> Path:
+    """Tạo bảng so sánh liên mô hình (Cross-Model Benchmark Synthesis) theo chuẩn IEEE TGRS."""
+    lines = []
+    lines.append("# BẢNG TỔNG HỢP SO SÁNH ĐA MÔ HÌNH (IEEE TGRS CROSS-MODEL BENCHMARK)")
+    lines.append("")
+    lines.append("Báo cáo so sánh trực tiếp các mô hình thị giác - ngôn ngữ (MLLMs) trên Benchmark RS-Solve:")
+    lines.append("- Kiểm định Giả thuyết Nút thắt Token ($H_1$)")
+    lines.append("- Hai ngưỡng phân giải độc lập ($H_2$)")
+    lines.append("- Bậc thang Johnson ($H_3$)")
+    lines.append("- Hiệu năng dự đoán có chọn lọc RGSP ($H_4$)")
+    lines.append("")
+    lines.append("## 1. BẢNG TỔNG HỢP: Ngưỡng Phân Giải & Kiểm Định Giả Thuyết ($H_1, H_2, H_3$)")
+    lines.append("")
+    lines.append("| Mô hình | $P$ (px) | Acc Toàn cục | $\\beta_1$ ($H_1$) | $p$-value ($H_1$) | $p_0^{50}$ (px) | $\\rho_{tok}^*$ (tok) | $\\rho_{tok}^* \\cdot P$ (px) | Johnson JT $z$ ($H_3$) | JT $p$-value |")
+    lines.append("| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |")
+
+    for res in all_results:
+        m_name = res.get("model_name", "UNKNOWN")
+        overall = res.get("overall", {})
+        t7 = res.get("table_vii", {})
+        t8 = res.get("table_viii", {})
+        t9 = res.get("table_ix", {})
+        jt = t9.get("jonckheere_terpstra", {})
+
+        p_patch = t8.get("P_patch", "—")
+        acc = f"{overall.get('overall_accuracy', 0.0):.2f}%"
+        b1 = f"{t7.get('beta_1', 0.0):.4f}"
+        p_h1 = f"{t7.get('p_value', 1.0):.2e}"
+        p0_50 = f"{t8.get('p0_50_px', np.nan):.2f}" if not np.isnan(t8.get("p0_50_px", np.nan)) else "—"
+        rho_star = f"{t8.get('rho_tok_star', np.nan):.2f}" if not np.isnan(t8.get("rho_tok_star", np.nan)) else "—"
+        model_px = f"{t8.get('model_px_threshold', np.nan):.2f}" if not np.isnan(t8.get("model_px_threshold", np.nan)) else "—"
+        jt_z = f"{jt.get('z', 0.0):.2f}"
+        jt_p = f"{jt.get('p_value', 1.0):.2e}"
+
+        lines.append(f"| **{m_name}** | {p_patch} | {acc} | `{b1}` | `{p_h1}` | `{p0_50}` | `{rho_star}` | `{model_px}` | `{jt_z}` | `{jt_p}` |")
+
+    lines.append("")
+    lines.append("---")
+    lines.append("## 2. BẢNG TỔNG HỢP: Dự Đoán Có Chọn Lọc RGSP vs Baselines ($H_4$)")
+    lines.append("")
+    lines.append("| Mô hình | Phương pháp | Cov@5% ↑ | Cov@10% ↑ | Cov@20% ↑ | Rủi ro @10% | AURC ↓ | Abst.-acc $U$ ↑ | Từ chối thừa $A$ ↓ | Sel. Acc ↑ |")
+    lines.append("| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |")
+
+    for res in all_results:
+        m_name = res.get("model_name", "UNKNOWN")
+        t10 = res.get("table_x", {})
+        methods = t10.get("methods", {})
+        for m_key in ["Zero-shot", "Max-logit / Confidence", "RGSP-abstain (Physical)", "RGSP+ (Physical + Confidence)"]:
+            if m_key in methods:
+                md = methods[m_key]
+                lines.append(
+                    f"| **{m_name}** | {m_key} | {md['cov_5']:.1f}% | {md['cov_10']:.1f}% | "
+                    f"{md['cov_20']:.1f}% | {md['risk_10']:.1f}% | {md['aurc']:.3f} | "
+                    f"{md['abst_u']:.1f}% | {md['over_abst_a']:.1f}% | {md['sel_acc']:.1f}% |"
+                )
+
+    lines.append("")
+    lines.append("---")
+    lines.append("*Báo cáo tổng hợp được tạo tự động bởi RGSP / RS-Solve Cross-Model Evaluator.*")
+
+    cmp_file = output_dir / "cross_model_comparison_report.md"
+    cmp_file.write_text("\n".join(lines), encoding="utf-8")
+    print(f"\n[+] ĐÃ XUẤT BẢNG SO SÁNH ĐA MÔ HÌNH TẠI: {cmp_file}")
+    return cmp_file
+
+
 def main():
     parser = argparse.ArgumentParser(description="Tính toán chỉ số khoa học cho Benchmark RS-Solve (Tables VI - X)")
     parser.add_argument("--preds-file", required=True, nargs="+", help="Đường dẫn đến 1 hoặc nhiều file dự đoán jsonl")
@@ -816,13 +882,29 @@ def main():
     args = parser.parse_args()
 
     out_dir = Path(args.output_dir)
+    all_results = []
 
     for p_file in args.preds_file:
         pf = Path(p_file)
         if not pf.exists():
             print(f"[-] Không tìm thấy file: {pf}")
             continue
-        evaluate_prediction_file(pf, out_dir, p_patch=args.p_patch)
+
+        # Tự động gán P theo tên mô hình nếu file có tên đặc trưng
+        fname = pf.name.lower()
+        if "intern" in fname:
+            p = 28
+        elif "llava" in fname or "geochat" in fname:
+            p = 14
+        else:
+            p = args.p_patch
+
+        res = evaluate_prediction_file(pf, out_dir, p_patch=p)
+        if res:
+            all_results.append(res)
+
+    if len(all_results) > 1:
+        generate_cross_model_comparison_report(all_results, out_dir)
 
 
 if __name__ == "__main__":
