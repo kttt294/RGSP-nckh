@@ -41,3 +41,4 @@ docs/
 # Eval outputs
 eval_outputs/
 eval_reports/
+kaggle_eval_worker/
