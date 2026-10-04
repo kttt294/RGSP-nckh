@@ -43,3 +43,8 @@ eval_outputs/
 eval_reports/
 kaggle_eval_worker/
 kaggle_pilot_worker/
+kaggle_worker_*/
+pilot_output/
+downloaded_pilot/
+qwen_output/
+internvl_output/
