@@ -124,26 +124,30 @@ def run_evaluation(
             except Exception:
                 pass
 
-    if max_samples and max_samples < len(all_items):
-        if stratified:
-            import random
-            random.seed(42)
-            by_kind = defaultdict(list)
-            for it in all_items:
-                by_kind[it.get("kind", "unknown")].append(it)
-            sampled = []
-            per_kind = max(1, max_samples // len(by_kind))
-            for k, items_k in by_kind.items():
-                random.shuffle(items_k)
-                sampled.extend(items_k[:per_kind])
-            if len(sampled) < max_samples:
-                sampled_ids = set(x.get("id") for x in sampled)
-                remain = [it for it in all_items if it.get("id") not in sampled_ids]
-                random.shuffle(remain)
-                sampled.extend(remain[:(max_samples - len(sampled))])
-            all_items = sampled[:max_samples]
+    if stratified:
+        import random
+        random.seed(42)
+        by_kind = defaultdict(list)
+        for it in all_items:
+            by_kind[it.get("kind", "unknown")].append(it)
+        for k in by_kind:
+            random.shuffle(by_kind[k])
+
+        # Xen kẽ đều đặn các loại câu hỏi (Q1, Q2, Q3-LF, Q3-HF, Q4, Q5, Q6)
+        interleaved = []
+        max_kind_len = max(len(v) for v in by_kind.values()) if by_kind else 0
+        sorted_kinds = sorted(by_kind.keys())
+        for step in range(max_kind_len):
+            for k in sorted_kinds:
+                if step < len(by_kind[k]):
+                    interleaved.append(by_kind[k][step])
+
+        if max_samples and max_samples < len(interleaved):
+            all_items = interleaved[:max_samples]
         else:
-            all_items = all_items[:max_samples]
+            all_items = interleaved
+    elif max_samples and max_samples < len(all_items):
+        all_items = all_items[:max_samples]
 
     total_processed = len(completed_ids)
     total_correct = 0
