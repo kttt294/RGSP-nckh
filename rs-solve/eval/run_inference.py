@@ -137,7 +137,8 @@ def run_evaluation(
                 random.shuffle(items_k)
                 sampled.extend(items_k[:per_kind])
             if len(sampled) < max_samples:
-                remain = [it for it in all_items if it not in set(id(x) for x in sampled)]
+                sampled_ids = set(x.get("id") for x in sampled)
+                remain = [it for it in all_items if it.get("id") not in sampled_ids]
                 random.shuffle(remain)
                 sampled.extend(remain[:(max_samples - len(sampled))])
             all_items = sampled[:max_samples]
