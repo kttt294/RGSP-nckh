@@ -31,22 +31,52 @@ if str(REPO_DIR / "rs-solve") not in sys.path:
 from model_adapters import get_model_adapter, BaseModelAdapter
 
 
+_IMAGE_CACHE: Dict[str, Optional[Path]] = {}
+
+
 def resolve_image_path(rel_path: str, image_root: Path) -> Optional[Path]:
-    """Tìm đường dẫn ảnh thực tế trên ổ đĩa từ đường dẫn tương đối."""
+    """Tìm đường dẫn ảnh thực tế trên ổ đĩa từ đường dẫn tương đối (tối ưu tốc độ cao)."""
+    if not rel_path:
+        return None
+    if rel_path in _IMAGE_CACHE:
+        return _IMAGE_CACHE[rel_path]
+
+    # 1. Kiểm tra trực tiếp
+    p_direct = Path(rel_path)
+    if p_direct.is_file():
+        _IMAGE_CACHE[rel_path] = p_direct
+        return p_direct
+
+    # 2. image_root / rel_path
     p1 = image_root / rel_path
     if p1.is_file():
+        _IMAGE_CACHE[rel_path] = p1
         return p1
 
+    # 3. REPO_DIR / rel_path
     p2 = REPO_DIR / rel_path
     if p2.is_file():
+        _IMAGE_CACHE[rel_path] = p2
         return p2
 
-    # Tìm kiếm theo tên file trong image_root
-    fname = Path(rel_path).name
-    matches = list(image_root.rglob(fname))
-    if matches:
-        return matches[0]
+    # 4. Biến thể tiền tố Kaggle: loại bỏ các tiền tố trùng lặp ('kaggle', 'input', 'datasets')
+    parts = [p for p in rel_path.replace("\\", "/").split("/") if p and p not in ("kaggle", "input", "datasets")]
+    if parts:
+        p3 = image_root.joinpath(*parts)
+        if p3.is_file():
+            _IMAGE_CACHE[rel_path] = p3
+            return p3
 
+        # Kiểm tra trong từng thư mục con của image_root (/kaggle/input/<dataset>/...)
+        if image_root.exists():
+            for sub in image_root.iterdir():
+                if sub.is_dir():
+                    cand = sub.joinpath(*parts)
+                    if cand.is_file():
+                        _IMAGE_CACHE[rel_path] = cand
+                        return cand
+
+    _IMAGE_CACHE[rel_path] = None
     return None
 
 
