@@ -6,7 +6,7 @@
     "Q1": 6000,
     "Q2": 6000,
     "Q3-HF": 332,
-    "Q3-LF": 0,
+    "Q3-LF": 439,
     "Q4": 6000,
     "Q5": 6000,
     "Q6": 6000
@@ -42,6 +42,12 @@
       "dota": 1500,
       "visdrone": 1500,
       "xview": 1500
+    },
+    "Q3-LF": {
+      "dior": 255,
+      "xview": 35,
+      "visdrone": 113,
+      "dota": 36
     }
   },
   "pool_by_dataset_and_kind": {
