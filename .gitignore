@@ -48,3 +48,6 @@ pilot_output/
 downloaded_pilot/
 qwen_output/
 internvl_output/
+llava_output/
+pilot_results_all5/
+
