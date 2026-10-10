@@ -1,0 +1,536 @@
+{
+  "source_file": "c:\\Users\\trang\\Downloads\\q3_lf_audit_result_2026-10-10.json",
+  "total_corrected": 106,
+  "corrections": {
+    "RS-SOLVE-Q3LF-00002": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00004": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00005": {
+      "orig": "Màu vàng",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00006": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00008": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu đen / xám",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00010": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00014": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00015": {
+      "orig": "Màu đỏ",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00017": {
+      "orig": "Màu đen / xám",
+      "corr": "Không thể xác định từ ảnh",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00020": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00024": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00025": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00026": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00027": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu đen / xám",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00029": {
+      "orig": "Màu vàng",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00030": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00033": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00034": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00036": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00039": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00040": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00041": {
+      "orig": "Màu vàng",
+      "corr": "Màu đỏ",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00043": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00044": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00051": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00052": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00064": {
+      "orig": "Màu vàng",
+      "corr": "Màu xanh lá cây",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00065": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00066": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu đỏ",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00068": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00069": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00070": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu xanh lá cây",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00072": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00073": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00074": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00075": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00076": {
+      "orig": "Màu vàng",
+      "corr": "Màu đỏ",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00077": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu xanh lá cây",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00079": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu đỏ",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00081": {
+      "orig": "Màu vàng",
+      "corr": "Màu đen / xám",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00091": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu đen / xám",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00094": {
+      "orig": "Màu trắng",
+      "corr": "Màu đỏ",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00105": {
+      "orig": "Màu trắng",
+      "corr": "Màu xanh lá cây",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00107": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00108": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00109": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00113": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00117": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00118": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00121": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00123": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00126": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00127": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00135": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00137": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00138": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00152": {
+      "orig": "Màu vàng",
+      "corr": "Màu đen / xám",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00159": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu đỏ",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00160": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00161": {
+      "orig": "Màu vàng",
+      "corr": "Màu đỏ",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00172": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00173": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00182": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu đỏ",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00184": {
+      "orig": "Màu đen / xám",
+      "corr": "Màu đỏ",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00185": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00191": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00197": {
+      "orig": "Màu vàng",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00200": {
+      "orig": "Màu vàng",
+      "corr": "Màu xanh lá cây",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00201": {
+      "orig": "Màu vàng",
+      "corr": "Màu đen / xám",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00203": {
+      "orig": "Màu vàng",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00204": {
+      "orig": "Màu vàng",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00205": {
+      "orig": "Màu vàng",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00209": {
+      "orig": "Màu vàng",
+      "corr": "Màu xanh lá cây",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00210": {
+      "orig": "Màu vàng",
+      "corr": "Màu đỏ",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00211": {
+      "orig": "Màu vàng",
+      "corr": "Màu đỏ",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00212": {
+      "orig": "Màu vàng",
+      "corr": "Màu đỏ",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00214": {
+      "orig": "Màu vàng",
+      "corr": "Màu đỏ",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00247": {
+      "orig": "Màu vàng",
+      "corr": "Màu xanh lá cây",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00254": {
+      "orig": "Màu vàng",
+      "corr": "Màu xanh lá cây",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00255": {
+      "orig": "Màu vàng",
+      "corr": "Màu xanh lá cây",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00258": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu đen / xám",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00262": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00263": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00266": {
+      "orig": "Màu đỏ",
+      "corr": "Màu vàng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00267": {
+      "orig": "Màu vàng",
+      "corr": "Màu đỏ",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00269": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu đen / xám",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00281": {
+      "orig": "Màu vàng",
+      "corr": "Màu đỏ",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00294": {
+      "orig": "Màu vàng",
+      "corr": "Màu đỏ",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00295": {
+      "orig": "Màu vàng",
+      "corr": "Màu đỏ",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00306": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00309": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00314": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00315": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00316": {
+      "orig": "Màu xanh dương",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00335": {
+      "orig": "Màu đỏ",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00365": {
+      "orig": "Màu đỏ",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00366": {
+      "orig": "Màu đỏ",
+      "corr": "Màu đen / xám",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00371": {
+      "orig": "Màu đỏ",
+      "corr": "Màu trắng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00372": {
+      "orig": "Màu đỏ",
+      "corr": "Không thể xác định từ ảnh",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00374": {
+      "orig": "Màu đỏ",
+      "corr": "Màu vàng",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00375": {
+      "orig": "Màu đỏ",
+      "corr": "Màu đen / xám",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00376": {
+      "orig": "Màu đỏ",
+      "corr": "Không thể xác định từ ảnh",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00377": {
+      "orig": "Màu đỏ",
+      "corr": "Không thể xác định từ ảnh",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00378": {
+      "orig": "Màu đỏ",
+      "corr": "Màu đen / xám",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00380": {
+      "orig": "Màu đỏ",
+      "corr": "Màu đen / xám",
+      "notes": ""
+    },
+    "RS-SOLVE-Q3LF-00434": {
+      "orig": "Không thể xác định từ ảnh",
+      "corr": "Màu đen / xám",
+      "notes": ""
+    }
+  }
+}
