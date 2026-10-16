@@ -1,0 +1,11 @@
+\begin{abstract}
+\normalfont
+Các mô hình ngôn ngữ lớn đa phương thức cho ảnh viễn thám (RS-MLLM) gặp hiện tượng ảo giác (hallucination) nghiêm trọng nhất khi kích thước thực tế của đối tượng quá nhỏ so với khả năng cảm nhận trực quan của mô hình. Các công trình gần đây đã định danh hiện tượng này dưới các thuật ngữ như ``không nhìn rõ'' (\textit{cannot see clearly}) hay ``ảo ảnh độ phân giải'' (\textit{resolution illusion}), nhưng chưa lượng hóa được nó bằng các đại lượng vật lý tính trước, chưa tách biệt hai cơ chế thất bại có bản chất đối lập - đối tượng \textit{không đủ thông tin trong ảnh gốc} (nút thắt cảm biến) hay \textit{có trong ảnh nhưng bị suy hao trong quá trình nén biểu diễn token} (nút thắt bộ mã hóa) - và chưa thiết lập được quy tắc định tuyến tối ưu: khi nào mô hình nên từ chối trả lời, khi nào nên phóng đại cục bộ. 
+
+Kế thừa Tiêu chí Johnson cổ điển trong vật lý viễn thám, bài báo này đề xuất mô hình hóa hai nút thắt thông qua hai đại lượng tính trước: (i) footprint-in-pixels $\rhopx = L/g$ (kích thước vật lý chia GSD cảm biến) và (ii) footprint-in-tokens $\rhotok = \rhopx \cdot s/P$ (kích thước trên không gian token của Vision Transformer). Chúng tôi: (1) Xây dựng bộ chuẩn đánh giá RS-Resolve gồm 30.771 câu hỏi kiểm soát vật lý đa nhiệm vụ (Q1-Q6) tự động trích xuất từ 5 tập ảnh vệ tinh lớn (DOTA-v2, DIOR, xView, VisDrone, iSAID); (2) Thực hiện chẩn đoán thực nghiệm trên 5 kiến trúc RS-MLLM tiêu biểu (GeoChat-7B, LLaVA-1.5-7B, Qwen3-VL-8B, InternVL3.5-8B, LLaVA-NeXT-7B), chứng minh sự tồn tại độc lập của nút thắt token với hệ số hồi quy $\beta_1 < 0$ áp đảo ($p < 10^{-11}$); (3) Đề xuất RGSP (\textit{Resolvability-Gated Selective Prediction}) - bộ định tuyến 4 nhánh không cần huấn luyện (Từ chối cảm biến / Từ chối token / Phóng đại xác định / Trả lời trực tiếp) kiểm soát rủi ro lựa chọn bằng quy trình kiểm định chuỗi cố định (\textit{fixed-sequence testing}). Kết quả thực nghiệm cho thấy RGSP kiểm soát selective risk dưới 10\% ổn định và vượt trội so với các cơ chế dựa trên độ tin cậy logit nội tại hay quy tắc tra bảng thông thường.
+\end{abstract}
+
+\begin{IEEEkeywords}
+\normalfont
+Mô hình đa phương thức, Ảnh viễn thám, Ảo giác (Hallucination), Dự đoán có chọn lọc, Tiêu chí Johnson, Khoảng cách lấy mẫu mặt đất (GSD), Vision Transformer.
+\end{IEEEkeywords}

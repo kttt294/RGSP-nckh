@@ -1,0 +1,32 @@
+\section{Công Trình Liên Quan}
+\label{sec:related}
+
+\subsection{Hiện Tượng Ảo Giác Trong RS-MLLM}
+Sự bùng nổ của các mô hình MLLM chuyên biệt cho ảnh viễn thám \cite{geochat2024, llavanext2024} đi liền với việc ghi nhận chúng thường xuyên ảo giác - tự tin khẳng định sự tồn tại của đối tượng, thuộc tính màu sắc hoặc số lượng mà không có bằng chứng quang học tương ứng. RSHallu \cite{rshallu2024} xây dựng bộ dữ liệu đánh giá và đề xuất phương pháp hiệu chỉnh logit dựa trên prompt nhận thức viễn thám. RADAR \cite{radar2024} phân loại lỗi thành Type 1 (\textit{không tìm thấy}) và Type 2 (\textit{không nhìn rõ}), đưa ra cơ chế zoom dựa trên attention bản đồ chú ý. UHR-Micro \cite{uhrmicro2024} định nghĩa ``ảo ảnh độ phân giải'' dựa trên tỷ lệ diện tích của đối tượng. Tuy nhiên, các công trình này đều chưa phân định được nguyên nhân thất bại đến từ cảm biến vệ tinh hay từ cấu trúc nén token của mô hình, và chưa lượng hóa được tiêu chí toán học để từ chối trước suy luận.
+
+\subsection{Khả Năng Phân Giải Quang Học và Tiêu Chí Johnson}
+Trong lý thuyết truyền dẫn quang học và viễn thám quân sự, việc xác định số điểm ảnh tối thiểu để quan sát đã được đặt nền móng từ công trình kinh điển của John Johnson (1958) \cite{johnson1958analysis}. Tiêu chí Johnson xác định số chu kỳ vạch tương phản trên chiều tới hạn của vật thể để con người đạt xác suất nhận biết 50\%: phát hiện ($\approx 1$ chu kỳ, tương đương 2 pixel), định hướng ($\approx 1.4$ chu kỳ), nhận dạng ($\approx 4$ chu kỳ) và định danh ($\approx 6.4$ chu kỳ, tương đương 12.8 pixel). Sau đó, thang NIIRS và phương trình GIQE \cite{leachtenauer1997general} đã liên kết các thông số cảm biến GSD, hàm truyền điều biến MTF và tỷ số tín hiệu trên nhiễu SNR với khả năng nhận biết của con người và máy dò chuyên dụng \cite{driggersinfrared}. Toàn bộ các lý thuyết này chỉ đo đạc trên con người hoặc mô hình trích xuất đặc trưng truyền thống với duy nhất một nút thắt: pixel cảm biến gốc. Bài báo này mở rộng tiêu chí Johnson lần đầu tiên sang không gian biểu diễn token của các mạng Vision Transformer hiện đại.
+
+\subsection{Dự Đoán Có Chọn Lọc và Kiểm Soát Rủi Ro}
+Lý thuyết phân loại có chọn lọc (\textit{Selective Classification}) của Geifman và El-Yaniv \cite{geifman2017selective} định nghĩa bài toán đánh đổi giữa tỷ lệ bao phủ (\textit{Coverage}) và rủi ro lựa chọn (\textit{Selective Risk}). Khung lý thuyết \textit{Learn-then-Test} \cite{angelopoulos2021learn} và \textit{Conformal Risk Control} \cite{angelopoulos2024conformal} cho phép kiểm soát rủi ro kỳ vọng dưới ngưỡng $\alpha$ định trước thông qua kiểm định giả thuyết thống kê nghiêm ngặt. Trong lĩnh vực thị giác-ngôn ngữ, SIEVES \cite{sieves2024} hiệu chỉnh bộ chọn dựa trên điểm bằng chứng thị giác, còn FUSE tích hợp độ bất định Bayes. Điểm chung của các phương pháp này là đều dựa trên tín hiệu sinh ra sau khi chạy mô hình (hậu nghiệm). Phương pháp RGSP của chúng tôi bổ sung tiên nghiệm vật lý tính trước, cho phép đưa ra quyết định từ chối ngay trước khi tốn bất kỳ chi phí tính toán suy luận nào.
+
+\begin{table*}[t]
+\centering
+\caption{Định vị phương pháp RGSP so với các công trình liên quan.}
+\label{tab:positioning}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccccc}
+\toprule
+Phương pháp & Miền bài toán & Tín hiệu định tuyến & Cần chạy mô hình? & Không huấn luyện & Cơ chế từ chối & Tách Pixel/Token & Định lượng kích thước & Chiến lược Zoom \\
+\midrule
+Johnson / GIQE \cite{johnson1958analysis, leachtenauer1997general} & Viễn thám (Người) & $\rhopx$, MTF, SNR & Không & - & - & Chỉ cảm biến & $\checkmark$ (Người) & - \\
+RADAR \cite{radar2024} & Viễn thám (MLLM) & Attention Entropy & Có & $\checkmark$ & Fallback & $\times$ & $\times$ & Zoom attention \\
+RSHallu-Shield \cite{rshallu2024} & Viễn thám (MLLM) & Hiệu chỉnh Logit & Có & $\checkmark$ & $\times$ & $\times$ & $\times$ & $\times$ \\
+UHR-Micro / MAP-Agent \cite{uhrmicro2024} & Viễn thám (MLLM) & Tỷ lệ diện tích & Có & $\checkmark$ & $\times$ & $\times$ & Một phần & Zoom lặp \\
+SIEVES \cite{sieves2024} & Tổng quát & Điểm bằng chứng & Có & $\checkmark$ & $\checkmark$ & $\times$ & $\times$ & $\times$ \\
+\midrule
+RGSP (Đề xuất) & Viễn thám (RS-MLLM) & $\rhopx$, $\rhotok$ (Vật lý) & Không & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ (MLLM) & Định tuyến 4 nhánh xác định \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

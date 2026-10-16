@@ -1,0 +1,36 @@
+\section{Thiết Lập Thực Nghiệm}
+\label{sec:experiments}
+
+\subsection{Các Mô Hình Thực Nghiệm}
+Chúng tôi tiến hành đánh giá toàn diện trên 5 mô hình ngôn ngữ lớn đa phương thức mã nguồn mở tiêu biểu nhất hiện nay, đại diện cho các trường phái kiến trúc Vision Transformer và chiến lược xử lý độ phân giải khác nhau:
+\begin{enumerate}
+    \item GeoChat-7B \cite{geochat2024}: Mô hình chuyên biệt viễn thám đầu tiên hỗ trợ grounding, sử dụng CLIP-ViT-L/14 co ảnh về $504 \times 504$ cố định ($P = 14$).
+    \item LLaVA-1.5-7B \cite{llava15}: Kiến trúc đa phương thức nền tảng kinh điển, co ảnh về kích thước cố định $336 \times 336$ ($P = 14$).
+    \item LLaVA-NeXT-7B \cite{llavanext2024}: Phiên bản nâng cấp hỗ trợ đa phân giải AnyRes (chia ảnh thành lưới các patch độ phân giải cao và một ảnh thu nhỏ toàn cảnh).
+    \item InternVL3.5-8B \cite{internvl2025}: Kiến trúc thị giác InternViT-6B tiên tiến với cơ chế chia tile động kích cỡ $448 \times 448$ và gộp token pixel unshuffle 2x2 ($P = 28$).
+    \item Qwen3-VL-8B \cite{qwen2025vl}: Mô hình thị giác SigLIP2 hàng đầu với khả năng nhận diện độ phân giải tự do động (\textit{native dynamic resolution}) và MLP merger 2x2 ($P = 32$).
+\end{enumerate}
+
+\subsection{Hệ Thống Thực Nghiệm Phần Cứng}
+Toàn bộ 153.855 lượt suy luận (30.771 câu $\times$ 5 mô hình) được thực thi trên cụm máy chủ nghiên cứu trang bị GPU NVIDIA RTX A6000 (48GB VRAM) và môi trường Kaggle GPU Dual T4. Để đảm bảo an toàn tuyệt đối khi vận hành đồng thời với các tiến trình y tế khác trên cùng máy chủ, chúng tôi thiết lập cơ chế giới hạn bộ nhớ theo thời gian thực (\textit{VRAM safety shield}) với ngưỡng trần cấp phát nghiêm ngặt (29\% VRAM qua hàm \texttt{set\_per\_process\_memory\_fraction}) kết hợp tối ưu bộ nhớ đệm hình ảnh PIL và giải phóng bộ nhớ định kỳ.
+
+\subsection{Các Phương Pháp Đối Chứng (Baselines)}
+Chúng tôi so sánh bộ định tuyến đề xuất RGSP với 5 nhóm phương pháp kiểm soát quyết định đại diện:
+\begin{itemize}
+    \item Zero-shot (Không gate): Mô hình luôn luôn trả lời mọi câu hỏi bất kể độ phân giải hay kích thước đối tượng (tỷ lệ bao phủ 100\%).
+    \item Prompt-based Abstention: Bổ sung chỉ dẫn tường minh trong câu hỏi yêu cầu mô hình tự từ chối khi không nhìn rõ.
+    \item Độ tin cậy nội tại (Max-logit / Softmax): Quyết định từ chối dựa trên giá trị xác suất logit cao nhất của token câu trả lời đầu ra.
+    \item Quy tắc tra bảng Naive (Class $\times$ GSD): Từ chối nếu GSD của ảnh vượt quá ngưỡng GSD cố định của lớp đối tượng, không chuẩn hóa theo kích thước patch $P$ của bộ mã hóa thị giác.
+    \item RGSP-abstain (Đề xuất): Bộ định tuyến thuần vật lý dựa trên hai ngưỡng tính trước $\rhopx$ và $\rhotok$ với chi phí suy luận bằng 0.
+    \item RGSP+ (Đề xuất): Cơ chế kết hợp đồng thời ngưỡng vật lý RGSP với xác suất logit nội tại của mô hình.
+\end{itemize}
+
+\subsection{Tiêu Chí Đánh Giá Khoa Học}
+Theo chuẩn mực đánh giá của bài toán Selective Prediction \cite{geifman2017selective, angelopoulos2021learn}:
+\begin{itemize}
+    \item Tỷ lệ bao phủ (Coverage @ Risk = $\alpha$): Tỷ lệ phần trăm số câu hỏi mà hệ thống chấp nhận trả lời tại mức rủi ro kiểm soát $\alpha \in \{5\%, 10\%, 20\%\}$.
+    \item Diện tích dưới đường cong Rủi ro-Bao phủ (AURC): Đo lường tổng thể năng lực chọn lọc; giá trị càng nhỏ thể hiện mô hình loại bỏ lỗi càng hiệu quả.
+    \item Độ chính xác từ chối trên tập không thể giải ($U$): Tỷ lệ mô hình từ chối đúng trên các câu hỏi có đối tượng bị suy hao dưới ngưỡng phân giải vật lý.
+    \item Tỷ lệ từ chối thừa trên tập có thể giải ($A$): Tỷ lệ mô hình từ chối nhầm các câu hỏi mà ảnh vốn có đủ chi tiết để trả lời đúng.
+    \item Độ chính xác chọn lọc (Selective Accuracy): Độ chính xác thực tế tính riêng trên tập các câu hỏi được hệ thống chấp nhận trả lời.
+\end{itemize}

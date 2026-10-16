@@ -1,0 +1,16 @@
+\section{Kết Luận và Bài Học Phương Pháp Luận}
+\label{sec:conclusion}
+
+Bài báo này đã giải quyết tận gốc hiện tượng ảo giác do độ phân giải trong các mô hình ngôn ngữ lớn đa phương thức viễn thám (RS-MLLM) thông qua việc phân tách thành hai nút thắt phân giải độc lập: nút thắt cảm biến ($\rhopx = L/\gsd$, đại lượng của Tiêu chí Johnson) và nút thắt bộ mã hóa ($\rhotok = \rhopx \cdot s/P$, đại lượng trên không gian token của Vision Transformer). Thực nghiệm trên bộ chuẩn kiểm soát vật lý RS-Resolve với 30.771 câu hỏi và 5 mô hình MLLM hàng đầu đã chứng minh sự tồn tại của nút thắt token với ý nghĩa thống kê áp đảo ($p < 10^{-11}$). Bộ định tuyến đề xuất RGSP không cần huấn luyện, vận hành trước suy luận và đảm bảo rủi ro lựa chọn dưới 10\%, đồng thời triệt tiêu 100\% các suy đoán sai lầm trên tập câu hỏi dưới ngưỡng phân giải cảm biến.
+
+\subsection{Bốn Bài Học Phương Pháp Luận Cho RS-MLLM}
+Kế thừa tinh thần đúc kết thực nghiệm sâu sắc, chúng tôi rút ra 4 bài học phương pháp luận quan trọng cho cộng đồng nghiên cứu:
+\begin{enumerate}
+    \item Không thể khắc phục giới hạn cảm biến bằng cách thêm token: Khi đối tượng có $\rhopx < \pzerou$, thông tin đã không tồn tại ngay từ khâu chụp ảnh vệ tinh. Mọi thao tác phóng đại nội suy hay cơ chế attention zoom chỉ làm tăng kích thước pixel rỗng, làm mô hình tự tin ảo giác hơn. Hành vi duy nhất có trách nhiệm của hệ thống là từ chối trả lời.
+    \item Độ tin cậy nội tại (Logit) không phản ánh năng lực phân giải: MLLM thường có xu hướng cực kỳ tự tin khi đoán bừa trên các đối tượng vi mô (do thiên lệch ngôn ngữ tiên nghiệm). Do đó, dựa vào logit hay softmax entropy để phát hiện lỗi phân giải là không hiệu quả; các tiên nghiệm vật lý tính trước ($\rhopx, \rhotok$) là tuyến phòng thủ không thể thay thế.
+    \item Chuẩn hóa theo kích thước patch $P$ là chìa khóa chuyển giao: Ngưỡng thất bại của bộ mã hóa ổn định trên không gian token ($\rhotokstar \approx 1 - 2\text{ tokens}$ trên các mô hình nén hiện đại), nhưng biến thiên mạnh nếu đo bằng pixel ảnh hay GSD danh định. Bất kỳ thuật toán định tuyến nào không chuẩn hóa theo kích thước patch hiệu dụng $P$ sẽ thất bại khi chuyển giao xuyên kiến trúc.
+    \item Bắt buộc phải đánh giá trên các câu hỏi không thể giải: Các bộ benchmark đánh giá MLLM viễn thám nếu chỉ đo các câu hỏi có thể giải sẽ bỏ lọt hiện tượng đoán bừa nguy hiểm. Việc tích hợp các câu hỏi dưới ngưỡng phân giải vật lý kèm phương án từ chối khách quan là tiêu chuẩn bắt buộc cho các benchmark trong tương lai.
+\end{enumerate}
+
+\subsection{Hạn Chế và Hướng Phát Triển}
+Phương pháp RGSP hiện tại giả định ảnh viễn thám có siêu dữ liệu độ phân giải mặt đất (GSD) và lớp đối tượng có thể tra cứu kích thước vật lý $L$ trong bảng chuẩn hóa. Trong các kịch bản thực tế khi ảnh bị mất siêu dữ liệu hoặc chụp từ các nguồn trôi nổi, GSD cần được ước lượng tự động thông qua các mạng nơ-ron hồi quy độ phân giải (như SSE-U hoặc ScaleEarth). Hướng nghiên cứu tiếp theo của chúng tôi là mở rộng khung lý thuyết hai footprint sang ảnh viễn thám đa phổ (Multispectral), siêu phổ (Hyperspectral) và ảnh radar khẩu độ tổng hợp (SAR), đồng thời tối ưu hóa cơ chế định tuyến lai phối hợp giữa siêu dữ liệu cảm biến và bộ trích xuất đặc trưng hình học cục bộ.

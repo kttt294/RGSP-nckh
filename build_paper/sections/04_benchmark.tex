@@ -1,0 +1,64 @@
+\section{Bộ Chuẩn Đánh Giá RS-Resolve}
+\label{sec:benchmark}
+
+\subsection{Tổng Quan Bộ Chuẩn Đa Nguồn}
+Để kiểm tra nghiêm ngặt hai nút thắt phân giải trên ảnh viễn thám thực tế, chúng tôi xây dựng bộ chuẩn đánh giá RS-Resolve gồm 30.771 câu hỏi trắc nghiệm được tạo tự động với các ràng buộc vật lý chặt chẽ. Dữ liệu được trích xuất từ 5 tập ảnh viễn thám phổ biến và đa dạng nhất hiện nay: DOTA-v2 \cite{dotav2}, DIOR \cite{dior2020}, xView \cite{xview2018}, VisDrone \cite{visdrone2021} và iSAID \cite{isaid2019}. Mỗi câu hỏi được liên kết chính xác với thông số cảm biến vệ tinh, kích thước thực địa của đối tượng $L$ và cờ từ chối khách quan dựa trên ngưỡng độ phân giải con người.
+
+\begin{table}[t]
+\centering
+\caption{Thống kê bộ chuẩn RS-Resolve theo các nguồn dữ liệu viễn thám.}
+\label{tab:dataset_stats}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+Tập dữ liệu nguồn & Số câu hỏi & Cảm biến / Nền tảng & GSD danh định & Dải $\rhopx$ (px) \\
+\midrule
+DOTA-v2.0 \cite{dotav2} & 6.200 & Vệ tinh Google Earth & 0.1 -- 1.0 m & 5.0 -- 1200.0 \\
+DIOR \cite{dior2020} & 6.150 & Vệ tinh quang học & 0.5 -- 3.0 m & 4.0 -- 850.0 \\
+xView \cite{xview2018} & 6.120 & Vệ tinh WorldView-3 & 0.3 m & 3.5 -- 600.0 \\
+VisDrone \cite{visdrone2021} & 6.150 & Thiết bị bay không người lái & 0.05 -- 0.2 m & 8.0 -- 950.0 \\
+iSAID \cite{isaid2019} & 6.151 & Vệ tinh siêu nét & 0.1 -- 1.0 m & 6.0 -- 1100.0 \\
+\midrule
+Tổng cộng & 30.771 & Đa cảm biến vệ tinh/UAV & 0.05 -- 3.0 m & 3.5 -- 1200.0 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\subsection{Cấu Trúc 6 Loại Câu Hỏi Nhận Thức (Q1--Q6)}
+Bộ câu hỏi bao phủ trọn vẹn bậc thang nhận thức từ phát hiện thô đến định danh tinh xảo (Bảng~\ref{tab:question_kinds}):
+\begin{itemize}
+    \item \textit{Q1 (Hiện diện / Phát hiện)}: Hỏi sự tồn tại của đối tượng trong toàn cảnh ảnh hoặc trong vùng không gian cụ thể.
+    \item \textit{Q2 (Đếm số lượng)}: Yêu cầu đếm chính xác số lượng thực thể của một lớp đối tượng trong ô lưới hoặc toàn ảnh.
+    \item \textit{Q3-HF (Thuộc tính tần số cao)}: Hỏi về góc xoay hướng trục OBB của đối tượng (đòi hỏi nhận biết cấu trúc vi mô).
+    \item \textit{Q3-LF (Thuộc tính tần số thấp)}: Hỏi về màu sắc chủ đạo của đối tượng (thuộc tính phổ có thể bảo toàn qua quá trình lấy mẫu hỗn hợp pixel).
+    \item \textit{Q4 (Hướng xoay / Diện tích)}: Hỏi về định hướng không gian hoặc so sánh kích thước tương đối của đối tượng.
+    \item \textit{Q5 (Định danh loại con)}: Phân loại chi tiết các lớp đối tượng có độ tương đồng hình thái cao (ví dụ: phân biệt xe tải nhỏ, xe van, xe bồn trong xView).
+    \item \textit{Q6 (Định vị không gian Grid 3x3)}: Yêu cầu xác định ô lưới tọa độ 3x3 (từ A1 đến C3) chứa đối tượng mục tiêu.
+\end{itemize}
+
+\begin{table}[t]
+\centering
+\caption{Phân bố các dạng câu hỏi và số lượng mẫu trong bộ chuẩn RS-Resolve.}
+\label{tab:question_kinds}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{llcc}
+\toprule
+Mã & Nhiệm vụ nhận thức & Bậc thang Johnson & Số lượng câu hỏi \\
+\midrule
+Q1 & Phát hiện sự hiện diện (Detection) & Detection & 6.000 câu \\
+Q2 & Đếm số lượng thực thể (Counting) & Recognition & 6.000 câu \\
+Q3-HF & Thuộc tính hướng xoay OBB & Identification & 332 câu \\
+Q3-LF & Thuộc tính màu sắc chủ đạo & Spectral / Color & 439 câu \\
+Q4 & Góc xoay / Diện tích hình học & Orientation & 6.000 câu \\
+Q5 & Nhận dạng phân lớp con (Fine-grained) & Identification & 6.000 câu \\
+Q6 & Định vị ô lưới không gian (Grounding) & Localization & 6.000 câu \\
+\midrule
+Tổng & Toàn bộ 6 nhóm tác vụ VQA viễn thám & - & 30.771 câu \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\subsection{Cơ Chế Gán Nhãn Từ Chối Khách Quan}
+Mỗi câu hỏi trắc nghiệm đều cung cấp phương án từ chối trung tính: \textit{``Không thể xác định từ ảnh''} (\textit{``Cannot be determined from the image''}). Đáp án đúng của câu hỏi được gán bằng phương án từ chối này khi và chỉ khi đối tượng có $\rhopx < \pzerou$ (dưới ngưỡng phân giải tối thiểu của mắt người đã được xác thực qua thẩm định thủ công). Thiết kế này tạo ra một thước đo khách quan để phạt các mô hình cố tình đoán bừa (\textit{overconfident hallucination}).
