@@ -877,7 +877,7 @@ def generate_cross_model_comparison_report(all_results: List[Dict[str, Any]], ou
 def main():
     parser = argparse.ArgumentParser(description="Tính toán chỉ số khoa học cho Benchmark RS-Solve (Tables VI - X)")
     parser.add_argument("--preds-file", required=True, nargs="+", help="Đường dẫn đến 1 hoặc nhiều file dự đoán jsonl")
-    parser.add_argument("--output-dir", default=str(Path(__file__).resolve().parent.parent.parent / "eval_reports"), help="Thư mục xuất báo cáo")
+    parser.add_argument("--output-dir", default=str(Path(__file__).resolve().parent.parent / "results" / "eval_reports"), help="Thư mục xuất báo cáo")
     parser.add_argument("--p-patch", type=int, default=32, help="Kích thước patch P của mô hình (32 cho Qwen2.5-VL, 28 cho InternVL, 14 cho LLaVA)")
     args = parser.parse_args()
 

@@ -23,7 +23,7 @@ from PIL import Image
 
 CURRENT_DIR = Path(__file__).resolve().parent
 REPO_DIR = CURRENT_DIR.parent if CURRENT_DIR.name in ("scripts", "eval") else CURRENT_DIR
-for p in [CURRENT_DIR, REPO_DIR, REPO_DIR / "scripts", REPO_DIR / "rs-solve"]:
+for p in [CURRENT_DIR, REPO_DIR, REPO_DIR / "scripts", REPO_DIR / "build_benchmark"]:
     if str(p) not in sys.path:
         sys.path.insert(0, str(p))
 
@@ -58,22 +58,48 @@ def resolve_image_path(rel_path: str, image_root: Path) -> Optional[Path]:
         _IMAGE_CACHE[rel_path] = p2
         return p2
 
-    # 4. Biến thể tiền tố Kaggle: loại bỏ các tiền tố trùng lặp ('kaggle', 'input', 'datasets')
+    # 4. Tự động lập chỉ mục các thư mục dataset trên Kaggle / local filesystem
+    if not hasattr(resolve_image_path, "_dataset_dirs"):
+        d_dirs = []
+        if image_root.exists():
+            for p in image_root.iterdir():
+                if p.is_dir():
+                    d_dirs.append(p)
+                    # Quét thêm 2 cấp cho cấu trúc Kaggle GCS: /kaggle/input/datasets/<owner>/<dataset>
+                    try:
+                        for sub1 in p.iterdir():
+                            if sub1.is_dir():
+                                d_dirs.append(sub1)
+                                try:
+                                    for sub2 in sub1.iterdir():
+                                        if sub2.is_dir():
+                                            d_dirs.append(sub2)
+                                except Exception:
+                                    pass
+                    except Exception:
+                        pass
+        resolve_image_path._dataset_dirs = d_dirs
+
     parts = [p for p in rel_path.replace("\\", "/").split("/") if p and p not in ("kaggle", "input", "datasets")]
     if parts:
-        p3 = image_root.joinpath(*parts)
-        if p3.is_file():
-            _IMAGE_CACHE[rel_path] = p3
-            return p3
-
-        # Kiểm tra trong từng thư mục con của image_root (/kaggle/input/<dataset>/...)
-        if image_root.exists():
-            for sub in image_root.iterdir():
-                if sub.is_dir():
-                    cand = sub.joinpath(*parts)
-                    if cand.is_file():
-                        _IMAGE_CACHE[rel_path] = cand
-                        return cand
+        for d in resolve_image_path._dataset_dirs:
+            # TH1: Khớp d / parts[0] / parts[1:]
+            cand1 = d.joinpath(*parts)
+            if cand1.is_file():
+                _IMAGE_CACHE[rel_path] = cand1
+                return cand1
+            # TH2: Thư mục d chính là parts[0] (ví dụ d.name == 'diordataset')
+            if d.name.lower() == parts[0].lower():
+                cand2 = d.joinpath(*parts[1:])
+                if cand2.is_file():
+                    _IMAGE_CACHE[rel_path] = cand2
+                    return cand2
+            # TH3: Khớp tên dataset mờ (ví dụ 'diordata' vs 'diordataset')
+            if parts[0].lower().startswith(d.name.lower()) or d.name.lower().startswith(parts[0].lower()):
+                cand3 = d.joinpath(*parts[1:])
+                if cand3.is_file():
+                    _IMAGE_CACHE[rel_path] = cand3
+                    return cand3
 
     _IMAGE_CACHE[rel_path] = None
     return None
@@ -157,12 +183,11 @@ def run_evaluation(
         img_rel = item.get("image_path", "")
         img_real = resolve_image_path(img_rel, image_root)
 
-        # Nếu không tìm thấy ảnh gốc thì dùng ảnh mẫu trống để tránh dừng tiến trình
+        # Kiểm tra sự tồn tại của ảnh: nếu thiếu ảnh thì dừng ngay và báo lỗi
         if img_real is None or not img_real.is_file():
-            # Tạo ảnh dummy 512x512
-            img_real = output_file.parent / "dummy.jpg"
-            if not img_real.exists():
-                Image.new("RGB", (512, 512), color=(128, 128, 128)).save(img_real)
+            raise FileNotFoundError(
+                f"[DỮ LIỆU LỖI] Không tìm thấy tệp ảnh cho câu hỏi {qid} tại: '{img_rel}' (Image root: {image_root})"
+            )
 
         try:
             with Image.open(img_real) as im:

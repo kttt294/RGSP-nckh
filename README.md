@@ -29,55 +29,62 @@ rgsp_nckh/
 │   ├── q3_lf_pilot_verification_list.csv  # Bảng kê 143 câu Q3-LF Pilot phục vụ kiểm định thủ công
 │   └── q3_lf_full_verification_list.csv   # Bảng kê 439 câu Q3-LF Full phục vụ kiểm định thủ công
 │
-├── results/                               # 4. Kết quả Thực nghiệm & Đo đạc Đã Hoàn thiện
-│   └── llava_1_5_full/                    # Kết quả Full 30.771 câu của mô hình LLaVA-1.5-7B
-│       ├── preds_llava_1_5.jsonl          # Dự đoán chi tiết từng câu
-│       ├── eval_report_preds_llava_1_5.md # Báo cáo số liệu độ chính xác & kiểm định giả thuyết
-│       └── eval_report_preds_llava_1_5.json
-│                                          # (Các kết quả mới sẽ được lưu vào đây khi chạy trên Server GPU)
+├── results/                               # 4. Kết quả Thực nghiệm & Đo đạc Đã Hoàn thiện (30.771 câu x 5 Mô hình)
+│   ├── geochat_full/                      # Kết quả Full của mô hình GeoChat-7B (CLIP-ViT@504)
+│   ├── internvl3_5_full/                  # Kết quả Full của mô hình InternVL3.5-8B (InternViT)
+│   ├── llava_1_5_full/                    # Kết quả Full của mô hình LLaVA-1.5-7B (CLIP-ViT@336)
+│   ├── llava_next_full/                   # Kết quả Full của mô hình LLaVA-NeXT-7B (AnyRes Grid)
+│   ├── qwen3_full/                        # Kết quả Full của mô hình Qwen3-VL-8B (SigLIP2)
+│   └── cross_model_comparison_report.md   # BẢNG TỔNG HỢP SO SÁNH ĐA MÔ HÌNH (TABLES VI - X)
 │
-├── rs-solve/                              # 5. Bộ Sinh Benchmark Tự động (Core Synthesizer)
+├── build_benchmark/                       # 5. Bộ Sinh Benchmark Tự động (Core Synthesizer)
 │   ├── build_dataset.py                   # Engine sinh dữ liệu theo tiêu chuẩn vật lý Johnson
-│   ├── core_generators.py                 # Hàm tạo câu hỏi Q1 - Q6, kiểm tra cô lập không gian
-│   ├── physical_sizes.json                # Kích thước vật lý thực địa L_m của từng lớp địa vật
+│   ├── core_generators.py                 # Hàm tạo câu hỏi Q1 - Q6, kiểm tra cô lập không gian & tính rho_px
+│   ├── physical_sizes.csv & .json         # Kích thước vật lý thực địa L_m của từng lớp địa vật
+│   ├── export_english_benchmark.py        # Xuất benchmark chuẩn tiếng Anh
+│   ├── generate_q3_lf_automated.py        # Thuật toán trích xuất thuộc tính màu sắc Q3-LF
 │   ├── parsers/                           # Parser nhãn chuẩn hóa cho 5 dataset: DIOR, DOTA, VisDrone, xView, iSAID
 │   ├── sample_data/                       # Dữ liệu ảnh và nhãn mẫu phục vụ unit test
 │   └── tests/                             # Bộ kiểm thử tự động (Unit tests)
 │
-└── scripts/                               # 6. Bộ Công cụ Kỹ thuật & Suy luận (Inference & Audit)
-    ├── run_inference.py                   # Script chạy suy luận MLLM trên GPU (Hỗ trợ 8-bit)
-    ├── model_adapters.py                  # Bộ điều hợp mô hình: GeoChat, Qwen2.5-VL, LLaVA-1.5, LLaVA-NeXT, InternVL2
-    ├── compute_metrics.py                 # Engine tính toán chỉ số khoa học, S-curve và điểm chuyển pha
-    ├── download_and_inspect_q3_lf.py      # Tải ảnh lẻ qua Kaggle API & crop đối tượng kiểm định nhãn
-    ├── inspect.html                       # Giao diện web tương tác duyệt nhãn trực quan
-    └── legacy_kaggle/                     # Lưu trữ các notebook Kaggle thử nghiệm ban đầu
+└── scripts/                               # 6. Bộ Công cụ Kỹ thuật & Suy luận (Inference & Evaluation)
+    ├── run_inference.py                   # Script chạy suy luận MLLM trên GPU / CPU
+    ├── model_adapters.py                  # Bộ điều hợp 5 kiến trúc: GeoChat, Qwen3-VL, LLaVA-1.5, LLaVA-NeXT, InternVL3.5
+    ├── compute_metrics.py                 # Engine tính toán chỉ số khoa học RGSP (Bảng VI, VII, VIII, IX, X)
+    └── compare_all_5_models.py            # Tổng hợp nhanh độ chính xác 5 mô hình theo các tác vụ Q1 - Q6
 ```
 
 ---
 
 ## 🚀 Hướng Dẫn Sử Dụng Nhanh
 
-### 1. Kiểm tra / Duyệt thủ công nhãn $Q_3\text{-LF}$
-Mở trực tiếp file giao diện web:
+### 1. Sinh Benchmark RS-Solve / RS-Resolve từ ảnh gốc
 ```bash
-# Mở bằng trình duyệt
-start scripts/inspect.html
+python build_benchmark/build_dataset.py --dataset all
 ```
 
-### 2. Chạy Suy luận MLLM (Local hoặc Remote Server GPU)
+### 2. Chạy Suy luận MLLM trên Benchmark
 ```bash
-# Chạy suy luận cho Qwen2.5-VL trên tập Pilot 1.000 câu (hoặc tập Full)
 python scripts/run_inference.py \
-    --model qwen2.5-vl \
-    --benchmark-file data/rs_solve_pilot_1000.jsonl \
+    --model qwen \
+    --benchmark-file data/rs_solve_full_benchmark_en.jsonl \
     --image-root /path/to/images \
-    --output-file results/preds_qwen2_5_vl.jsonl
+    --output-file results/qwen3_full/preds_qwen3.jsonl
 ```
 
-### 3. Tính toán Toàn bộ Bảng Chỉ số Khoa học (Tables VI - X)
+### 3. Tính toán Toàn bộ Bảng Chỉ số Khoa học RGSP (Tables VI - X)
 ```bash
+# Đo lường và xuất báo cáo cho từng mô hình hoặc so sánh chéo 5 mô hình
 python scripts/compute_metrics.py \
-    --preds-file results/pilot_eval/preds_qwen2_5_vl.jsonl \
-    --output-dir results/pilot_eval \
-    --p-patch 32
+    --preds-file results/geochat_full/preds_geochat.jsonl \
+                 results/llava_1_5_full/preds_llava_1_5.jsonl \
+                 results/qwen3_full/preds_qwen3.jsonl \
+                 results/internvl3_5_full/preds_internvl3_5.jsonl \
+                 results/llava_next_full/preds_llava_next.jsonl \
+    --output-dir results
+```
+
+### 4. Xem Tổng kết Nhanh Độ chính xác Tác vụ Q1 - Q6
+```bash
+python scripts/compare_all_5_models.py
 ```
